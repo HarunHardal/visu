@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Italiana&family=Redressed&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
     margin: 0px;
@@ -86,6 +87,15 @@ label {
     font-weight: 100;
     letter-spacing: 1.1px;
 }
+.text-montserrat{
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+  }
+.text-center{
+    text-align: center;
+}
+  
 
 .landing-page {
     width: 100%;
@@ -160,4 +170,76 @@ label {
     justify-content: center;
     align-items: start;
     gap: 20px;
+}
+
+.landing-page-container-inner-70 {
+    margin: auto;
+    width: 80%;
+    height: 70vh;
+    display: flex;
+    justify-items: center;
+    gap: 20px;
+}
+
+
+@media only screen and (max-width: 680px){
+
+    .landing-page-container {
+        width: 100%;
+        height: auto;
+        position: relative;
+        z-index: 99;
+    }
+    
+    .landing-page-container-row {
+        width: 100%;
+        height: auto;
+        display: grid;
+        margin-top: 150px;
+        border:1px solid red;
+        grid-template-rows: auto;
+    }
+    
+    .landing-page-container-column {
+        
+        grid-template-columns: 100%;
+    }
+    
+    .landing-page-container-column-container {
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        border-right: 1px solid #fff;
+    
+    }
+    
+    .landing-page-container-column-container p {
+        font-size: 2rem;
+        font-family: "Italiana", serif;
+        line-height: 55px;
+    }
+    
+    .landing-page-container-brand-name-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-top: 1px solid #fff;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+    
+    .landing-page-brand-name {
+        font-size: 5rem;
+        font-family: "Italiana", serif;
+        font-weight: 100;
+        padding: 0;
+        margin: 0;
+        letter-spacing: 5px;
+        text-align: center;
+    }
 }

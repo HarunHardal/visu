@@ -1,7 +1,8 @@
 .sticky-scroll-container {
   position: relative;
   width: 100%;
-  height: 500vh; /* Panellerin scroll ile düzgün çalışması için uzun bir alan */
+  height: 500vh;
+  /* Panellerin scroll ile düzgün çalışması için uzun bir alan */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,9 +28,10 @@
   transition: all 0.3s ease;
   backdrop-filter: blur(15px);
   padding: 20px 50px;
+  gap: 20px;
 }
 
-.sticky-01-panel-wrapper{
+.sticky-01-panel-wrapper {
   width: 90%;
   height: auto;
   padding: 20px 10px;
@@ -39,19 +41,19 @@
 }
 
 .sticky-01_image {
-  width: 40%;
-  height: 60%;
-  background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+  width: 50%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  font-weight: bold;
   border-radius: 10px;
   transition: transform 0.3s ease;
+  padding: 0;
 }
 
-.sticky-01_text{
-  width: 100%;
-  border: 1px solid red;
+.sticky-01_text {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
