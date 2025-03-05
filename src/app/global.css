@@ -100,14 +100,14 @@ label {
 .landing-page {
     width: 100%;
     height: auto;
-    z-index: 99;
+    z-index: 9;
 }
 
 .landing-page-container {
     width: 100%;
     height: auto;
     position: relative;
-    z-index: 99;
+    z-index: 9;
 }
 
 .landing-page-container-row {

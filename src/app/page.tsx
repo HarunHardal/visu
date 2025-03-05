@@ -4,8 +4,8 @@ import TextEffectComponent from "../components/textEffect/TextEffect";
 
 export default function Home() {
   return (
-    <div className="landing-page">
-      <div className="landing-page-container" style={{ zIndex: '1' }}>
+    <div className="landing-page" >
+      <div className="landing-page-container" style={{ zIndex: '9999' }}>
         <div className="landing-page-container-row">
 
           <div className="landing-page-container-column">
@@ -42,9 +42,11 @@ export default function Home() {
           </TextEffectComponent>
         </div>
       </div>
-
       <div className="landing-page-container">
         <ScrollingText />
+      </div>
+      <div className="landing-page-container">
+
       </div>
       <div className="landing-page-container" style={{ border: '1px solid red' }}>
         <StickyScroll />

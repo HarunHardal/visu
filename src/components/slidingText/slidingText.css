@@ -6,7 +6,6 @@
 	overflow: hidden;
 	border-top: 1px solid #eee;
 	border-bottom: 1px solid #eee;
-    z-index: 99;
 }
 
 .sliding-text-inner {
@@ -25,7 +24,8 @@
 	font-size: 40px;
 	font-family: "Italiana", sans-serif;
 	color: #fff;
-    font-weight: 400;
+	font-weight: 400;
 	font-style: normal;
-	font-size: 200px
+	font-size: 200px;
+	margin: 0 50px;
 }
