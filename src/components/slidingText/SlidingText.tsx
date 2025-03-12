@@ -1,24 +1,24 @@
 "use client";
 
 import gsap from "gsap";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { useLenis } from "@studio-freight/react-lenis";
 import "./slidingText.css";
 
 const ScrollingText = () => {
-  const lenis = useLenis(); // Lenis hook'unu kullan
-  const [previousScroll, setPreviousScroll] = useState(0);
+  const lenis = useLenis();
+  const tweenRef = useRef<gsap.core.Tween | null>(null);
+  let lastScroll = 0;
 
   useEffect(() => {
     if (!lenis) return;
 
-    let scrollTimeout: NodeJS.Timeout | null = null;
-
-    const tween = gsap.to(".sliding-text-inner", {
+    // GSAP animasyonu oluştur, başta durdur
+    tweenRef.current = gsap.to(".sliding-text-inner", {
       xPercent: -100,
       repeat: -1,
-      duration: 5,
-      ease: "linear",
+      duration: 10,
+      ease: "none",
       paused: true,
     });
 
@@ -28,43 +28,33 @@ const ScrollingText = () => {
       display: "flex",
     });
 
+    // Scroll eventini dinle
     const onScroll = () => {
       const currentScroll = lenis.scroll;
-      const isScrollingDown = currentScroll > previousScroll;
+      const scrollDiff = currentScroll - lastScroll;
+      const isScrollingDown = scrollDiff > 0;
 
-      // Scroll yönüne göre animasyon yönü değiştir
-      gsap.to(tween, {
-        timeScale: isScrollingDown ? 1 : -1,
-        duration: 0.7, // Yumuşak geçiş
-        ease: "power2.out",
-      });
+      // Scroll yönüne göre animasyon hızını değiştir
+      if (tweenRef.current) {
+        const speed = Math.min(Math.abs(scrollDiff) * 0.1, 3); // Hızı sınırlamak için
+        tweenRef.current.timeScale(isScrollingDown ? speed : -speed);
+        if (!tweenRef.current.isActive()) tweenRef.current.play();
+      }
 
-      tween.play();
-
-      if (scrollTimeout) clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        gsap.to(tween, {
-          timeScale: 0, // Hızı sıfıra indirerek smooth duruş sağla
-          duration: 1.2, // Yavaş duruş süresi
-          ease: "power2.out",
-        });
-      }, 200); // 200ms içinde yeni scroll gelmezse dur
-
-      setPreviousScroll(currentScroll);
+      lastScroll = currentScroll;
     };
 
     lenis.on("scroll", onScroll);
 
     return () => {
       lenis.off("scroll", onScroll);
-      if (scrollTimeout) clearTimeout(scrollTimeout);
     };
-  }, [lenis, previousScroll]);
+  }, [lenis]);
 
   return (
     <section className="sliding-text">
       <div className="sliding-text-inner">
-        {Array(12).fill("HİZMETLERİMİZ").map((text, index) => (
+        {Array(6).fill("YENİLİK İNOVASYON DÜŞÜNCE SANAT KREATİF").map((text, index) => (
           <div className="sliding-text-part" key={index}>
             {text}
           </div>
