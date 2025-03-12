@@ -95,7 +95,7 @@ const StickyScroll: React.FC = () => {
           <Sphere />
         </div>
         <div className="sticky-01_text">
-          <h2 className='text-italiana'>Marka Kimliği & Grafik Tasarım
+          <h2 className='text-italianal'>Marka Kimliği & Grafik Tasarım
           </h2>
           <h3 className='text-montserrat'>Güçlü Bir Kimlik, Unutulmaz Bir Marka!</h3>
           <p className='text-montserrat'> Markanızın ruhunu yansıtan, akılda kalıcı bir görsel kimlik oluşturuyoruz. Logo tasarımı, kurumsal kimlik, afiş ve dijital tasarımlar ile markanızı daha profesyonel ve dikkat çekici hale getiriyoruz. Tasarımın gücüyle markanızı rakiplerinizden ayırın!
