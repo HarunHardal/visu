@@ -45,9 +45,6 @@ export default function Home() {
       <div className="landing-page-container">
         <ScrollingText />
       </div>
-      <div className="landing-page-container">
-
-      </div>
       <div className="landing-page-container" style={{ border: '1px solid red' }}>
         <StickyScroll />
       </div>

@@ -181,6 +181,36 @@ label {
     gap: 20px;
 }
 
+@media only screen and (max-width: 1280px){
+
+}
+
+@media only screen and (max-width: 1024px){
+    .landing-page-container-column-container {
+        padding: 10px 20px;
+    }
+    .landing-page-brand-name {
+        font-size: 13rem;
+    }
+    .landing-page-container-column {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 70% 30%;
+    }
+    .landing-page-container-inner{
+        margin: auto;
+        width: 90%;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 20px;
+    }
+    
+}
+
 
 @media only screen and (max-width: 680px){
 
@@ -196,7 +226,6 @@ label {
         height: auto;
         display: grid;
         margin-top: 150px;
-        border:1px solid red;
         grid-template-rows: auto;
     }
     
