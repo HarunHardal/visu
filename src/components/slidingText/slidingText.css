@@ -1,8 +1,8 @@
 .sliding-text {
-	width: 99vw;
+	position: relative;
+	width: 100vw;
 	color: #eee;
 	padding: 30px 0;
-	text-transform: uppercase;
 	overflow: hidden;
 	border-top: 1px solid #eee;
 	border-bottom: 1px solid #eee;
@@ -12,9 +12,6 @@
 .sliding-text-inner {
 	display: flex;
 	width: 100%;
-	flex: auto;
-	flex-direction: row;
-	gap: 2rem;
 }
 
 .sliding-text-part {
@@ -26,7 +23,11 @@
 	color: #fff;
 	font-weight: 400;
 	font-style: normal;
-	font-size: 80px;
-	margin: 0 50px;
-	font-family:"Italiana", serif;
+	font-size: 8vw;
+	font-family: "Bodoni Moda";
+}
+
+
+@media only screen and (max-width: 1280px) {
+
 }

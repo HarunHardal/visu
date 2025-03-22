@@ -8,13 +8,12 @@
   align-items: center;
   justify-content: center;
   gap: 100px;
-  top: 50%;
   z-index: 99;
 }
 
 .sticky-01_panel {
   position: sticky;
-  top: 50%;
+  top: 50%; 
   transform: translateY(-50%);
   width: 80%;
   height: 70vh;
@@ -58,57 +57,4 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-}
-
-@media only screen and (max-width: 1280px) {
-  .sticky-01_panel {
-    width: 95%;
-    height: 85vh;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  .sticky-01_image {
-    width: 100%;
-    height: 50%;
-    border:1px solid red;
-    position: absolute;
-    top:0;
-  }
-
-
-  .sticky-01_text {
-    width: 90%;
-    height: 60%;
-    bottom:0;
-    text-align: center;
-    justify-content: center;
-    z-index: 10;
-    border:1px solid blue;
-  }
-}
-
-@media only screen and (max-width: 1024px) {}
-
-@media only screen and (max-width: 480px) {
-  .sticky-01_panel {
-    position: sticky;
-    width: 100%;
-    height: 95vh;
-    display: flex;
-    flex-direction: column;
-    padding: 20px 10px;
-    align-items: center;
-    justify-content: center;
-  }
-
-
-
-
-  .sticky-01_text {
-    width: 90%;
-    height: auto;
-    text-align: center;
-  }
 }

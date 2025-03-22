@@ -24,7 +24,7 @@ export default function RootLayout({
           {children}
 
           <Experience meshRef={null} />
-          <GrainEffect />
+          
         </SmoothScrolling>
       </body>
     </html>

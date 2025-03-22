@@ -44,7 +44,7 @@ const TextEffectComponent = ({ children }:any) => {
     }, []);
     
   
-    return <div style={{display:'flex', flexDirection:'column', alignItems:'start', justifyContent:'center', gap:'20px'}} ref={textRef}>{children}</div>;
+    return <div style={{hyphens:'none' ,display:'flex', flexDirection:'column', alignItems:'start', justifyContent:'center', gap:'20px'}} ref={textRef}>{children}</div>;
   };
   
   export default TextEffectComponent;
