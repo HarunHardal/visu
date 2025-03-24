@@ -50,3 +50,28 @@ section {
 .sticky-text-wrapper p, h3, h2{
   color:#fff
 }
+
+
+@media only screen and (max-width: 1280px){
+
+}
+@media only screen and (max-width: 1024px){
+
+}
+
+@media only screen and (max-width: 680px){
+  .sticky-text-wrapper p{
+    font-size:14px
+  }
+  .sticky-text-wrapper h2{
+    font-size:24px
+  }
+  .sticky-text-wrapper h3{
+    font-size:20px
+  }
+  
+}
+
+@media only screen and (max-width: 425px){
+
+}
