@@ -33,7 +33,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/components/background/Sphere.jsx"
-  ],
+, "src/components/sticky/Sticky.jsx"  ],
   "exclude": [
     "node_modules"
   ]

@@ -1,19 +1,18 @@
-'use client';
+'use client'
 
-import { useEffect, useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import './stickyslider.css'
-import Octahedron from '../spheries/Octahedron';
+import './sticky.css'; // CSS dosyanızı import edin
 import Cylinder from '../spheries/Cylinder';
+import Octahedron from '../spheries/Octahedron';
 import Torus from '../spheries/Torus';
 import Tetrahedron from '../spheries/Tetrahedron';
-import Sphere from '../spheries/Sphere';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const StickyScroll: React.FC = () => {
-  const panelsRef = useRef<HTMLDivElement[]>([]);
+const StickyScroll2 = () => {
+  const panelsRef = useRef([]);
 
   useEffect(() => {
     if (panelsRef.current.length === 0) return;
@@ -39,11 +38,10 @@ const StickyScroll: React.FC = () => {
     });
   }, []);
 
+
   return (
     <div>
-    <div className="sticky-scroll-container">
-
-      <div ref={(el) => { if (el) panelsRef.current[0] = el; }} className="sticky-01_panel">
+      <section class="about" ref={(el) => { if (el) panelsRef.current[0] = el; }}>
         <div className="sticky-01_image">
           <Octahedron />
         </div>
@@ -54,8 +52,9 @@ const StickyScroll: React.FC = () => {
             Markanızı en iyi şekilde yansıtan, modern ve yüksek performanslı web siteleri tasarlıyoruz. Kullanıcı dostu arayüzler, mobil uyumluluk ve en güncel teknolojilerle öne çıkan web çözümleri sunuyoruz. İster kurumsal bir site, ister e-ticaret platformu olsun, hızlı, güvenli ve SEO uyumlu siteler inşa ediyoruz.
           </p>
         </div>
-      </div>
-      <div ref={(el) => { if (el) panelsRef.current[1] = el; }} className="sticky-01_panel">
+      </section>
+
+      <section class="photo photo1" ref={(el) => { if (el) panelsRef.current[1] = el; }}>
         <div className="sticky-01_image">
           <Cylinder />
         </div>
@@ -66,8 +65,9 @@ const StickyScroll: React.FC = () => {
             SEO, yalnızca bir web sitesine sahip olmakla yetinmeyen markalar için en kritik stratejilerden biridir. Anahtar kelime optimizasyonu, teknik SEO ve içerik stratejileri ile Google ve diğer arama motorlarında görünürlüğünüzü artırıyoruz. Doğru kitleye ulaşmanız için organik trafik ve dönüşüm odaklı çözümler sunuyoruz.
           </p>
         </div>
-      </div>
-      <div ref={(el) => { if (el) panelsRef.current[2] = el; }} className="sticky-01_panel">
+      </section>
+
+      <section class="photo photo2" ref={(el) => { if (el) panelsRef.current[2] = el; }}>
         <div className="sticky-01_image">
           <Torus />
         </div>
@@ -78,10 +78,11 @@ const StickyScroll: React.FC = () => {
             Dijital dünyada başarılı olmak için doğru strateji şart! Google Ads, sosyal medya reklamları ve içerik pazarlaması ile markanızı hedef kitlenizle buluşturuyoruz. Dönüşüm odaklı reklam kampanyaları ile satışlarınızı artırıyor, marka bilinirliğinizi güçlendiriyoruz.
           </p>
         </div>
-      </div>
-      <div ref={(el) => { if (el) panelsRef.current[3] = el; }} className="sticky-01_panel">
+      </section>
+
+      <section class="photo photo3" ref={(el) => { if (el) panelsRef.current[3] = el; }}>
         <div className="sticky-01_image">
-          <Tetrahedron/>
+          <Tetrahedron />
         </div>
         <div className="sticky-01_text">
           <h2 className='text-italiana'>Sosyal Medya Yönetimi</h2>
@@ -90,24 +91,10 @@ const StickyScroll: React.FC = () => {
             Sosyal medya, dijital dünyada en güçlü iletişim kanallarından biri. Instagram, Facebook, LinkedIn ve diğer platformlarda etkili içerik stratejileri oluşturuyor, etkileşimi artıran paylaşımlar yapıyoruz. Topluluk yönetimi, reklam kampanyaları ve kreatif içeriklerle sosyal medyada aktif bir marka kimliği oluşturuyoruz.
           </p>
         </div>
-      </div>
-      <div ref={(el) => { if (el) panelsRef.current[4] = el; }} className="sticky-01_panel">
-        <div className="sticky-01_image">
-          <Sphere />
-        </div>
-        <div className="sticky-01_text">
-          <h2 className='text-italiana'>Marka Kimliği & Grafik Tasarım
-          </h2>
-          <h3 className='text-montserrat'>Güçlü Bir Kimlik, Unutulmaz Bir Marka!</h3>
-          <p className='text-montserrat'> Markanızın ruhunu yansıtan, akılda kalıcı bir görsel kimlik oluşturuyoruz. Logo tasarımı, kurumsal kimlik, afiş ve dijital tasarımlar ile markanızı daha profesyonel ve dikkat çekici hale getiriyoruz. Tasarımın gücüyle markanızı rakiplerinizden ayırın!
-          </p>
-        </div>
-      </div>
+      </section>
     </div>
 
-
-    </div>
   );
 };
 
-export default StickyScroll;
+export default StickyScroll2;

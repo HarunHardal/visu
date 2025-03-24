@@ -1,6 +1,7 @@
 import ScrollingText from "../components/slidingText/SlidingText";
 import StickyScroll from "../components/sticky/StickySlider";
 import TextEffectComponent from "../components/textEffect/TextEffect";
+import StickyScroll2 from '../components/sticky/Sticky'
 
 export default function Home() {
   return (
@@ -26,10 +27,10 @@ export default function Home() {
         <div className="section2-wrap">
           <div>
             <TextEffectComponent>
-              <h2 className="text-color text-italiana" style={{width:'100%'}}>
+              <h2 className="text-color text-italiana" style={{ width: '100%' }}>
                 Neden Visugenius?
               </h2>
-              <h3 className="no-hyphen text-color text-montserrat text-italiana" style={{width:'100%'}}>
+              <h3 className="no-hyphen text-color text-montserrat text-italiana" style={{ width: '100%' }}>
                 Yaratıcı çözümlerle işinizi büyütüyoruz.
               </h3>
               <p className="no-hyphen  text-montserrat text-color">
@@ -45,15 +46,17 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="section3-container">
+       <div className="section3-container">
 
-        <ScrollingText/>
-      </div>
-      <div className="section4-container">
+        <ScrollingText />
+      </div> 
 
-        <StickyScroll/>
-      </div>
       
+        <StickyScroll2/>
+
+    <div className="section4-container"></div>
+
+
     </div>
   );
 }

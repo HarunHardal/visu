@@ -12,7 +12,7 @@
 
 html {
     width: 100vw;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 :root {
@@ -103,9 +103,7 @@ label {
 
 .landing-page {
     width: 100vw;
-    height: auto;
     z-index: 999;
-    overflow: hidden;
 }
 
 .section1-container{
@@ -222,9 +220,12 @@ label {
 
 /*Section 4 */
 .section4-container{
-    position: relative;
-    width: 100%;
-    border:1px solid red
+  overflow: hidden; 
+  height: 500px;
+  width: 100%;
+  background-color: rgb(34, 34, 58);
+}
+  /*
 }
 
 
@@ -326,8 +327,6 @@ label {
 
 .landing-page-container {
     width: 100%;
-    height: auto;
-    position: relative;
     z-index: 9;
 }
 
