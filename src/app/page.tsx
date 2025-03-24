@@ -46,15 +46,14 @@ export default function Home() {
           </div>
         </div>
       </div>
-       <div className="section3-container">
-
+      <div className="section3-container" style={{border:'1px solid red'}}>
         <ScrollingText />
-      </div> 
+      </div>
 
-      
-        <StickyScroll2/>
 
-    <div className="section4-container"></div>
+      <StickyScroll2 />
+
+      <div className="section4-container"></div>
 
 
     </div>

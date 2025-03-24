@@ -52,7 +52,7 @@ const ScrollingText = () => {
   }, [lenis]);
 
   return (
-    <section className="sliding-text">
+    <div className="sliding-text">
       <div className="sliding-text-inner">
         {Array(6).fill("YENİLİK İNOVASYON DÜŞÜNCE SANAT KREATİF").map((text, index) => (
           <div className="sliding-text-part" key={index}>
@@ -60,7 +60,7 @@ const ScrollingText = () => {
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 };
 
