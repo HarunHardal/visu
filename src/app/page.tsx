@@ -11,9 +11,9 @@ export default function Home() {
         <div className="section1-con-top">
 
           <div className="section1-container-l">
-            <p className="text-color">We bring your</p>
-            <p className="text-color">vision together</p>
-            <p className="text-color">with creativity.</p>
+            <p className="text-color">Vizyonunuzu</p>
+            <p className="text-color">Yaratıcılıkla</p>
+            <p className="text-color">Buluşturuyoruz.</p>
           </div>
 
           <div className="section1-container-r"></div>
@@ -46,7 +46,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="section3-container" style={{border:'1px solid red'}}>
+      <div className="section3-container">
         <ScrollingText />
       </div>
 

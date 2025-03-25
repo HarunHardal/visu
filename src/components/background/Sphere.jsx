@@ -9,6 +9,7 @@ import fragmentShader from "./fragment.glsl";
 import vertexShader from "./vertex.glsl";
 import { useMediaQuery } from "usehooks-ts";
 import { Environment } from '@react-three/drei';
+import GrainEffect from "../grain/GrainEffect";
 
 const Experiment = ({ shouldReduceQuality, isMobile, meshRef }) => {
   const materialRef = useRef(null);
@@ -81,17 +82,21 @@ const Experience = ({ meshRef }) => {
   const isMobile = useMediaQuery("(max-width: 767px)");
 
   return (
+    <>
+    <GrainEffect/>
     <div
       style={{
-        width: "100%",
+        width: "100vw",
         height: "100vh",
         position: "fixed",
         top: 0,
         left: 0,
-        zIndex: -999,
+        zIndex: -9,
         backgroundColor: "#000",
+        overflowY:'hidden',
       }}
     >
+     
       <Canvas
         camera={{
           position: [0, .5, isMobile ? 6 : isTablet ? 5 : 5], // Mobil ve tablet için kamera konumunu ayarla
@@ -105,6 +110,7 @@ const Experience = ({ meshRef }) => {
         <Experiment shouldReduceQuality={isTablet} isMobile={isMobile} meshRef={meshRef} />
       </Canvas>
     </div>
+    </>
   );
 };
 

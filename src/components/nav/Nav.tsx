@@ -3,9 +3,11 @@ import React, { useState, useEffect } from "react";
 import "./nav.css";
 import Image from "next/image";
 import logo from "../../../public/visu.svg";
+import { FiMenu, FiX } from "react-icons/fi"; // Hamburger ve kapatma ikonları
 
 const Nav = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,19 +33,25 @@ const Nav = () => {
           className={`logo ${isScrolled ? "scrolled" : ""}`}
         />
       </div>
-      <div className="container">
+
+      {/* Hamburger Butonu */}
+      <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+        {menuOpen ? <FiX size={30} /> : <FiMenu size={30} />}
+      </button>
+
+      <div className={`container ${menuOpen ? "open" : ""}`}>
         <ul className="menu-items">
           <li>
-            <a href="#">Home</a>
+            <a href="#" onClick={() => setMenuOpen(false)}>Home</a>
           </li>
           <li>
-            <a href="#">About Us</a>
+            <a href="#" onClick={() => setMenuOpen(false)}>About Us</a>
           </li>
           <li>
-            <a href="#">Services</a>
+            <a href="#" onClick={() => setMenuOpen(false)}>Services</a>
           </li>
           <li>
-            <a href="#">Contact</a>
+            <a href="#" onClick={() => setMenuOpen(false)}>Contact</a>
           </li>
         </ul>
       </div>

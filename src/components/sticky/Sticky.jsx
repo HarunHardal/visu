@@ -8,6 +8,7 @@ import Cylinder from '../spheries/Cylinder';
 import Octahedron from '../spheries/Octahedron';
 import Torus from '../spheries/Torus';
 import Tetrahedron from '../spheries/Tetrahedron';
+import Sphere from '../spheries/Sphere';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,7 +32,7 @@ const StickyScroll2 = () => {
           ease: 'none',
           startAt: { filter: 'brightness(100%)' },
           filter: isLast ? 'none' : 'brightness(50%)',
-          scale: 0.50,
+          scale: 0.95,
         }, 0);
     });
   }, []);
@@ -94,6 +95,21 @@ const StickyScroll2 = () => {
             <h3 className='text-montserrat'>Markanızı Sosyal Medyada Güçlendirin!</h3>
             <p className='text-montserrat'>
               Sosyal medya, dijital dünyada en güçlü iletişim kanallarından biri. Instagram, Facebook, LinkedIn ve diğer platformlarda etkili içerik stratejileri oluşturuyor, etkileşimi artıran paylaşımlar yapıyoruz. Topluluk yönetimi, reklam kampanyaları ve kreatif içeriklerle sosyal medyada aktif bir marka kimliği oluşturuyoruz.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-container" ref={(el) => { if (el) panelsRef.current[4] = el; }}>
+        <div className='sticky-grid'>
+          <div className="sticky-3d">
+            <Sphere />
+          </div>
+          <div className="sticky-text-wrapper">
+            <h2 className='text-italiana'>Marka Kimliği & Grafik Tasarım
+            </h2>
+            <h3 className='text-montserrat'>Güçlü Bir Kimlik, Unutulmaz Bir Marka!</h3>
+            <p className='text-montserrat'> Markanızın ruhunu yansıtan, akılda kalıcı bir görsel kimlik oluşturuyoruz. Logo tasarımı, kurumsal kimlik, afiş ve dijital tasarımlar ile markanızı daha profesyonel ve dikkat çekici hale getiriyoruz. Tasarımın gücüyle markanızı rakiplerinizden ayırın!
             </p>
           </div>
         </div>

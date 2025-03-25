@@ -17,7 +17,7 @@ section {
 }
 
 
-.sticky-wrapper{
+.sticky-wrapper {
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -27,14 +27,11 @@ section {
   width: 100%;
   display: grid;
   grid-template-columns: 50% 50%;
-  border: 1px solid red;
 }
 
 
 .sticky-3d {
-  border: 1px solid blue;
   width: 100%;
-  
 }
 
 .sticky-text-wrapper {
@@ -44,34 +41,96 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  border:5px solid purple;
   gap: 20px;
 }
-.sticky-text-wrapper p, h3, h2{
-  color:#fff
+
+.sticky-text-wrapper p,
+h3,
+h2 {
+  color: #fff
 }
 
 
-@media only screen and (max-width: 1280px){
+@media only screen and (max-width: 1280px) {}
 
-}
-@media only screen and (max-width: 1024px){
+@media only screen and (max-width: 1024px) {}
 
-}
-
-@media only screen and (max-width: 680px){
-  .sticky-text-wrapper p{
-    font-size:14px
+@media only screen and (max-width: 750px) {
+  .sticky-text-wrapper p {
+    font-size: 16px
   }
-  .sticky-text-wrapper h2{
-    font-size:24px
+
+  .sticky-text-wrapper h2 {
+    font-size: 26px;
+    width: 100%;
   }
-  .sticky-text-wrapper h3{
-    font-size:20px
+
+  .sticky-text-wrapper h3 {
+    font-size: 22px;
+    width: 100%;
   }
-  
+
+  .section-container {
+    height: 80vh;
+    width: 95vw;
+  }
+
+  .sticky-grid {
+    grid-template-columns: 100%;
+    grid-template-rows: 80% 60%;
+    text-shadow: 0 0 5px #000;
+  }
+
+  .sticky-3d {
+    position: absolute;
+    width: 90%;
+    height: 50%;
+    z-index: 9;
+  }
+
+  .sticky-text-wrapper {
+    justify-content: end;
+    z-index: 10;
+    text-align: center;
+  }
 }
 
-@media only screen and (max-width: 425px){
+@media only screen and (max-width: 425px) {
+  .sticky-text-wrapper p {
+    font-size: 14px;
+    text-shadow: 0 0 5px #000;
+  }
 
+  .sticky-text-wrapper h2 {
+    font-size: 24px;
+    width: 100%;
+    text-shadow: 0 0 5px #000;
+
+  }
+
+  .sticky-text-wrapper h3 {
+    font-size: 20px;
+    width: 100%;
+    text-shadow: 0 0 5px #000;
+  }
+
+  .section-container {
+    height: 80vh;
+    width: 95vw;
+  }
+
+  .sticky-grid {
+    grid-template-columns: 100%;
+    grid-template-rows: 80% 70%;
+    gap: 50px;
+  }
+
+  .sticky-3d {
+    width: 80%;
+    height: 50%;
+  }
+
+  .sticky-text-wrapper {
+    height: 100%;
+  }
 }
