@@ -2,6 +2,7 @@ import ScrollingText from "../components/slidingText/SlidingText";
 import StickyScroll from "../components/sticky/StickySlider";
 import TextEffectComponent from "../components/textEffect/TextEffect";
 import StickyScroll2 from '../components/sticky/Sticky'
+import Chart from "../components/spheries/Chart";
 
 export default function Home() {
   return (
@@ -46,6 +47,32 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+
+      <div className="section-vision">
+        <div className="section-vision-grid">
+          <div className="">
+            <Chart/>
+          </div>
+          <div className="">
+            <TextEffectComponent>
+              <h4 className="no-hyphen text-color text-montserrat text-italiana" style={{ width: '100%' }}>
+                İşletmenizi Geleceğe Taşıyan Akıllı Çözümler
+              </h4>
+
+              <h2 className="text-color text-italiana" style={{ width: '100%' }}>
+                Yeni Nesil Dijital Dönüşüm
+              </h2>
+
+              <p className="no-hyphen  text-montserrat text-color">
+                Her işletmenin kendine özgü bir dijital dönüşüm yolculuğu vardır. Hazır kalıplar yerine, ihtiyaçlarınıza özel çözümler geliştiriyor ve süreci sizinle birlikte şekillendiriyoruz. İlk adımda işletmenizin gereksinimlerini analiz ederek, en uygun dijital stratejiyi belirliyoruz. Çift yönlü etkileşimle ilerleyen bu süreçte, teknolojiyi işletmenize entegre ederken, sürdürülebilir bir dijital altyapı oluşturuyoruz. Böylece, işletmenizin geleceğe uyum sağlamasını ve rekabet avantajı kazanmasını sağlıyoruz.
+              </p>
+            </TextEffectComponent>
+          </div>
+        </div>
+      </div>
+
+
       <div className="section3-container">
         <ScrollingText />
       </div>

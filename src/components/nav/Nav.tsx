@@ -50,7 +50,7 @@ const Nav = () => {
           <li>
             <a href="#" onClick={() => setMenuOpen(false)}>Services</a>
           </li>
-          <li>
+          <li className="contact-button">
             <a href="#" onClick={() => setMenuOpen(false)}>Contact</a>
           </li>
         </ul>

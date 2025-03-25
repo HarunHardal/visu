@@ -9,7 +9,7 @@ import fragmentShader from "./fragment.glsl";
 import vertexShader from "./vertex.glsl";
 import { useMediaQuery } from "usehooks-ts";
 import { Environment } from '@react-three/drei';
-import GrainEffect from "../grain/GrainEffect";
+import GrainEffect from "../grain/GlassEffect";
 
 const Experiment = ({ shouldReduceQuality, isMobile, meshRef }) => {
   const materialRef = useRef(null);
