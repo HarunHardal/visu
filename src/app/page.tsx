@@ -2,7 +2,8 @@ import ScrollingText from "../components/slidingText/SlidingText";
 import StickyScroll from "../components/sticky/StickySlider";
 import TextEffectComponent from "../components/textEffect/TextEffect";
 import StickyScroll2 from '../components/sticky/Sticky'
-import Chart from "../components/spheries/Chart";
+import AnimatedCircle from "../components/spheries/Chart";
+import Kure from "../components/spheries/Chart";
 
 export default function Home() {
   return (
@@ -51,8 +52,16 @@ export default function Home() {
 
       <div className="section-vision">
         <div className="section-vision-grid">
-          <div className="">
-            <Chart/>
+          <div>
+            <div className="planet">
+              <Kure />
+            </div>
+            <div className="outer-circle">
+              <div className="dot outer-dot"></div>
+            </div>
+            <div className="inner-circle">
+              <div className="dot inner-dot"></div>
+            </div>
           </div>
           <div className="">
             <TextEffectComponent>

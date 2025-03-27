@@ -35,8 +35,8 @@ html {
     --line-height-text: 1.6;
 
     --planet: 200px;
-	--orbit1: 400px;
-  --orbit2: 350px;
+    --orbit1: 400px;
+    --orbit2: 350px;
 }
 
 h1 {
@@ -90,12 +90,14 @@ label {
     font-weight: 100;
     letter-spacing: 1.1px;
 }
-.text-montserrat{
+
+.text-montserrat {
     font-family: "Montserrat", serif;
     font-optical-sizing: auto;
     font-weight: 300;
-  }
-.text-center{
+}
+
+.text-center {
     text-align: center;
 }
 
@@ -104,20 +106,21 @@ label {
     z-index: 99;
 }
 
-.section1-container{
+.section1-container {
     width: 100%;
     height: 100vh;
     display: grid;
     grid-template-rows: 60% 30%;
 }
-.section1-con-top{
+
+.section1-con-top {
     height: 100%;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 50%);
 }
 
-.section1-container-l{
+.section1-container-l {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -126,13 +129,13 @@ label {
     padding: 10px 50px;
 }
 
-.section1-container-l p{
+.section1-container-l p {
     font-size: 6vw;
     font-family: "Italiana", serif;
     line-height: 10pc;
 }
 
-.brandname-container{
+.brandname-container {
     padding-top: 100px;
     width: 100%;
     height: auto;
@@ -142,95 +145,99 @@ label {
     justify-content: center;
 }
 
-.brandname{
+.brandname {
     font-size: 20vw;
     font-family: "Italiana", serif;
     font-weight: 100;
-    color:#fff;
+    color: #fff;
     padding: 0;
     margin: 0;
     letter-spacing: 5px;
     text-align: center;
 }
 
-.section2-container{
+.section2-container {
     width: 100%;
     height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.section2-wrap{
+
+.section2-wrap {
     width: 80%;
     display: grid;
     grid-template-columns: 50% 50%;
 }
 
-.planet{
+.planet {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
 }
+
 #planet {
-	width: var(--planet);
-	height: var(--planet);
-	background: linear-gradient(rgb(255, 255, 255), hsla(0, 0%, 27%, 0.452));
-	border-radius: 50%;
-	position: absolute;
-    
+    width: var(--planet);
+    height: var(--planet);
+    background: linear-gradient(rgb(255, 255, 255), hsla(0, 0%, 27%, 0.452));
+    border-radius: 50%;
+    position: absolute;
+
 }
 
 .ring {
-	width: 600px;
-	height: 30px;
-	border: solid 1px white;
-	border-radius: 50%;
-	position: absolute;
-	transform: rotate(45deg);
-	animation: fatten 3s ease-in-out infinite alternate;
+    width: 600px;
+    height: 30px;
+    border: solid 1px white;
+    border-radius: 50%;
+    position: absolute;
+    transform: rotate(45deg);
+    animation: fatten 3s ease-in-out infinite alternate;
 }
+
 .ring-front {
     position: absolute;
-	border-top: none;
-	border-left: none;
-	border-right: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 
 @keyframes fatten {
-	from {
-		height: 10px;
-	}
-	to {
-		height: 50px;
-	}
+    from {
+        height: 10px;
+    }
+
+    to {
+        height: 50px;
+    }
 }
 
 /* Section Vision */
 
-.section-vision{
+.section-vision {
     width: 100%;
     height: 70vh;
-    border:1px solid red;
 }
 
-.section-vision-grid{
+.section-vision-grid {
     width: 100%;
     height: 100%;
     display: grid;
     grid-template-columns: repeat(2, 50%);
 }
-.section-vision-grid div{
-    display:flex;
+
+.section-vision-grid div {
+    display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/*Section 3 */  
+/*Section 3 */
 
 
 
-.section3-container{
+.section3-container {
     height: 40vh;
     width: 100%;
     position: relative;
@@ -238,23 +245,25 @@ label {
 }
 
 /*Section 4 */
-.section4-container{
-  overflow: hidden; 
-  width: 100%;
-  background-color: rgb(34, 34, 58);
+.section4-container {
+    overflow: hidden;
+    width: 100%;
+    background-color: rgb(34, 34, 58);
 }
-  
 
 
-@media only screen and (max-width: 1280px){
-    .section1-container-l p{
+
+@media only screen and (max-width: 1280px) {
+    .section1-container-l p {
         font-size: 5vw;
         line-height: 4pc;
     }
-    .brandname{
+
+    .brandname {
         font-size: 17vw;
     }
-    .section3-container{
+
+    .section3-container {
         height: 40vh;
         width: 100%;
         position: relative;
@@ -262,35 +271,40 @@ label {
         align-items: center;
     }
 }
-@media only screen and (max-width: 1024px){
-    .section2-container{
+
+@media only screen and (max-width: 1024px) {
+    .section2-container {
         width: 100%;
         height: 90vh;
-       
+
     }
-    .section2-wrap{
+
+    .section2-wrap {
         width: 90%;
     }
+
     .ring {
         width: 500px;
         height: 25px;
-     
+
     }
 }
 
-@media only screen and (max-width: 680px){
-    .section1-con-top{
+@media only screen and (max-width: 680px) {
+    .section1-con-top {
         grid-template-columns: 90% 10%;
     }
-    .section1-container-l p{
+
+    .section1-container-l p {
         font-size: 8vw;
         line-height: 4pc;
     }
-    .brandname{
+
+    .brandname {
         font-size: 18vw;
     }
 
-    .section2-container{
+    .section2-container {
         width: 100%;
         height: 70vh;
         display: flex;
@@ -298,40 +312,70 @@ label {
         align-items: center;
     }
 
-    .section2-wrap{
+    .section2-wrap {
         height: 100%;
         display: grid;
         grid-template-rows: repeat(2, 50%);
         grid-template-columns: 100%;
-        gap:20px;
+        gap: 20px;
         text-align: center;
     }
 
+    .section-vision {
+        width: 90%;
+        height: 100vh;
+        margin: auto;
+    }
+
+    .section-vision-grid {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(2, 50%);
+    }
+    .section-vision-grid:nth-child(1){
+        grid-row: 2;
+        border:1px solid red;
     
+    }
+
+    .section-vision-grid:nth-child(2){
+        grid-row: 1;
+        border:1px solid purple
+    }
+
 }
 
-@media only screen and (max-width: 425px){
-    .section1-con-top{
+@media only screen and (max-width: 425px) {
+    .section1-con-top {
         grid-template-columns: 70% 30%;
     }
-    .section1-con-top{
+
+    .section1-con-top {
         grid-template-columns: 90% 10%;
     }
-    .section1-container-l p{
+
+    .section1-container-l p {
         font-size: 8vw;
         line-height: 4pc;
     }
-    .brandname{
+
+    .brandname {
         font-size: 18vw;
     }
+
     .ring {
         width: 400px;
     }
-    .section3-container{
+
+    .section3-container {
         margin-bottom: 250px;
     }
 
 }
+
+
 
 
 
@@ -426,24 +470,25 @@ label {
     gap: 20px;
 }
 
-@media only screen and (max-width: 1280px){
+@media only screen and (max-width: 1280px) {}
 
-}
-
-@media only screen and (max-width: 1024px){
+@media only screen and (max-width: 1024px) {
     .landing-page-container-column-container {
         padding: 10px 20px;
     }
+
     .landing-page-brand-name {
         font-size: 13rem;
     }
+
     .landing-page-container-column {
         width: 100%;
         height: 100%;
         display: grid;
         grid-template-columns: 70% 30%;
     }
-    .landing-page-container-inner{
+
+    .landing-page-container-inner {
         margin: auto;
         width: 90%;
         height: 50vh;
@@ -453,11 +498,11 @@ label {
         align-items: start;
         gap: 20px;
     }
-    
+
 }
 
 
-@media only screen and (max-width: 680px){
+@media only screen and (max-width: 680px) {
 
     .landing-page-container {
         width: 100%;
@@ -465,7 +510,7 @@ label {
         position: relative;
         z-index: 99;
     }
-    
+
     .landing-page-container-row {
         width: 100%;
         height: auto;
@@ -473,12 +518,12 @@ label {
         margin-top: 150px;
         grid-template-rows: auto;
     }
-    
+
     .landing-page-container-column {
-        
+
         grid-template-columns: 100%;
     }
-    
+
     .landing-page-container-column-container {
         width: 100%;
         padding: 10px;
@@ -487,15 +532,15 @@ label {
         justify-content: center;
         align-items: start;
         border-right: 1px solid #fff;
-    
+
     }
-    
+
     .landing-page-container-column-container p {
         font-size: 2rem;
         font-family: "Italiana", serif;
         line-height: 55px;
     }
-    
+
     .landing-page-container-brand-name-container {
         display: flex;
         align-items: center;
@@ -506,7 +551,7 @@ label {
         margin: 0;
         width: 100%;
     }
-    
+
     .landing-page-brand-name {
         font-size: 5rem;
         font-family: "Italiana", serif;
