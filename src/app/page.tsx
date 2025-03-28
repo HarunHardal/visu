@@ -90,25 +90,26 @@ export default function Home() {
       <StickyScroll2 />
 
       <div className="section4-container">
+        <div className="section4-container-wrapper">
 
-        <h2>Dijital Başarıya Giden Yolda Birlikte Yürüyelim</h2>
-        <p>Güçlü bir marka, etkili bir dijital strateji ile büyür. Visugenius olarak, işletmenizi dijital dünyada en iyi şekilde konumlandırmak için yenilikçi, stratejik ve yaratıcı çözümler sunuyoruz. Her markanın kendine özgü bir hikayesi olduğuna inanıyor, sizi rakiplerinizden ayıracak özgün stratejiler geliştiriyoruz.</p>
-        <div>
-          <div>
-            <p></p>
-            <p></p>
-            <p></p>
+          <h2 className="text-color text-bodoni text-center">Dijital Başarıya Giden Yolda Birlikte Yürüyelim</h2>
+          <p className="text-montserrat text-color text-center">Güçlü bir marka, etkili bir dijital strateji ile büyür. Visugenius olarak, işletmenizi dijital dünyada en iyi şekilde konumlandırmak için yenilikçi, stratejik ve yaratıcı çözümler sunuyoruz. Her markanın kendine özgü bir hikayesi olduğuna inanıyor, sizi rakiplerinizden ayıracak özgün stratejiler geliştiriyoruz.</p>
+          <div className="">
+            <div className="">
+              <p className=""> Kapsamlı Dijital Dönüşüm Çözümleri</p>
+              <p className="">Marka Stratejisi ve Konumlandırma</p>
+              <p className="">Son Teknoloji ile Güçlendirilmiş Çözümler</p>
+            </div>
+            <div className="">
+              <p className="">Veri Odaklı Pazarlama & SEO Optimizasyonu</p>
+              <p className="">Etkili Sosyal Medya Yönetimi</p>
+              <p className="">Yenilikçi ve Dönüşüm Odaklı Web & Mobil Çözümler</p>
+            </div>
           </div>
-          <div>
-            <p></p>
-            <p></p>
-            <p></p>
-          </div>
+
+          İster yeni bir girişim olun ister köklü bir marka, işinizi büyütmek için doğru stratejiyi birlikte belirleyelim. Visugenius ile markanızı dijital dünyada zirveye taşıyın.
         </div>
-
-        İster yeni bir girişim olun ister köklü bir marka, işinizi büyütmek için doğru stratejiyi birlikte belirleyelim. Visugenius ile markanızı dijital dünyada zirveye taşıyın.
       </div>
-
 
     </div>
   );
