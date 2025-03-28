@@ -258,8 +258,8 @@ label {
 .section4-container {
     overflow: hidden;
     width: 100%;
-    min-height: 60vh;
-    border:1px solid red;
+    height: auto;
+    border: 1px solid red;
 }
 .section4-container-wrapper{
     width: 80%;
@@ -272,10 +272,26 @@ label {
     gap: 30px;
 }
 
+.section4-col{
+   width: 100%;
+   height: auto;
+   display: grid;
+   grid-template-columns: repeat(2,50%);
+}
+
+.section4-col div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    gap: 20px;
+}
+
 /*Section 5 */
 .section5-container {
     overflow: hidden;
-    width: 100%;
+    width: auto;
+    margin: auto;
     background-color: rgb(34, 34, 58);
 }
 
