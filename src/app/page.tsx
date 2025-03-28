@@ -89,7 +89,25 @@ export default function Home() {
 
       <StickyScroll2 />
 
-      <div className="section4-container"></div>
+      <div className="section4-container">
+
+        <h2>Dijital Başarıya Giden Yolda Birlikte Yürüyelim</h2>
+        <p>Güçlü bir marka, etkili bir dijital strateji ile büyür. Visugenius olarak, işletmenizi dijital dünyada en iyi şekilde konumlandırmak için yenilikçi, stratejik ve yaratıcı çözümler sunuyoruz. Her markanın kendine özgü bir hikayesi olduğuna inanıyor, sizi rakiplerinizden ayıracak özgün stratejiler geliştiriyoruz.</p>
+        <div>
+          <div>
+            <p></p>
+            <p></p>
+            <p></p>
+          </div>
+          <div>
+            <p></p>
+            <p></p>
+            <p></p>
+          </div>
+        </div>
+
+        İster yeni bir girişim olun ister köklü bir marka, işinizi büyütmek için doğru stratejiyi birlikte belirleyelim. Visugenius ile markanızı dijital dünyada zirveye taşıyın.
+      </div>
 
 
     </div>

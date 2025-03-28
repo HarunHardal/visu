@@ -217,12 +217,16 @@ label {
 
 .section-vision {
     width: 100%;
-    height: 70vh;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .section-vision-grid {
-    width: 100%;
+    width: 80%;
     height: 100%;
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(2, 50%);
 }
@@ -250,6 +254,14 @@ label {
     width: 100%;
     background-color: rgb(34, 34, 58);
 }
+
+/*Section 5 */
+.section5-container {
+    overflow: hidden;
+    width: 100%;
+    background-color: rgb(34, 34, 58);
+}
+
 
 
 

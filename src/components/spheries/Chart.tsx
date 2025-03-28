@@ -16,8 +16,8 @@ const Kure = () => {
       slice.style.position = "absolute";
       slice.style.border = "solid 1px #fff";
       slice.style.borderRadius = "50%";
-      slice.style.height = "300px";
-      slice.style.width = "300px";
+      slice.style.height = "200px";
+      slice.style.width = "200px";
       slice.style.opacity = "0.8";
       slice.style.transform = `rotateY(${angle * i}deg)`;
       sphereRef.current.appendChild(slice);
