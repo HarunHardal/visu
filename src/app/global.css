@@ -259,7 +259,6 @@ font-family: "Bodoni Moda";
     overflow: hidden;
     width: 100%;
     height: auto;
-    border: 1px solid red;
 }
 .section4-container-wrapper{
     width: 80%;
@@ -291,8 +290,7 @@ font-family: "Bodoni Moda";
 .section5-container {
     overflow: hidden;
     width: auto;
-    margin: auto;
-    background-color: rgb(34, 34, 58);
+    margin: 100px;
 }
 
 

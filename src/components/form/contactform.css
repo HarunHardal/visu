@@ -1,0 +1,121 @@
+.form {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.form-wrapper {
+    width: 60%;
+    margin: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.10);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 5px #fff;
+    border-radius: 10px;
+    gap: 30px;
+}
+
+.form-inner {
+    width: 70%;
+    transition: 0.5s ease-in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px
+}
+
+.form-inner:hover {
+    box-shadow: 0 0 15px #fff;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 50px
+}
+
+.form-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.form-input {
+
+    padding: 10px 20px;
+    border: none;
+    background-color: #00000098;
+    color: #fff;
+    font-family: 'montserrat';
+    font-size: 16px;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid white;
+    width: 300px;
+    margin: auto;
+
+}
+
+.form-input::placeholder {
+    color: #fff;
+}
+
+.form-input:focus {
+    outline: none;
+    box-shadow: 0px 2px 2px #fff;
+}
+
+.form-input-message {
+    resize: none;
+    width: 90%;
+    height: 40vh;
+    background-color: #00000098;
+    border: 1px solid #fff;
+    font-family: 'montserrat';
+    font-size: 16px;
+    color: #fff;
+    padding: 5px;
+}
+
+.form-input-message-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.form-input-message::placeholder {
+    color: #fff;
+}
+
+.submit-button {
+
+    background-image: linear-gradient(to right, #BE93C5 0%, #7BC6CC 51%, #BE93C5 100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: #000;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+    outline: none;
+}
+
+.submit-button:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}

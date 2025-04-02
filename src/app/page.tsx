@@ -4,6 +4,8 @@ import TextEffectComponent from "../components/textEffect/TextEffect";
 import StickyScroll2 from '../components/sticky/Sticky'
 import AnimatedCircle from "../components/spheries/Chart";
 import Kure from "../components/spheries/Chart";
+import ContactForm from "../components/form/ContactForm";
+import TextReveal from "../components/textReveal/TextReveal";
 
 export default function Home() {
   return (
@@ -91,25 +93,36 @@ export default function Home() {
 
       <div className="section4-container">
         <div className="section4-container-wrapper">
+          <TextReveal>
+            <h2 className="text-color text-bodoni text-center">Dijital Başarıya Giden Yolda Birlikte Yürüyelim</h2>
+          </TextReveal>
 
-          <h2 className="text-color text-bodoni text-center">Dijital Başarıya Giden Yolda Birlikte Yürüyelim</h2>
-          <p className="text-montserrat text-color text-center">Güçlü bir marka, etkili bir dijital strateji ile büyür. Visugenius olarak, işletmenizi dijital dünyada en iyi şekilde konumlandırmak için yenilikçi, stratejik ve yaratıcı çözümler sunuyoruz. Her markanın kendine özgü bir hikayesi olduğuna inanıyor, sizi rakiplerinizden ayıracak özgün stratejiler geliştiriyoruz.</p>
-          <div className="section4-col">
-            <div className="">
-              <p className="text-color text-montserrat"> Kapsamlı Dijital Dönüşüm Çözümleri</p>
-              <p className="text-color text-montserrat">Marka Stratejisi ve Konumlandırma</p>
-              <p className="text-color text-montserrat">Son Teknoloji ile Güçlendirilmiş Çözümler</p>
+          <TextReveal>
+            <div className="section4-col">
+              <div className="">
+                <p className="text-color text-montserrat text-center"> Kapsamlı Dijital Dönüşüm Çözümleri</p>
+                <p className="text-color text-montserrat text-center">Marka Stratejisi ve Konumlandırma</p>
+                <p className="text-color text-montserrat text-center">Son Teknoloji ile Güçlendirilmiş Çözümler</p>
+              </div>
+              <div className="">
+                <p className="text-color text-montserrat text-center">Veri Odaklı Pazarlama & SEO Optimizasyonu</p>
+                <p className="text-color text-montserrat text-center">Etkili Sosyal Medya Yönetimi</p>
+                <p className="text-color text-montserrat text-center">Yenilikçi ve Dönüşüm Odaklı Web & Mobil Çözümler</p>
+              </div>
             </div>
-            <div className="">
-              <p className="text-color text-montserrat">Veri Odaklı Pazarlama & SEO Optimizasyonu</p>
-              <p className="text-color text-montserrat">Etkili Sosyal Medya Yönetimi</p>
-              <p className="text-color text-montserrat">Yenilikçi ve Dönüşüm Odaklı Web & Mobil Çözümler</p>
-            </div>
-          </div>
-          <h5 className="text-color text-montserrat">İster yeni bir girişim olun ister köklü bir marka, işinizi büyütmek için doğru stratejiyi birlikte belirleyelim. Visugenius ile markanızı dijital dünyada zirveye taşıyın.</h5>
+          </TextReveal>
+          <TextReveal>
+            <h5 className="text-color text-montserrat text-center">İster yeni bir girişim olun ister köklü bir marka, işinizi büyütmek için doğru stratejiyi birlikte belirleyelim. Visugenius ile markanızı dijital dünyada zirveye taşıyın.</h5>
+          </TextReveal>
         </div>
       </div>
 
+      <div className="section5-container">
+        <TextReveal>
+          <ContactForm />
+        </TextReveal>
+
+      </div>
     </div>
   );
 }

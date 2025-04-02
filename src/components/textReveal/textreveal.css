@@ -1,0 +1,7 @@
+.text-fade {
+  opacity: 0;
+  /* Başlangıçta görünmez */
+  transform: translateY(50px);
+  /* 50px aşağıdan başlasın */
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
