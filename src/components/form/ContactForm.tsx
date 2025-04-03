@@ -59,7 +59,6 @@ export default function ContactForm() {
                     </div>
                 </div>
             </div>
-
             {status && <p>{status}</p>}
         </form>
     )

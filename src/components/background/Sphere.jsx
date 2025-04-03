@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import React, { useRef, useMemo } from "react";
+import React, { useRef, useMemo, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Color, IcosahedronGeometry, MeshDepthMaterial, MeshPhysicalMaterial, RGBADepthPacking, Mesh } from "three";
 import CustomShaderMaterial from "three-custom-shader-material";
@@ -8,8 +8,12 @@ import { mergeVertices } from "three/examples/jsm/utils/BufferGeometryUtils";
 import fragmentShader from "./fragment.glsl";
 import vertexShader from "./vertex.glsl";
 import { useMediaQuery } from "usehooks-ts";
-import { Environment } from '@react-three/drei';
+import { Environment } from "@react-three/drei";
 import GrainEffect from "../grain/GlassEffect";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Experiment = ({ shouldReduceQuality, isMobile, meshRef }) => {
   const materialRef = useRef(null);
@@ -31,9 +35,37 @@ const Experiment = ({ shouldReduceQuality, isMobile, meshRef }) => {
     uGradientStrength: { value: 1 },
     uSpeed: { value: 1 },
     uNoiseStrength: { value: 1 },
-    uDisplacementStrength: { value: 0.50},
+    uDisplacementStrength: { value: 0.5 },
     uFractAmount: { value: 2 },
   };
+
+  // GSAP Scroll Animasyonu
+  useEffect(() => {
+    if (!meshRef?.current) return;
+
+    setTimeout(() => {
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: "body",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 1,
+        },
+      })
+        .to(meshRef.current.position, { x: 2, y: 0, z: -2, ease: "power2.out", duration: 2 }, "5%")
+        .to(meshRef.current.rotation, { y: Math.PI * 0.5, ease: "power2.out", duration: 2 }, "5%")
+
+        .to(meshRef.current.position, { x: -2, y: 0, z: -2, ease: "power2.out", duration: 2 }, "6%")
+        .to(meshRef.current.rotation, { y: Math.PI, ease: "power2.out", duration: 2 }, "6%")
+
+        .to(meshRef.current.position, { x: 0, y: 0, z: 2, ease: "power2.out", duration: 2 }, "40%")
+        .to(meshRef.current.rotation, { y: Math.PI, ease: "power2.out", duration: 2 }, "40%")
+
+        .to(meshRef.current.position, { x: 0, y: 0, z: -1.5, ease: "power2.out", duration: 2 }, "100%")
+        .to(meshRef.current.rotation, { y: Math.PI * 1.5, ease: "power2.out", duration: 2 }, "100%");  
+
+    }, 100);
+  }, [meshRef]);
 
   return (
     <>
@@ -54,7 +86,7 @@ const Experiment = ({ shouldReduceQuality, isMobile, meshRef }) => {
           vertexShader={vertexShader}
           fragmentShader={fragmentShader}
           roughness={0}
-          metalness={0.50}
+          metalness={0.5}
           reflectivity={1}
           clearcoat={1}
           ior={0}
@@ -72,44 +104,43 @@ const Experiment = ({ shouldReduceQuality, isMobile, meshRef }) => {
       </mesh>
       <ambientLight color="#fff" intensity={1} />
       <directionalLight color="#fff" intensity={5} position={[-2, 2, 3.5]} />
-       <Environment files="/textures/liquid-prism-wallpaper.jpg" background={false} /> 
+      <Environment files="/textures/liquid-prism-wallpaper.jpg" background={false} />
     </>
   );
 };
 
-const Experience = ({ meshRef }) => {
+const Experience = () => {
   const isTablet = useMediaQuery("(max-width: 1199px)");
   const isMobile = useMediaQuery("(max-width: 767px)");
+  const meshRef = useRef(null);
 
   return (
     <>
-    <GrainEffect/>
-    <div
-      style={{
-        width: "100vw",
-        height: "100vh",
-        position: "fixed",
-        top: 0,
-        left: 0,
-        zIndex: -9,
-        backgroundColor: "#000",
-        overflowY:'hidden',
-      }}
-    >
-     
-      <Canvas
-        camera={{
-          position: [0, .5, isMobile ? 6 : isTablet ? 5 : 5], // Mobil ve tablet için kamera konumunu ayarla
-          fov: isMobile ? 55 : 45, // Mobil cihazlarda daha geniş bir görüş açısı
-          near: 0.1,
-          far: 1000,
+      <GrainEffect />
+      <div
+        style={{
+          width: "100vw",
+          height: "100vh",
+          position: "fixed",
+          top: 0,
+          left: 0,
+          zIndex: -9,
+          backgroundColor: "#000",
+          overflowY: "hidden",
         }}
-        gl={{ alpha: true }}
       >
-        
-        <Experiment shouldReduceQuality={isTablet} isMobile={isMobile} meshRef={meshRef} />
-      </Canvas>
-    </div>
+        <Canvas
+          camera={{
+            position: [0, 0.5, isMobile ? 6 : isTablet ? 5 : 5],
+            fov: isMobile ? 55 : 45,
+            near: 0.1,
+            far: 1000,
+          }}
+          gl={{ alpha: true }}
+        >
+          <Experiment shouldReduceQuality={isTablet} isMobile={isMobile} meshRef={meshRef} />
+        </Canvas>
+      </div>
     </>
   );
 };

@@ -6,6 +6,7 @@
     justify-content: center;
     align-items: center;
     gap: 50px;
+    padding: 20px 0;
 }
 
 .form-wrapper {
@@ -17,13 +18,14 @@
     background-color: rgba(0, 0, 0, 0.10);
     backdrop-filter: blur(10px);
     box-shadow: 0 0 5px #fff;
+    transition: 0.5s ease-in;
     border-radius: 10px;
     gap: 30px;
+    padding: 30px 0;
 }
 
 .form-inner {
     width: 70%;
-    transition: 0.5s ease-in;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,15 +33,13 @@
     gap: 50px
 }
 
-.form-inner:hover {
+.form-wrapper:hover {
     box-shadow: 0 0 15px #fff;
 }
 
 .form-row {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 50% 50%;
     width: 100%;
     gap: 50px
 }
@@ -49,6 +49,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    gap: 40px;
 }
 
 .form-input {
@@ -98,24 +99,48 @@
 }
 
 .submit-button {
-
-    background-image: linear-gradient(to right, #BE93C5 0%, #7BC6CC 51%, #BE93C5 100%);
+    background-image: linear-gradient(to right, #000000 0%, #53346D  51%, #000000  100%);
     margin: 10px;
     padding: 15px 45px;
     text-align: center;
     text-transform: uppercase;
     transition: 0.5s;
     background-size: 200% auto;
-    color: #000;
+    color: #fff;
+    font-family: 'montserrat';
+    font-size: 17px;
+    font-weight: 500;
     box-shadow: 0 0 20px #eee;
     border-radius: 10px;
     display: block;
     outline: none;
+    border: .3px solid #fff;
 }
 
 .submit-button:hover {
     background-position: right center;
-    /* change the direction of the change here */
     color: #fff;
     text-decoration: none;
 }
+
+
+
+.btn-grad {background-image: linear-gradient(to right, #000000 0%, #53346D  51%, #000000  100%)}
+.btn-grad {
+   margin: 10px;
+   padding: 15px 45px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+   display: block;
+ }
+
+ .btn-grad:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }
