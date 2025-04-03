@@ -8,19 +8,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 10px;
+  padding: 30px 10px;
   background-color: transparent;
-
 }
 
 /* Logo */
 .nav .brand-logo {
-  margin-top: 10px;
+  margin-top: 5px;
   margin-left: 20px;
   transition: all 0.3s ease-in-out;
   position: relative;
   flex-shrink: 0;
-
 }
 
 .nav .logo {

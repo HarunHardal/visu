@@ -47,19 +47,19 @@ const Experiment = ({ shouldReduceQuality, isMobile, meshRef }) => {
       gsap.timeline({
         scrollTrigger: {
           trigger: "body",
-          start: "top top",
-          end: "bottom bottom",
+          start: "0%",
+          end: "100%",
           scrub: 1,
         },
       })
-        .to(meshRef.current.position, { x: 2, y: 0, z: -2, ease: "power2.out", duration: 2 }, "5%")
-        .to(meshRef.current.rotation, { y: Math.PI * 0.5, ease: "power2.out", duration: 2 }, "5%")
+        .to(meshRef.current.position, { x: 2, y: 0, z: -2, ease: "power2.out", duration: .5 }, "1%")
+        .to(meshRef.current.rotation, { y: Math.PI * 0.5, ease: "power2.out", duration: .5 }, "1%")
 
-        .to(meshRef.current.position, { x: -2, y: 0, z: -2, ease: "power2.out", duration: 2 }, "6%")
-        .to(meshRef.current.rotation, { y: Math.PI, ease: "power2.out", duration: 2 }, "6%")
+        .to(meshRef.current.position, { x: -2, y: 0, z: -2, ease: "power2.out", duration: .7 }, "2%")
+        .to(meshRef.current.rotation, { y: Math.PI, ease: "power2.out", duration: .7 }, "2%")
 
-        .to(meshRef.current.position, { x: 0, y: 0, z: 2, ease: "power2.out", duration: 2 }, "40%")
-        .to(meshRef.current.rotation, { y: Math.PI, ease: "power2.out", duration: 2 }, "40%")
+        .to(meshRef.current.position, { x: 0, y: 0, z: 1.5, ease: "power2.out", duration: 2 }, "3%")
+        .to(meshRef.current.rotation, { y: Math.PI, ease: "power2.out", duration: 2 }, "3%")
 
         .to(meshRef.current.position, { x: 0, y: 0, z: -1.5, ease: "power2.out", duration: 2 }, "100%")
         .to(meshRef.current.rotation, { y: Math.PI * 1.5, ease: "power2.out", duration: 2 }, "100%");  
