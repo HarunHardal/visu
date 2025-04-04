@@ -33,15 +33,17 @@ const Footer = (props: Props) => {
           </div>
         </div>
         <div className='footer-menu-wrapper'>
-          <h5 className='text-color text-montserrat'>Menü</h5>
-           <div className='footer-menu-items'>
-            <ul>
-              <li><a className='text-color text-montserrat' href={'/home'} >Anasayfa</a></li>
-              <li><a className='text-color text-montserrat' href={'/hakkımızda'} >Hakkımızda</a></li>
-              <li><a className='text-color text-montserrat' href={'/hizmetlerimiz'} >Hizmetlerimiz</a></li>
-              <li><a className='text-color text-montserrat' href={'/iletişim'} >İletişim</a></li>
-            </ul>
-           </div>
+          <div className='footer-menu'>
+            <h5 className='text-color text-montserrat'>Menü</h5>
+            <div className='footer-menu-items'>
+              <ul>
+                <li><a className='text-color text-montserrat' href={'/home'} >Anasayfa</a></li>
+                <li><a className='text-color text-montserrat' href={'/hakkımızda'} >Hakkımızda</a></li>
+                <li><a className='text-color text-montserrat' href={'/hizmetlerimiz'} >Hizmetlerimiz</a></li>
+                <li><a className='text-color text-montserrat' href={'/iletişim'} >İletişim</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
       <div className='copyright'>© 2024 Visugenius. Tüm hakları saklıdır.</div>
