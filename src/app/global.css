@@ -103,6 +103,10 @@ font-family: "Bodoni Moda";
   font-weight: 100;
 }
 
+.text-shadow{
+    text-shadow: 0 0 5px #000;
+}
+
 .text-center {
     text-align: center;
 }
@@ -136,9 +140,8 @@ font-family: "Bodoni Moda";
 }
 
 .section1-container-l p {
-    font-size: 6vw;
+    font-size: 5vw;
     font-family: "Italiana", serif;
-    line-height: 10pc;
 }
 
 .brandname-container {
@@ -289,8 +292,7 @@ font-family: "Bodoni Moda";
 /*Section 5 */
 .section5-container {
     overflow: hidden;
-    width: auto;
-    margin: 100px;
+    width: 100%;
 }
 
 
@@ -324,6 +326,22 @@ font-family: "Bodoni Moda";
 
     .section2-wrap {
         width: 90%;
+    }
+    .section4-container {
+        overflow: hidden;
+        width: 100%;
+        height: 80vh;
+    }
+    .section4-container h5{
+        font-size: 20px;
+    }
+
+    .section4-container-wrapper{
+       gap: 35px;
+    }
+
+    .section-vision{
+        height: 100vh;
     }
 
     .ring {
@@ -379,13 +397,15 @@ font-family: "Bodoni Moda";
     }
     .section-vision-grid:nth-child(1){
         grid-row: 2;
-        border:1px solid red;
     
     }
 
     .section-vision-grid:nth-child(2){
         grid-row: 1;
-        border:1px solid purple
+    }
+
+    .section4-container {
+        height: 100vh
     }
 
 }

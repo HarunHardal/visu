@@ -52,13 +52,13 @@ const Experiment = ({ shouldReduceQuality, isMobile, meshRef }) => {
           scrub: 1,
         },
       })
-        .to(meshRef.current.position, { x: 2, y: 0, z: -2, ease: "power2.out", duration: .5 }, "1%")
-        .to(meshRef.current.rotation, { y: Math.PI * 0.5, ease: "power2.out", duration: .5 }, "1%")
+        .to(meshRef.current.position, { x: 2, y: 0, z: -2, ease: "power2.out", duration: .6 }, "1%")
+        .to(meshRef.current.rotation, { y: Math.PI * 0.5, ease: "power2.out", duration: .6 }, "1%")
 
         .to(meshRef.current.position, { x: -2, y: 0, z: -2, ease: "power2.out", duration: .7 }, "2%")
         .to(meshRef.current.rotation, { y: Math.PI, ease: "power2.out", duration: .7 }, "2%")
 
-        .to(meshRef.current.position, { x: 0, y: 0, z: 1.5, ease: "power2.out", duration: 2 }, "3%")
+        .to(meshRef.current.position, { x: 0, y: 0, z: 2, ease: "power2.out", duration: 2 }, "3%")
         .to(meshRef.current.rotation, { y: Math.PI, ease: "power2.out", duration: 2 }, "3%")
 
         .to(meshRef.current.position, { x: 0, y: 0, z: -1.5, ease: "power2.out", duration: 2 }, "100%")

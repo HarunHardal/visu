@@ -94,25 +94,25 @@ export default function Home() {
       <div className="section4-container">
         <div className="section4-container-wrapper">
           <TextReveal>
-            <h2 className="text-color text-bodoni text-center">Dijital Başarıya Giden Yolda Birlikte Yürüyelim</h2>
+            <h2 className="text-color text-bodoni text-center text-shadow">Dijital Başarıya Giden Yolda Birlikte Yürüyelim</h2>
           </TextReveal>
 
           <TextReveal>
             <div className="section4-col">
               <div className="">
-                <p className="text-color text-montserrat text-center"> Kapsamlı Dijital Dönüşüm Çözümleri</p>
-                <p className="text-color text-montserrat text-center">Marka Stratejisi ve Konumlandırma</p>
-                <p className="text-color text-montserrat text-center">Son Teknoloji ile Güçlendirilmiş Çözümler</p>
+                <p className="text-color text-montserrat text-center text-shadow"> Kapsamlı Dijital Dönüşüm Çözümleri</p>
+                <p className="text-color text-montserrat text-center text-shadow">Marka Stratejisi ve Konumlandırma</p>
+                <p className="text-color text-montserrat text-center text-shadow">Son Teknoloji ile Güçlendirilmiş Çözümler</p>
               </div>
               <div className="">
-                <p className="text-color text-montserrat text-center">Veri Odaklı Pazarlama & SEO Optimizasyonu</p>
-                <p className="text-color text-montserrat text-center">Etkili Sosyal Medya Yönetimi</p>
-                <p className="text-color text-montserrat text-center">Yenilikçi ve Dönüşüm Odaklı Web & Mobil Çözümler</p>
+                <p className="text-color text-montserrat text-center text-shadow">Veri Odaklı Pazarlama & SEO Optimizasyonu</p>
+                <p className="text-color text-montserrat text-center text-shadow">Etkili Sosyal Medya Yönetimi</p>
+                <p className="text-color text-montserrat text-center text-shadow">Yenilikçi ve Dönüşüm Odaklı Web & Mobil Çözümler</p>
               </div>
             </div>
           </TextReveal>
           <TextReveal>
-            <h5 className="text-color text-montserrat text-center">İster yeni bir girişim olun ister köklü bir marka, işinizi büyütmek için doğru stratejiyi birlikte belirleyelim. Visugenius ile markanızı dijital dünyada zirveye taşıyın.</h5>
+            <h5 className="text-color text-montserrat text-center text-shadow">İster yeni bir girişim olun ister köklü bir marka, işinizi büyütmek için doğru stratejiyi birlikte belirleyelim. Visugenius ile markanızı dijital dünyada zirveye taşıyın.</h5>
           </TextReveal>
         </div>
       </div>
