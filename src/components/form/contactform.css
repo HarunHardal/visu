@@ -182,6 +182,9 @@
  }
 
  @media only screen and (max-width: 680px) {
+    .form{
+        width: 90%;
+    }
     .form-wrapper{
         width: 90%;
     }

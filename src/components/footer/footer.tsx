@@ -10,7 +10,7 @@ type Props = {}
 
 const Footer = (props: Props) => {
   return (
-    <div className='footer-container'>
+    <footer className='footer-container'>
       <div className='footer-grid'>
         <div className='footer-grid-l'>
           <h2>
@@ -40,14 +40,14 @@ const Footer = (props: Props) => {
                 <li><a className='text-color text-montserrat' href={'/home'} >Anasayfa</a></li>
                 <li><a className='text-color text-montserrat' href={'/hakkımızda'} >Hakkımızda</a></li>
                 <li><a className='text-color text-montserrat' href={'/hizmetlerimiz'} >Hizmetlerimiz</a></li>
-                <li><a className='text-color text-montserrat' href={'/iletişim'} >İletişim</a></li>
+                <li><a className='text-color text-montserrat' href={'/iletisim'} >İletişim</a></li>
               </ul>
             </div>
           </div>
         </div>
       </div>
       <div className='copyright'>© 2024 Visugenius. Tüm hakları saklıdır.</div>
-    </div>
+    </footer>
   )
 }
 

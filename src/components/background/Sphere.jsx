@@ -12,10 +12,11 @@ import { Environment } from "@react-three/drei";
 import GrainEffect from "../grain/GlassEffect";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { usePathname } from "next/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Experiment = ({ shouldReduceQuality, isMobile, meshRef }) => {
+const Experiment = ({ shouldReduceQuality, isMobile, isTablet, meshRef }) => {
   const materialRef = useRef(null);
   const depthMaterialRef = useRef(null);
 
@@ -43,29 +44,71 @@ const Experiment = ({ shouldReduceQuality, isMobile, meshRef }) => {
   useEffect(() => {
     if (!meshRef?.current) return;
 
-    setTimeout(() => {
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: "body",
-          start: "0%",
-          end: "100%",
-          scrub: 1,
-        },
-      })
-        .to(meshRef.current.position, { x: 2, y: 0, z: -2, ease: "power2.out", duration: .6 }, "1%")
-        .to(meshRef.current.rotation, { y: Math.PI * 0.5, ease: "power2.out", duration: .6 }, "1%")
 
-        .to(meshRef.current.position, { x: -2, y: 0, z: -2, ease: "power2.out", duration: .7 }, "2%")
-        .to(meshRef.current.rotation, { y: Math.PI, ease: "power2.out", duration: .7 }, "2%")
+    const id = requestAnimationFrame(()=>{
+      setTimeout(() => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: "body",
+            start: "0%",
+            end: "100%",
+            scrub: 1,
+          },
+        });
+  
+        if (isMobile) {
+          // 📱 Mobil animasyonu
+          tl.to(meshRef.current.position, { x: 1, y: 0, z: 1.5, ease: "power2.out", duration: 0.6 }, "1%")
+            .to(meshRef.current.rotation, { y: Math.PI * 0.5, ease: "power2.out", duration: 0.6 }, "1%")
+            .to(meshRef.current.position, { x: -1, y: 0, z: 1.5, ease: "power2.out", duration: 0.5 }, "2%")
+            .to(meshRef.current.rotation, { y: Math.PI, ease: "power2.out", duration: 0.5 }, "2%")
+            .to(meshRef.current.position, { x: 2, y: 0, z: 3, ease: "power2.out", duration: 2 }, "3%")
+            .to(meshRef.current.rotation, { y: Math.PI, ease: "power2.out", duration: 2 }, "3%")
+            .to(meshRef.current.position, { x: 0, y: 0, z: -1, ease: "power2.out", duration: 2 }, "100%")
+            .to(meshRef.current.rotation, { y: Math.PI * 1.5, ease: "power2.out", duration: 2 }, "100%");
+        } else if (isTablet) {
+          // 💻 Tablet animasyonu
+          tl.to(meshRef.current.position, { x: 1.5, y: 0, z: -1.8, ease: "power2.out", duration: 0.6 }, "1%")
+            .to(meshRef.current.rotation, { y: Math.PI * 0.5, ease: "power2.out", duration: 0.6 }, "1%")
+            .to(meshRef.current.position, { x: -1.5, y: 0, z: -1.8, ease: "power2.out", duration: 0.7 }, "2%")
+            .to(meshRef.current.rotation, { y: Math.PI, ease: "power2.out", duration: 0.7 }, "2%")
+            .to(meshRef.current.position, { x: 0, y: 0, z: 2, ease: "power2.out", duration: 2 }, "3%")
+            .to(meshRef.current.rotation, { y: Math.PI, ease: "power2.out", duration: 2 }, "3%")
+            .to(meshRef.current.position, { x: 0, y: 0, z: -1.2, ease: "power2.out", duration: 2 }, "100%")
+            .to(meshRef.current.rotation, { y: Math.PI * 1.5, ease: "power2.out", duration: 2 }, "100%");
+        } else {
+          // 🖥️ Masaüstü animasyonu
+          tl.to(meshRef.current.position, { x: 2, y: 0, z: -2, ease: "power2.out", duration: 0.6 }, "1%")
+            .to(meshRef.current.rotation, { y: Math.PI * 0.5, ease: "power2.out", duration: 0.6 }, "1%")
+            .to(meshRef.current.position, { x: -2, y: 0, z: -2, ease: "power2.out", duration: 0.7 }, "2%")
+            .to(meshRef.current.rotation, { y: Math.PI, ease: "power2.out", duration: 0.7 }, "2%")
+            .to(meshRef.current.position, { x: 0, y: 0, z: 2, ease: "power2.out", duration: 2 }, "3%")
+            .to(meshRef.current.rotation, { y: Math.PI, ease: "power2.out", duration: 2 }, "3%")
+            .to(meshRef.current.position, { x: 0, y: 0, z: -1.5, ease: "power2.out", duration: 2 }, "100%")
+            .to(meshRef.current.rotation, { y: Math.PI * 1.5, ease: "power2.out", duration: 2 }, "100%");
+        }
+      }, 100);
 
-        .to(meshRef.current.position, { x: 0, y: 0, z: 2, ease: "power2.out", duration: 2 }, "3%")
-        .to(meshRef.current.rotation, { y: Math.PI, ease: "power2.out", duration: 2 }, "3%")
+    })
 
-        .to(meshRef.current.position, { x: 0, y: 0, z: -1.5, ease: "power2.out", duration: 2 }, "100%")
-        .to(meshRef.current.rotation, { y: Math.PI * 1.5, ease: "power2.out", duration: 2 }, "100%");  
+    return()=> cancelAnimationFrame(id)
 
-    }, 100);
-  }, [meshRef]);
+
+  
+  }, [meshRef, isMobile, isTablet]);
+
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (!meshRef?.current) return;
+  
+    if (pathname === "/iletisim") {
+      meshRef.current.position.set(-2, 0, 1); // sola al
+    } else if (pathname === "/hakkimizda") {
+      meshRef.current.position.set(0, 1, 2); // yukarı al
+    } 
+  
+  }, [pathname, meshRef]);
 
   return (
     <>
@@ -77,7 +120,7 @@ const Experiment = ({ shouldReduceQuality, isMobile, meshRef }) => {
           return geometry;
         }, [shouldReduceQuality])}
         frustumCulled={false}
-        position={[0, isMobile ? -1.3 * 0 : -1.5, isMobile ? 1.3 * 2 : 3]}
+        position={[0, isMobile ? -1.3 * 1 : -1.5, isMobile ? 1.3 * 2 : 3]}
         scale={isMobile ? 0.8 : 1}
       >
         <CustomShaderMaterial

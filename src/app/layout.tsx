@@ -19,6 +19,7 @@ export default function RootLayout({
   return (
     <html>
       <body>
+        <div className="page-container content">
         <SmoothScrolling>
           <Nav />
           <NoiseEffect/>
@@ -27,6 +28,7 @@ export default function RootLayout({
           <Experience />
           <GlassEffect/>
         </SmoothScrolling>
+        </div>
       </body>
     </html>
   );

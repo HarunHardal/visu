@@ -1,5 +1,5 @@
 section {
-  padding: 30px;
+  padding: 30px 0;
   position: sticky;
   top: 50%;
   transform: translateY(-50%);
@@ -12,7 +12,7 @@ section {
   background-color: rgba(0, 0, 0, 0.26);
   backdrop-filter: blur(15px);
   height: 70vh;
-  width: 90vw;
+  width: 90%;
   margin: auto;
 }
 
@@ -84,7 +84,7 @@ h2 {
 
   .section-container {
     height: 80vh;
-    width: 95vw;
+    width: 95%;
   }
 
   .sticky-grid {
@@ -117,7 +117,6 @@ h2 {
     font-size: 24px;
     width: 100%;
     text-shadow: 0 0 5px #000;
-
   }
 
   .sticky-text-wrapper h3 {
@@ -133,8 +132,9 @@ h2 {
 
   .sticky-grid {
     grid-template-columns: 100%;
-    grid-template-rows: 80% 70%;
+    grid-template-rows: 90% 0%;
     gap: 50px;
+    justify-items: center;
   }
 
   .sticky-3d {
