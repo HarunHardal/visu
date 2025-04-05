@@ -13,7 +13,7 @@ const Footer = (props: Props) => {
     <footer className='footer-container'>
       <div className='footer-grid'>
         <div className='footer-grid-l'>
-          <h2>
+          <h2 className='text-color'>
             Dijital dünyada iz bırakmak ister misiniz? Haydi, birlikte büyüyelim!
           </h2>
         </div>
