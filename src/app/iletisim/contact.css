@@ -2,8 +2,14 @@
     min-height: 50vh;
     width: 100%;
     margin-top: 80px;
+    padding-top: 100px;
 }
-
+.contact-page-text{
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    margin-bottom: -100px;
+}
 .contact-grid{
     width: 100%;
     display: grid;
@@ -13,5 +19,10 @@
     .contact-grid{
         width: 100%;
         grid-template-columns: 100%;
+    }
+
+    .contact-page-text{
+        width: 90%;
+        text-align: center;
     }
 }

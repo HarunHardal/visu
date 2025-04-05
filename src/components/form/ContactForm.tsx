@@ -38,7 +38,7 @@ export default function ContactForm() {
 
     return (
         <form onSubmit={handleSubmit} className='form'>
-            <h3> Bizinle İletişime Geçin</h3>
+            <h3 className='text-color text-bodoni'> Bizinle İletişime Geçin</h3>
             <div className='form-wrapper'>
                 <div className='form-inner'>
                     <div className='form-row'>
