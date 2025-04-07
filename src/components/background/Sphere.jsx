@@ -51,9 +51,21 @@ const Experiment = ({ shouldReduceQuality, isMobile, isTablet, meshRef }) => {
       if (!meshRef?.current) return;
 
       if (pathname === "/iletisim") {
-        meshRef.current.position.set(-2, 0, 1); // sola al
+        if (isMobile) { meshRef.current.position.set(0, 0, 2); }
+        else if (isTablet) { meshRef.current.position.set(0, 0, 2); }
+        else { meshRef.current.position.set(-2.5, 0, 2); }
       } else if (pathname === "/hakkimizda") {
-        meshRef.current.position.set(0, 1, 2); // yukarı al
+
+        if (isMobile) {
+          meshRef.current.position.set(0, 0, 2);
+        }
+        else if (isTablet) {
+          meshRef.current.position.set(0, 0, 2);
+        }
+        else {
+          meshRef.current.position.set(2.5, 0, 2);
+        }
+
       } else {
 
         setTimeout(() => {
@@ -104,29 +116,23 @@ const Experiment = ({ shouldReduceQuality, isMobile, isTablet, meshRef }) => {
 
     return () => cancelAnimationFrame(id)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   }, [meshRef, isMobile, isTablet]);
 
   const pathname = usePathname();
 
-
+  const directionalLightRef = useRef();
+  useFrame(({ clock }) => {
+    if (
+      (pathname === "/hakkimizda" || pathname === "/iletisim") &&
+      directionalLightRef.current
+    ) {
+      const t = clock.getElapsedTime();
+      const radius = 4;
+      directionalLightRef.current.position.x = Math.cos(t) * radius;
+      directionalLightRef.current.position.z = Math.sin(t) * radius;
+      directionalLightRef.current.position.y = 2; // sabit yükseklik
+    }
+  });
 
   return (
     <>
@@ -164,7 +170,14 @@ const Experiment = ({ shouldReduceQuality, isMobile, isTablet, meshRef }) => {
         />
       </mesh>
       <ambientLight color="#fff" intensity={1} />
-      <directionalLight color="#fff" intensity={5} position={[-2, 2, 3.5]} />
+      {(pathname === "/hakkimizda" || pathname === "/iletisim")&& (
+        <directionalLight
+          ref={directionalLightRef}
+          color="#fff"
+          intensity={5}
+          position={[-2, 2, 3.5]}
+        />
+      )}
       <Environment files="/textures/liquid-prism-wallpaper.jpg" background={false} />
     </>
   );

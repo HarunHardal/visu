@@ -42,16 +42,16 @@ const Nav = () => {
       <div className={`container ${menuOpen ? "open" : ""}`}>
         <ul className="menu-items">
           <li>
-            <a href="/" onClick={() => setMenuOpen(false)}>Home</a>
+            <a href="/" onClick={() => setMenuOpen(false)}>Anasayfa</a>
           </li>
           <li>
-            <a href="#" onClick={() => setMenuOpen(false)}>About Us</a>
+            <a href="/hakkimizda" onClick={() => setMenuOpen(false)}>Hakkımızda</a>
           </li>
           <li>
-            <a href="#" onClick={() => setMenuOpen(false)}>Services</a>
+            <a href="#" onClick={() => setMenuOpen(false)}>Hizmetlerimiz</a>
           </li>
           <li className="contact-button">
-            <a href="/iletisim" onClick={() => setMenuOpen(false)}>Contact</a>
+            <a href="/iletisim" onClick={() => setMenuOpen(false)}>İLETİŞİM</a>
           </li>
         </ul>
       </div>

@@ -36,13 +36,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Dikey hizalamayı sağlamak için */
 }
 
 .nav ul {
   display: flex;
   align-items: center;
-  /* Menü elemanlarını dikey olarak hizalar */
   list-style: none;
   justify-content: center;
   gap: 20px;
