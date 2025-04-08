@@ -48,7 +48,7 @@ const Nav = () => {
             <a href="/hakkimizda" onClick={() => setMenuOpen(false)}>Hakkımızda</a>
           </li>
           <li>
-            <a href="#" onClick={() => setMenuOpen(false)}>Hizmetlerimiz</a>
+            <a href="/hizmetlerimiz" onClick={() => setMenuOpen(false)}>Hizmetlerimiz</a>
           </li>
           <li className="contact-button">
             <a href="/iletisim" onClick={() => setMenuOpen(false)}>İLETİŞİM</a>
