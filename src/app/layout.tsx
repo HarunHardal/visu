@@ -17,19 +17,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html>
-      <body>
-        <div className="page-container content">
-        <SmoothScrolling>
-          <Nav />
-          <NoiseEffect/>
-          {children}
-          <Footer/>
-          <Experience />
-          <GlassEffect/>
-        </SmoothScrolling>
-        </div>
-      </body>
-    </html>
+<html>
+  <body>
+    <div className="page-container">
+      <SmoothScrolling>
+        <NoiseEffect />
+        <Experience />
+        <GlassEffect />
+        <Nav />
+        <main className="main-content">{children}</main>
+        <Footer />
+      </SmoothScrolling>
+    </div>
+  </body>
+</html>
   );
 }

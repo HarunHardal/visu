@@ -1,121 +1,99 @@
-"use client";
+"use client"
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import "./services.css";
 
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+gsap.registerPlugin(ScrollTrigger);
 
-const sections = [
-  { id: "section1", title: "Giriş" },
-  { id: "section2", title: "Özellikler" },
-  { id: "section3", title: "Kullanım Alanları" },
-  { id: "section4", title: "İletişim" },
+const sectionsData = [
+  {
+    title: "Web Tasarım & Geliştirme",
+    subTitle: "Estetik, Hız ve Kullanıcı Deneyimi Bir Arada!",
+    content: "Markanızı en iyi şekilde yansıtan, modern ve yüksek performanslı web siteleri tasarlıyoruz. Kullanıcı dostu arayüzler, mobil uyumluluk ve en güncel teknolojilerle öne çıkan web çözümleri sunuyoruz. İster kurumsal bir site, ister e-ticaret platformu olsun, hızlı, güvenli ve SEO uyumlu siteler inşa ediyoruz."
+  },
+  {
+    title: "SEO Hizmetleri",
+    subTitle: "Google’da Üst Sıralara Çıkın, Daha Fazla Görünün!",
+    content: " SEO, yalnızca bir web sitesine sahip olmakla yetinmeyen markalar için en kritik stratejilerden biridir. Anahtar kelime optimizasyonu, teknik SEO ve içerik stratejileri ile Google ve diğer arama motorlarında görünürlüğünüzü artırıyoruz. Doğru kitleye ulaşmanız için organik trafik ve dönüşüm odaklı çözümler sunuyoruz."
+  },
+  {
+    title: "Dijital Pazarlama",
+    subTitle: "Stratejik Reklamlarla Müşterilerinize Ulaşın!",
+    content: "Dijital dünyada başarılı olmak için doğru strateji şart! Google Ads, sosyal medya reklamları ve içerik pazarlaması ile markanızı hedef kitlenizle buluşturuyoruz. Dönüşüm odaklı reklam kampanyaları ile satışlarınızı artırıyor, marka bilinirliğinizi güçlendiriyoruz."
+  },
+  {
+    title: "Sosyal Medya Yönetimi",
+    subTitle: "Markanızı Sosyal Medyada Güçlendirin!",
+    content: "Sosyal medya, dijital dünyada en güçlü iletişim kanallarından biri. Instagram, Facebook, LinkedIn ve diğer platformlarda etkili içerik stratejileri oluşturuyor, etkileşimi artıran paylaşımlar yapıyoruz. Topluluk yönetimi, reklam kampanyaları ve kreatif içeriklerle sosyal medyada aktif bir marka kimliği oluşturuyoruz."
+  },
+  {
+    title: "Marka Kimliği & Grafik Tasarım",
+    subTitle: "Güçlü Bir Kimlik, Unutulmaz Bir Marka!",
+    content: "Markanızın ruhunu yansıtan, akılda kalıcı bir görsel kimlik oluşturuyoruz. Logo tasarımı, kurumsal kimlik, afiş ve dijital tasarımlar ile markanızı daha profesyonel ve dikkat çekici hale getiriyoruz. Tasarımın gücüyle markanızı rakiplerinizden ayırın!"
+  },
 ];
 
-export default function StickyScrollPage() {
-  const sidebarRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
+export default function ScrollPanels() {
+  const sectionsRef = useRef<HTMLElement[]>([]);
+  const currentSection = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    sectionRefs.current.forEach((el, index) => {
-      if (!el) return;
+    const sections = sectionsRef.current;
+    if (sections.length === 0) return;
 
+    currentSection.current = sections[0];
+
+    gsap.defaults({ overwrite: "auto", duration: 1 });
+    gsap.set("body", { height: `${sections.length * 100}%` });
+
+    sections.forEach((section, i) => {
       ScrollTrigger.create({
-        trigger: el,
-        start: "top center",
-        end: "bottom center",
-        onEnter: () => activate(index),
-        onEnterBack: () => activate(index),
-      });
-
-      gsap.from(el, {
-        opacity: 0,
-        y: 50,
-        duration: 0.5,
-        scrollTrigger: {
-          trigger: el,
-          start: "top 80%",
+        start: () => (i - 0.5) * window.innerHeight,
+        end: () => (i + 0.5) * window.innerHeight,
+        scrub: true,
+        markers: true,
+        toggleActions: "play reset play reset",
+        onToggle: (self) => {
+          if (self.isActive) setSection(section);
         },
       });
     });
 
-    function activate(index: number) {
-      sidebarRefs.current.forEach((ref, i) => {
-        if (ref) {
-          if (i === index) {
-            gsap.to(ref, {
-              scale: 1.1,
-              color: "#000",
-              borderLeftColor: "#3b82f6",
-              duration: 0.3,
-            });
-          } else {
-            gsap.to(ref, {
-              scale: 1,
-              color: "#888",
-              borderLeftColor: "transparent",
-              duration: 0.3,
-            });
-          }
-        }
-      });
+    function setSection(newSection: HTMLElement) {
+      if (newSection !== currentSection.current) {
+        const tlOut = gsap.timeline();
+        tlOut.to("h2", { y: -30, autoAlpha: 0, duration: 0.3 });
+        tlOut.to(currentSection.current, { autoAlpha: 0, duration: 0.5 });
+
+        const tlIn = gsap.timeline();
+        tlIn.to(newSection, { autoAlpha: 1, duration: 0.5 });
+        tlIn.to("h2", { y: -30, autoAlpha: 1, duration: 0.3 });
+
+        currentSection.current = newSection;
+      }
     }
   }, []);
 
-  const handleClick = (index: number) => {
-    const target = sectionRefs.current[index];
-    if (target) {
-      gsap.to(window, {
-        scrollTo: { y: target, offsetY: 50 },
-        duration: 1,
-        ease: "power2.out",
-      });
-    }
-  };
-
   return (
-    <div className="services-page-container">
-      <div className="services-sidebar">
-        <div className="services-menu-list">
-          {sections.map((section, i) => (
-            <div
-              key={section.id}
-              ref={(el) => {
-                sidebarRefs.current[i] = el;
-              }}
-              onClick={() => handleClick(i)}
-              className="services-menu-item"
-            >
-              {section.title}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="services-content">
-        {sections.map((section, i) => (
-          <div
-            key={section.id}
-            id={section.id}
-            ref={(el) => {
-                sectionRefs.current[i] = el;
-              }}
-            className="services-section"
-          >
-            <h2 className="services-section-title">{section.title}</h2>
-            <p className="services-section-text">
-              {section.title} içeriği burada olacak. Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-              labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat.
-            </p>
+    <div className="section-container">
+      {sectionsData.map((section, index) => (
+        <section
+          key={index}
+          ref={(el) => {
+            if (el) sectionsRef.current[index] = el;
+          }}
+          className={`panel ${index === 0 ? "first visible" : ""}`}
+        >
+          <div className="services-content-wrapper">
+            <span className="services-line" />
+            <h1 className="text-italiana text-color">{section.title}</h1>
+            <h3 className="text-italiana text-color">{section.subTitle}</h3>
+            <p className="text-montserrat text-color">{section.content}</p>
           </div>
-        ))}
-      </div>
+        </section>
+      ))}
     </div>
   );
 }

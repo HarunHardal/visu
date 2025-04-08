@@ -1,67 +1,54 @@
-.services-page-container {
-    display: flex;
-    min-height: 100vh;
-    font-family: sans-serif;
-  }
-  
-  .services-sidebar {
-    width: 25%;
-    padding: 24px;
-    overflow-y: auto;
-    height: 100vh;
-    position: sticky;
-    top: 0;
-    border-right: 1px solid #e5e7eb;
-    display: none;
-  }
-  
-  @media (min-width: 768px) {
-    .services-sidebar {
-      display: block;
-    }
-  }
-  
-  .services-menu-list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  
-  .services-menu-item {
-    cursor: pointer;
-    padding: 8px 16px;
-    border-left: 4px solid transparent;
-    color: #fff;
-    transition: all 0.2s ease;
-  }
-  
-  .services-menu-item:hover {
-    color: #4b5563;
-  }
-  
-  .services-content {
-    width: 100%;
-    max-width: 75%;
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 128px;
-  }
-  
-  .services-section {
-    min-height: 100vh;
-  }
-  
-  .services-section-title {
-    font-size: 2.25rem;
-    font-weight: bold;
-    margin-bottom: 16px;
-    color: #1f2937;
-  }
-  
-  .services-section-text {
-    font-size: 1.125rem;
-    color: #4b5563;
-    line-height: 1.75;
-  }
-  
+.section-container {
+  width: 100%;
+  height: 500vh;
+  position: relative;
+  margin-bottom: 200px;
+}
+
+.panel {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+
+}
+
+.services-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  backdrop-filter: blur(15px);
+  background-color: #00000052;
+  width: 70%;
+  height: 60vh;
+  padding: 50px 70px;
+  box-shadow: 0 0 1px #fff;
+  border-radius: 2px;
+  gap: 20px;
+}
+
+.panel.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.panel-title {
+  font-size: 1.8em;
+  font-weight: 300;
+  margin: 0 auto;
+  z-index: 5;
+}
+
+.services-line {
+  border-top: 1px solid #fff;
+  width: 30%;
+  margin-bottom: 20px;
+}

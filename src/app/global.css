@@ -12,6 +12,7 @@
 html {
     overflow-x: hidden;
     background-color: #000;
+    height: 100%;
 }
 
 ::selection{
@@ -127,9 +128,9 @@ font-family: "Bodoni Moda";
     flex-direction: column;
 }
 
-.content{
-    flex:1;
-}
+.main-content {
+    flex: 1;
+  }
 
 .section1-container {
     width: 100%;
