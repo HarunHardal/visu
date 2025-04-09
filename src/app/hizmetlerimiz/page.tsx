@@ -36,63 +36,21 @@ const sectionsData = [
 ];
 
 export default function ScrollPanels() {
-  const sectionsRef = useRef<HTMLElement[]>([]);
-  const currentSection = useRef<HTMLElement | null>(null);
-
-  useEffect(() => {
-    const sections = sectionsRef.current;
-    if (sections.length === 0) return;
-
-    currentSection.current = sections[0];
-
-    gsap.defaults({ overwrite: "auto", duration: 1 });
-    gsap.set("body", { height: `${sections.length * 100}%` });
-
-    sections.forEach((section, i) => {
-      ScrollTrigger.create({
-        start: () => (i - 0.5) * window.innerHeight,
-        end: () => (i + 0.5) * window.innerHeight,
-        scrub: true,
-        markers: true,
-        toggleActions: "play reset play reset",
-        onToggle: (self) => {
-          if (self.isActive) setSection(section);
-        },
-      });
-    });
-
-    function setSection(newSection: HTMLElement) {
-      if (newSection !== currentSection.current) {
-        const tlOut = gsap.timeline();
-        tlOut.to("h2", { y: -30, autoAlpha: 0, duration: 0.3 });
-        tlOut.to(currentSection.current, { autoAlpha: 0, duration: 0.5 });
-
-        const tlIn = gsap.timeline();
-        tlIn.to(newSection, { autoAlpha: 1, duration: 0.5 });
-        tlIn.to("h2", { y: -30, autoAlpha: 1, duration: 0.3 });
-
-        currentSection.current = newSection;
-      }
-    }
-  }, []);
 
   return (
     <div className="section-container">
-      {sectionsData.map((section, index) => (
-        <section
-          key={index}
-          ref={(el) => {
-            if (el) sectionsRef.current[index] = el;
-          }}
-          className={`panel ${index === 0 ? "first visible" : ""}`}
-        >
-          <div className="services-content-wrapper">
-            <span className="services-line" />
-            <h1 className="text-italiana text-color">{section.title}</h1>
-            <h3 className="text-italiana text-color">{section.subTitle}</h3>
-            <p className="text-montserrat text-color">{section.content}</p>
+      {sectionsData.map((e) => (
+        <div className="section-grid">
+          <div className="section-title">
+            <h1 className="text-color text-italiana text-shadow">{e.title}</h1>
           </div>
-        </section>
+          <div className="">
+            <h3 className="text-color text-bodoni text-shadow">{e.subTitle}</h3>
+          </div>
+          <div className="">
+            <p className="text-color text-montserrat text-shadow">{e.content}</p>
+          </div>
+        </div>
       ))}
     </div>
   );
