@@ -1,0 +1,13 @@
+diff --git a/node_modules/@studio-freight/react-lenis/dist/types/index.d.ts b/node_modules/@studio-freight/react-lenis/dist/types/index.d.ts
+index b003c98..3e2249c 100644
+--- a/node_modules/@studio-freight/react-lenis/dist/types/index.d.ts
++++ b/node_modules/@studio-freight/react-lenis/dist/types/index.d.ts
+@@ -20,7 +20,7 @@ type Props = {
+     autoRaf?: boolean;
+     rafPriority?: number;
+     className?: string;
+-    children?: ReactNode;
++    children?: import("react").ReactNode;
+     props?: any;
+ };
+ type LenisRef = {

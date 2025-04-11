@@ -1,23 +1,14 @@
-"use client"
+"use client";
 
 import { useEffect, useState } from "react";
 
 const Loader = () => {
   const [progress, setProgress] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
+  const [opacity, setOpacity] = useState(1); // 👈 fade için
 
   useEffect(() => {
-    const bodyStyle = document.body.style;
-    const scrollY = window.scrollY;
-
-    bodyStyle.overflow = 'hidden';
-    bodyStyle.position = 'absolute';
-    bodyStyle.top = `${scrollY}px`;
-    bodyStyle.width = '100%';
-    bodyStyle.top= "0";
-    bodyStyle.bottom= "0";
-    bodyStyle.left= "0";
-    bodyStyle.right= "0";
+    document.body.style.overflow = "hidden"; // Scroll'u kilitle
 
     const interval = setInterval(() => {
       setProgress((prev) => (prev < 100 ? prev + 1 : 100));
@@ -25,46 +16,47 @@ const Loader = () => {
 
     if (progress === 100) {
       clearInterval(interval);
+
+      // 👇 fade out başlat
+      setOpacity(0);
+
+      // 👇 fade süresi kadar sonra kaldır
       setTimeout(() => {
         setIsVisible(false);
-
-        bodyStyle.overflow = 'auto';
-        bodyStyle.position = '';
-        bodyStyle.top = '';
-        window.scrollTo(0, scrollY);
-      }, 10)
+        document.body.style.overflow = ""; // Scroll'u aç
+        window.scrollTo(0, 0);
+      }, 1000); // fade süresiyle eşleşmeli
     }
+
     return () => {
       clearInterval(interval);
-
-      bodyStyle.overflow = 'auto';
-      bodyStyle.position = '';
-      bodyStyle.top = '';
-      window.scrollTo(0, scrollY);
-    }
-  }, [progress])
+      document.body.style.overflow = "";
+    };
+  }, [progress]);
 
   if (!isVisible) return null;
 
   return (
     <div
       style={{
-        position: "absolute",
+        position: "fixed",
+        top: 0,
+        left: 0,
         width: "100%",
         height: "100vh",
-        zIndex: "999999",
+        zIndex: 999999,
         backgroundColor: "#00000A",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         overflow: "hidden",
-        opacity: progress === 100 ? 0 : 1,
-        transition: "opacity 5s ease",
+        opacity: opacity, // 👈 fade kontrolü burada
+        transition: "opacity 1s ease", // 👈 fade animasyonu
       }}
     >
       <div
         style={{
-          zIndex: "10000",
+          zIndex: 10000,
           clipPath: "polygon(0 30%, 100% 0, 100% 100%, 0% 100%)",
           width: "100%",
           height: "55vh",
@@ -72,23 +64,22 @@ const Loader = () => {
           bottom: "0%",
           backdropFilter: "blur(15px)",
         }}
-      ></div>
+      />
       <div
         style={{
-          zIndex: "10001",
+          zIndex: 10001,
           position: "absolute",
           width: "100%",
           height: "100vh",
           top: "0",
           left: "0",
         }}
-      >
-      </div>
+      />
       <p
         style={{
           fontSize: "150px",
           fontFamily: `bodoni moda`,
-          color:'#fff'
+          color: "#fff",
         }}
       >
         {progress}%
