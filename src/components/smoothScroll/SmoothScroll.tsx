@@ -1,10 +1,10 @@
 "use client";
 
 import { ReactLenis } from "@studio-freight/react-lenis";
-import type { ReactNode } from "react";
+import type { JSX } from "react";  // ReactNode yerine JSX.Element kullanıyoruz
 
 interface SmoothScrollingProps {
-  children: JSX.Element | JSX.Element[];
+  children: JSX.Element | JSX.Element[];  // JSX.Element ile sınırlı tutuyoruz
 }
 
 const SmoothScrolling = ({ children }: SmoothScrollingProps) => {
