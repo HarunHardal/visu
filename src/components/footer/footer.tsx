@@ -46,7 +46,7 @@ const Footer = (props: Props) => {
           </div>
         </div>
       </div>
-      <div className='copyright'>© 2024 Visugenius. Tüm hakları saklıdır.</div>
+      <div className='copyright'>© 2025 Visugenius. Tüm hakları saklıdır.</div>
     </footer>
   )
 }

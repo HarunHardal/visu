@@ -40,7 +40,6 @@ const Experiment = ({ shouldReduceQuality, isMobile, isTablet, meshRef }) => {
     uFractAmount: { value: 2 },
   };
 
-  // GSAP Scroll Animasyonu
   useEffect(() => {
     if (!meshRef?.current) return;
 
@@ -66,7 +65,19 @@ const Experiment = ({ shouldReduceQuality, isMobile, isTablet, meshRef }) => {
           meshRef.current.position.set(2.5, 0, 2);
         }
 
-      } else {
+      } else if (pathname === "/hizmetlerimiz") {
+
+        if (isMobile) {
+          meshRef.current.position.set(0, 0, 2);
+        }
+        else if (isTablet) {
+          meshRef.current.position.set(0, 0, 1.5);
+        }
+        else {
+          meshRef.current.position.set(0, 0, 1.5);
+        }
+
+      }else {
 
         setTimeout(() => {
           const tl = gsap.timeline({
@@ -79,7 +90,7 @@ const Experiment = ({ shouldReduceQuality, isMobile, isTablet, meshRef }) => {
           });
 
           if (isMobile) {
-            // 📱 Mobil animasyonu
+            //  Mobil animasyonu
             tl.to(meshRef.current.position, { x: 1, y: 0, z: 1.5, ease: "power2.out", duration: 0.6 }, "1%")
               .to(meshRef.current.rotation, { y: Math.PI * 0.5, ease: "power2.out", duration: 0.6 }, "1%")
               .to(meshRef.current.position, { x: -1, y: 0, z: 1.5, ease: "power2.out", duration: 0.5 }, "2%")
@@ -89,7 +100,7 @@ const Experiment = ({ shouldReduceQuality, isMobile, isTablet, meshRef }) => {
               .to(meshRef.current.position, { x: 0, y: 0, z: -1, ease: "power2.out", duration: 2 }, "100%")
               .to(meshRef.current.rotation, { y: Math.PI * 1.5, ease: "power2.out", duration: 2 }, "100%");
           } else if (isTablet) {
-            // 💻 Tablet animasyonu
+            //  Tablet animasyonu
             tl.to(meshRef.current.position, { x: 1.5, y: 0, z: -1.8, ease: "power2.out", duration: 0.6 }, "1%")
               .to(meshRef.current.rotation, { y: Math.PI * 0.5, ease: "power2.out", duration: 0.6 }, "1%")
               .to(meshRef.current.position, { x: -1.5, y: 0, z: -1.8, ease: "power2.out", duration: 0.7 }, "2%")
@@ -99,7 +110,7 @@ const Experiment = ({ shouldReduceQuality, isMobile, isTablet, meshRef }) => {
               .to(meshRef.current.position, { x: 0, y: 0, z: -1.2, ease: "power2.out", duration: 2 }, "100%")
               .to(meshRef.current.rotation, { y: Math.PI * 1.5, ease: "power2.out", duration: 2 }, "100%");
           } else {
-            // 🖥️ Masaüstü animasyonu
+            //  Masaüstü animasyonu
             tl.to(meshRef.current.position, { x: 2, y: 0, z: -2, ease: "power2.out", duration: 0.6 }, "1%")
               .to(meshRef.current.rotation, { y: Math.PI * 0.5, ease: "power2.out", duration: 0.6 }, "1%")
               .to(meshRef.current.position, { x: -2, y: 0, z: -2, ease: "power2.out", duration: 0.7 }, "2%")

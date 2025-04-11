@@ -33,7 +33,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/components/background/Sphere.jsx"
-, "src/components/sticky/Sticky.jsx", "src/components/spheries/Chart.tsx", "src/app/iletisim"  ],
+, "src/components/sticky/Sticky.jsx", "src/components/spheries/Chart.tsx", "src/app/iletisim", "src/components/modelViewer/ModelViewer.tsx"  ],
   "exclude": [
     "node_modules"
   ]
