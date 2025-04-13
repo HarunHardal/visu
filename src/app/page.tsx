@@ -7,6 +7,11 @@ import Kure from "../components/spheries/Chart";
 import ContactForm from "../components/form/ContactForm";
 import TextReveal from "../components/textReveal/TextReveal";
 
+export const metadata = {
+  title: "Ana Sayfa | Visugenius",
+  description: "Visugenius, web tasarım, SEO ve sosyal medya yönetimi alanında yenilikçi dijital çözümler sunar. Markanı dijitalde büyüt!",
+};
+
 export default function Home() {
   return (
     <div className="landing-page" >
