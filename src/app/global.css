@@ -120,6 +120,7 @@ font-family: "Bodoni Moda";
 .landing-page {
     width: 100vw;
     z-index: 99;
+    overflow-x: hidden;
 }
 
 .page-container{
