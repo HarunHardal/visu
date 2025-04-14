@@ -2,6 +2,12 @@ import React from 'react'
 import './aboutus.css'
 import TextReveal from '../../components/textReveal/TextReveal'
 import { MdOutlineCircle } from "react-icons/md";
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Hizmetlerimiz | Visugenius",
+  description: "Web sitesi tasarımı, sosyal medya yönetimi, grafik tasarım ve dijital pazarlama çözümleriyle Visugenius, markanızı dijitalde büyütür.",
+};
 
 type Props = {}
 
