@@ -421,7 +421,12 @@ font-family: "Bodoni Moda";
     }
 
     .section4-container {
-        height: 100vh
+        height: 100vh;
+        margin: auto;
+    }
+
+    .section4-col {
+        grid-template-columns: 100%;
     }
 
 }

@@ -57,7 +57,7 @@ const Loader = () => {
       <div
         style={{
           zIndex: 10000,
-          clipPath: "polygon(0 30%, 100% 0, 100% 100%, 0% 100%)",
+          clipPath: "polygon(0 40%, 100% 0, 100% 100%, 0% 100%)",
           width: "100%",
           height: "55vh",
           position: "absolute",
@@ -77,7 +77,7 @@ const Loader = () => {
       />
       <p
         style={{
-          fontSize: "150px",
+          fontSize: "10vw",
           fontFamily: `bodoni moda`,
           color: "#fff",
         }}
