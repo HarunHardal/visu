@@ -10,4 +10,7 @@ declare global {
   }
 }
 
-/// <reference types="@react-three/fiber" />
+/// <reference types="react-scripts" />
+/// <reference types="three" />
+
+import '@react-three/fiber';
