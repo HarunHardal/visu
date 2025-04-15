@@ -1,4 +1,6 @@
 {
+  "name": "Visugenius",
+  "version": "1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -25,7 +27,8 @@
     "split-type": "^0.3.4",
     "three": "^0.175.0",
     "three-custom-shader-material": "^6.2.1",
-    "usehooks-ts": "^3.1.0"
+    "usehooks-ts": "^3.1.0",
+    "Visugenius": "file:"
   },
   "devDependencies": {
     "@types/node": "22.7.7",
