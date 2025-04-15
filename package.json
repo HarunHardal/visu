@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm install --legacy-peer-deps && next build",
     "start": "next start",
     "postinstall": "patch-package",
     "vercel-build": "npm install --legacy-peer-deps && next build"
@@ -44,8 +44,6 @@
     "typescript": "^5.8.3"
   },
   "overrides": {
-    "@studio-freight/react-lenis": {
-      "@types/react": "^18.3.1"
-    }
+    "@studio-freight/react-lenis": {}
   }
 }
