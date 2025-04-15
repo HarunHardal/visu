@@ -54,7 +54,7 @@ const StickyScroll2 = () => {
         </div>
       </section>
 
-      <section class="section-container" ref={(el) => { if (el) panelsRef.current[1] = el; }}>
+      <section className="section-container" ref={(el) => { if (el) panelsRef.current[1] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
             <Cylinder />
