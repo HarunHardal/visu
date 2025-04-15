@@ -39,8 +39,7 @@ const StickyScroll2 = () => {
 
   return (
     <div className='sticky-wrapper'>
-
-      <section class="section-container" ref={(el) => { if (el) panelsRef.current[0] = el; }}>
+      <section className="section-container" ref={(el) => { if (el) panelsRef.current[0] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
             <Octahedron />
