@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Environment } from '@react-three/drei';
+import { ambientLight } from '@react-three/fiber';
 
 type Props = {};
 
