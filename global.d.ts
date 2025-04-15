@@ -9,3 +9,5 @@ declare global {
     }
   }
 }
+
+/// <reference types="@react-three/fiber" />

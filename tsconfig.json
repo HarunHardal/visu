@@ -14,7 +14,7 @@
     "module": "NodeNext",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "incremental": true,
     "types": [
       "@types/three",
@@ -29,11 +29,17 @@
     "moduleResolution": "NodeNext"
   },
   "include": [
+    "src",
+    "global.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/components/background/Sphere.jsx"
-, "src/components/sticky/Sticky.jsx", "src/components/spheries/Chart.tsx", "src/app/iletisim", "src/components/modelViewer/ModelViewer.tsx"  ],
+    "src/components/background/Sphere.jsx",
+    "src/components/sticky/Sticky.jsx",
+    "src/components/spheries/Chart.tsx",
+    "src/app/iletisim",
+    "src/components/modelViewer/ModelViewer.tsx"
+  ],
   "exclude": [
     "node_modules"
   ]
