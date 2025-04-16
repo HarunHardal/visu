@@ -9,9 +9,7 @@ export const metadata: Metadata = {
   description: "Web sitesi tasarımı, sosyal medya yönetimi, grafik tasarım ve dijital pazarlama çözümleriyle Visugenius, markanızı dijitalde büyütür.",
 };
 
-type Props = {}
-
-const AboutUs = (props: Props) => {
+const AboutUs = () => {
   return (
     <div className='about-container'>
       <div className='about-grid'>

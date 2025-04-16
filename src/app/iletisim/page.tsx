@@ -8,9 +8,7 @@ export const metadata: Metadata = {
   description: "Visugenius ile şimdi iletişime geçin. Dijital çözümler, web tasarım ve sosyal medya hizmetleri hakkında bilgi almak için bize ulaşın.",
 };
 
-type Props = {}
-
-const Contact = (props: Props) => {
+const Contact = () => {
   return (
     <div className='contact-page-container'>
       <div className='contact-page-text'>

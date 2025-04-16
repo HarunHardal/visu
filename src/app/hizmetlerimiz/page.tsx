@@ -1,14 +1,6 @@
 "use client"
 
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./services.css";
-import { HiCodeBracket } from "react-icons/hi2";
-import { GiChart } from "react-icons/gi";
-import { GiPencilBrush } from "react-icons/gi";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from '@react-three/drei';
-import { useGLTF } from '@react-three/drei';
 import TextReveal from "../../components/textReveal/TextReveal";
 
 export default function ScrollPanels() {
