@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Environment } from '@react-three/drei';
 
-type Props = {};
-
-const Cylinder = (props: Props) => {
+const Cylinder = () => {
     const [scrollY, setScrollY] = useState(0);
 
     useEffect(() => {
@@ -21,7 +19,7 @@ const Cylinder = (props: Props) => {
 
     const rotationSpeed = 0.002;
 
-    const cylinderRotation: [number, number, number] = [
+    const cylinderRotation = [
         Math.sin(scrollY * rotationSpeed) * .5,
         Math.cos(scrollY * rotationSpeed) * .9,
         Math.sin(scrollY * rotationSpeed) * .5,

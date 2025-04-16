@@ -3,11 +3,12 @@ declare module '*.glsl' {
   export default value;
 }
 
-import { JSX } from 'react-jsx';
-import { elements } from '@react-three/fiber';
+import { ThreeElements } from '@react-three/fiber';
 
 declare global {
   namespace JSX {
-    interface IntrinsicElements extends elements { }
+    interface IntrinsicElements extends ThreeElements {}
   }
 }
+
+export {}; 
