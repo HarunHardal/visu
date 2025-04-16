@@ -38,7 +38,8 @@
     "src/components/sticky/Sticky.jsx",
     "src/components/spheries/Chart.tsx",
     "src/app/iletisim",
-    "src/components/modelViewer/ModelViewer.tsx"
+    "src/components/modelViewer/ModelViewer.tsx",
+    "src/declarations.d.ts"
   ],
   "exclude": [
     "node_modules"
