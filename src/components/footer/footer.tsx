@@ -4,11 +4,7 @@ import { FiInstagram } from "react-icons/fi";
 import { TfiFacebook } from "react-icons/tfi";
 import { SiLinkedin } from "react-icons/si";
 import { SiWhatsapp } from "react-icons/si";
-import Link from 'next/link';
-
-type Props = {}
-
-const Footer = (props: Props) => {
+const Footer = () => {
   return (
     <footer className='footer-container'>
       <div className='footer-grid'>

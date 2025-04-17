@@ -8,8 +8,8 @@
     "vercel-build": "next build"
   },
   "dependencies": {
-    "@react-three/drei": "latest",
-    "@react-three/fiber": "^8.18.0",
+    "@react-three/drei": "^10.0.6",
+    "@react-three/fiber": "^9.1.2",
     "@studio-freight/lenis": "^1.0.42",
     "@studio-freight/react-lenis": "^0.0.47",
     "dotenv": "^16.4.7",
