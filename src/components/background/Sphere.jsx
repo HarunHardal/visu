@@ -19,7 +19,6 @@ gsap.registerPlugin(ScrollTrigger);
 const Experiment = ({ shouldReduceQuality, isMobile, isTablet, meshRef }) => {
   const materialRef = useRef(null);
   const depthMaterialRef = useRef(null);
-  const pathname = usePathname();
 
   useFrame(({ clock }) => {
     const elapsedTime = clock.getElapsedTime();
@@ -130,7 +129,8 @@ const Experiment = ({ shouldReduceQuality, isMobile, isTablet, meshRef }) => {
 
   }, [meshRef, isMobile, isTablet]);
 
- 
+  const pathname = usePathname();
+
   const directionalLightRef = useRef();
   useFrame(({ clock }) => {
     if (
