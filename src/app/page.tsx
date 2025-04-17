@@ -73,7 +73,7 @@ export default function Home() {
                 İşletmenizi Geleceğe Taşıyan Akıllı Çözümler
               </h4>
 
-              <h2 className="text-color text-italiana" style={{ width: '100%' }}>
+              <h2 className="text-color text-italiana " style={{ width: '100%' }}>
                 Yeni Nesil Dijital Dönüşüm
               </h2>
 

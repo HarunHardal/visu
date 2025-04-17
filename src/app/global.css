@@ -404,6 +404,7 @@ font-family: "Bodoni Moda";
         width: 90%;
         height: 100vh;
         margin: auto;
+        text-align: center;
     }
 
     .section-vision-grid {
@@ -412,6 +413,7 @@ font-family: "Bodoni Moda";
         display: grid;
         grid-template-columns: 100%;
         grid-template-rows: repeat(2, 50%);
+        
     }
     .section-vision-grid:nth-child(1){
         grid-row: 2;
