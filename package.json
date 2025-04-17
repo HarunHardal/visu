@@ -1,11 +1,10 @@
 {
   "private": true,
   "scripts": {
-   "dev": "next dev",
+  "dev": "next dev",
   "build": "next build",
   "start": "next start",
-  "postinstall": "patch-package",
-  "vercel-build": "next build"
+  "postinstall": "patch-package"
   },
   "dependencies": {
     "@react-three/drei": "^10.0.6",
