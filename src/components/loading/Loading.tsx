@@ -17,10 +17,8 @@ const Loader = () => {
     if (progress === 100) {
       clearInterval(interval);
 
-      // 👇 fade out başlat
       setOpacity(0);
 
-      // 👇 fade süresi kadar sonra kaldır
       setTimeout(() => {
         setIsVisible(false);
         document.body.style.overflow = ""; // Scroll'u aç
@@ -59,7 +57,7 @@ const Loader = () => {
           zIndex: 10000,
           clipPath: "polygon(0 40%, 100% 0, 100% 100%, 0% 100%)",
           width: "100%",
-          height: "55vh",
+          height: "60vh",
           position: "absolute",
           bottom: "0%",
           backdropFilter: "blur(15px)",
