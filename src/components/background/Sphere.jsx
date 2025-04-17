@@ -19,6 +19,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Experiment = ({ shouldReduceQuality, isMobile, isTablet, meshRef }) => {
   const materialRef = useRef(null);
   const depthMaterialRef = useRef(null);
+  
 
   useFrame(({ clock }) => {
     const elapsedTime = clock.getElapsedTime();
@@ -42,12 +43,12 @@ const Experiment = ({ shouldReduceQuality, isMobile, isTablet, meshRef }) => {
 
   useEffect(() => {
     if (!meshRef?.current) return;
-
+    const pathname = usePathname();
 
     const id = requestAnimationFrame(() => {
 
 
-      if (!meshRef?.current) return;
+      if (!meshRef.current) return;
 
       if (pathname === "/iletisim") {
         if (isMobile) { meshRef.current.position.set(0, 0, 2); }
@@ -129,8 +130,7 @@ const Experiment = ({ shouldReduceQuality, isMobile, isTablet, meshRef }) => {
 
   }, [meshRef, isMobile, isTablet]);
 
-  const pathname = usePathname();
-
+ 
   const directionalLightRef = useRef();
   useFrame(({ clock }) => {
     if (

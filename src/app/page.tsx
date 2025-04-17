@@ -84,15 +84,10 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-
       <div className="section3-container">
         <ScrollingText />
       </div>
-
-
       <StickyScroll2 />
-
       <div className="section4-container">
         <div className="section4-container-wrapper">
           <TextReveal>

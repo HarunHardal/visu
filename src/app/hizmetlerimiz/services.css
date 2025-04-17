@@ -1,5 +1,6 @@
 .section-container {
   width: 90%;
+  height: 100%;
   position: relative;
   margin: auto;
   backdrop-filter: blur(15px);
