@@ -4,6 +4,7 @@ import "./nav.css";
 import Image from "next/image";
 import logo from "../../../public/visu.svg";
 import { FiMenu, FiX } from "react-icons/fi"; // Hamburger ve kapatma ikonları
+import Link from "next/link";
 
 const Nav = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,16 +43,16 @@ const Nav = () => {
       <div className={`container ${menuOpen ? "open" : ""}`}>
         <ul className="menu-items">
           <li>
-            <a href="/" onClick={() => setMenuOpen(false)}>Anasayfa</a>
+            <Link href="/" onClick={() => setMenuOpen(false)}>Anasayfa</Link>
           </li>
           <li>
-            <a href="/hakkimizda" onClick={() => setMenuOpen(false)}>Hakkımızda</a>
+            <Link href="/hakkimizda" onClick={() => setMenuOpen(false)}>Hakkımızda</Link>
           </li>
           <li>
-            <a href="/hizmetlerimiz" onClick={() => setMenuOpen(false)}>Hizmetlerimiz</a>
+            <Link href="/hizmetlerimiz" onClick={() => setMenuOpen(false)}>Hizmetlerimiz</Link>
           </li>
           <li className="contact-button">
-            <a href="/iletisim" onClick={() => setMenuOpen(false)}>İLETİŞİM</a>
+            <Link href="/iletisim" onClick={() => setMenuOpen(false)}>İLETİŞİM</Link>
           </li>
         </ul>
       </div>

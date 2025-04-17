@@ -3,7 +3,7 @@
 import { useRef, useEffect } from 'react';
 import { TextSplitter } from './textSplitter';
 
-const TextEffectComponent = ({ children }:any) => {
+const TextEffectComponent = ({ children }) => {
     const textRef = useRef<HTMLDivElement | null>(null);
   
     useEffect(() => {
