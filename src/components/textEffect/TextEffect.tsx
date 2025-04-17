@@ -1,51 +1,69 @@
-'use client'
+'use client';
 
 import { useRef, useEffect } from 'react';
-import { TextSplitter } from './textSplitter';
+import 'splitting/dist/splitting.css';
 
-const TextEffectComponent = ({ children }) => {
-    const textRef = useRef<HTMLDivElement | null>(null);
-  
-    useEffect(() => {
-      // Dinamik olarak GSAP ve ScrollTrigger'ı yükle
-      const loadGSAP = async () => {
-        const { default: gsap } = await import('gsap'); // GSAP'i dinamik olarak yükle
-        const { ScrollTrigger } = await import('gsap/ScrollTrigger'); // ScrollTrigger'ı dinamik olarak yükle
-  
-        // GSAP ve ScrollTrigger yüklendikten sonra animasyonu başlat 
-        gsap.registerPlugin(ScrollTrigger);
-  
-        if (textRef.current) {
-          // TextSplitter'ı başlat
-          const splitter = new TextSplitter(textRef.current, {
-            splitTypeTypes: 'words' // Metni harflerine ayır
-          });
-  
-          const chars = splitter.getChars();
-          gsap.fromTo(chars, {
+const TextEffectComponent = ({ children }: { children: React.ReactNode }) => {
+  const textRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const loadEffects = async () => {
+      const { default: gsap } = await import('gsap');
+      const { ScrollTrigger } = await import('gsap/ScrollTrigger');
+      const Splitting = (await import('splitting')).default;
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      if (textRef.current) {
+        const results = Splitting({
+          target: textRef.current,
+          by: 'chars',
+        });
+
+        const chars = results[0]?.chars || [];
+
+        gsap.fromTo(
+          chars,
+          {
             opacity: 0,
-            filter: "blur(10px)",  // Başlangıçta bulanık
-          }, {
+            filter: 'blur(10px)',
+            y: 20,
+          },
+          {
             opacity: 1,
-            filter: "blur(0px)",   
-            stagger: 0.1,          
-            ease: "power2.out",    
+            filter: 'blur(0px)',
+            y: 0,
+            stagger: 0.05,
+            ease: 'power2.out',
             scrollTrigger: {
               trigger: textRef.current,
-              start: "top bottom-=10%",  
-              end: "bottom center+=10%", 
-              scrub: 0.3,                
+              start: 'top bottom-=10%',
+              end: 'bottom center+=10%',
+              scrub: 0.3,
             },
-          });  
-        }
-      };
-  
-      loadGSAP();
-    }, []);
-    
-  
-    return <div style={{hyphens:'none' ,display:'flex', flexDirection:'column', alignItems:'start', justifyContent:'center', gap:'20px'}} ref={textRef}>{children}</div>;
-  };
-  
-  export default TextEffectComponent;
-  
+          }
+        );
+      }
+    };
+
+    loadEffects();
+  }, []);
+
+  return (
+    <div
+      ref={textRef}
+      style={{
+        hyphens: 'none',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'start',
+        justifyContent: 'center',
+        gap: '20px',
+      }}
+    >
+      {children}
+    </div>
+  );
+};
+
+export default TextEffectComponent;
