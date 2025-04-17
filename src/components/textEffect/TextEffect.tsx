@@ -18,7 +18,7 @@ const TextEffectComponent = ({ children }) => {
         if (textRef.current) {
           // TextSplitter'ı başlat
           const splitter = new TextSplitter(textRef.current, {
-            splitTypeTypes: 'chars' // Metni harflerine ayır
+            splitTypeTypes: 'words' // Metni harflerine ayır
           });
   
           const chars = splitter.getChars();
