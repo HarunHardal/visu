@@ -44,44 +44,21 @@ const Experiment = ({ shouldReduceQuality, isMobile, isTablet, meshRef }) => {
   useEffect(() => {
     if (!meshRef?.current) return;
 
+    let tl; // Timeline üstte tanımlanmalı ki cleanup içinde erişilebilsin
 
     const id = requestAnimationFrame(() => {
-
-
       if (!meshRef.current) return;
 
       if (pathname === "/iletisim") {
-        if (isMobile) { meshRef.current.position.set(0, 0, 2); }
-        else if (isTablet) { meshRef.current.position.set(0, 0, 2); }
-        else { meshRef.current.position.set(-2.5, 0, 2); }
+        meshRef.current.position.set(isMobile || isTablet ? 0 : -2.5, 0, 2);
       } else if (pathname === "/hakkimizda") {
-
-        if (isMobile) {
-          meshRef.current.position.set(0, 0, 2);
-        }
-        else if (isTablet) {
-          meshRef.current.position.set(0, 0, 2);
-        }
-        else {
-          meshRef.current.position.set(2.5, 0, 2);
-        }
-
+        meshRef.current.position.set(isMobile || isTablet ? 0 : 2.5, 0, 2);
       } else if (pathname === "/hizmetlerimiz") {
-
-        if (isMobile) {
-          meshRef.current.position.set(0, 0, 2);
-        }
-        else if (isTablet) {
-          meshRef.current.position.set(0, 0, 1.5);
-        }
-        else {
-          meshRef.current.position.set(0, 0, 1.5);
-        }
-
+        meshRef.current.position.set(0, 0, isMobile ? 2 : 1.5);
       } else {
-
         setTimeout(() => {
-          const tl = gsap.timeline({
+          tl = gsap.timeline({
+            id: "home-scroll-animation",
             scrollTrigger: {
               trigger: "body",
               start: "0%",
@@ -90,49 +67,41 @@ const Experiment = ({ shouldReduceQuality, isMobile, isTablet, meshRef }) => {
             },
           });
 
-          if (isMobile) {
-            //  Mobil animasyonu
-            tl.to(meshRef.current.position, { x: 1, y: 0, z: 1.5, ease: "power2.out", duration: 0.6 }, "1%")
-              .to(meshRef.current.rotation, { y: Math.PI * 0.5, ease: "power2.out", duration: 0.6 }, "1%")
-              .to(meshRef.current.position, { x: -1, y: 0, z: 1.5, ease: "power2.out", duration: 0.5 }, "2%")
-              .to(meshRef.current.rotation, { y: Math.PI, ease: "power2.out", duration: 0.5 }, "2%")
-              .to(meshRef.current.position, { x: 2, y: 0, z: 3, ease: "power2.out", duration: 2 }, "3%")
-              .to(meshRef.current.rotation, { y: Math.PI, ease: "power2.out", duration: 2 }, "3%")
-              .to(meshRef.current.position, { x: 0, y: 0, z: -1, ease: "power2.out", duration: 2 }, "100%")
-              .to(meshRef.current.rotation, { y: Math.PI * 1.5, ease: "power2.out", duration: 2 }, "100%");
-          } else if (isTablet) {
-            //  Tablet animasyonu
-            tl.to(meshRef.current.position, { x: 1.5, y: 0, z: -1.8, ease: "power2.out", duration: 0.6 }, "1%")
-              .to(meshRef.current.rotation, { y: Math.PI * 0.5, ease: "power2.out", duration: 0.6 }, "1%")
-              .to(meshRef.current.position, { x: -1.5, y: 0, z: -1.8, ease: "power2.out", duration: 0.7 }, "2%")
-              .to(meshRef.current.rotation, { y: Math.PI, ease: "power2.out", duration: 0.7 }, "2%")
-              .to(meshRef.current.position, { x: 0, y: 0, z: 2, ease: "power2.out", duration: 2 }, "3%")
-              .to(meshRef.current.rotation, { y: Math.PI, ease: "power2.out", duration: 2 }, "3%")
-              .to(meshRef.current.position, { x: 0, y: 0, z: -1.2, ease: "power2.out", duration: 2 }, "100%")
-              .to(meshRef.current.rotation, { y: Math.PI * 1.5, ease: "power2.out", duration: 2 }, "100%");
-          } else {
-            //  Masaüstü animasyonu
-            tl.to(meshRef.current.position, { x: 2, y: 0, z: -2, ease: "power2.out", duration: 0.6 }, "1%")
-              .to(meshRef.current.rotation, { y: Math.PI * 0.5, ease: "power2.out", duration: 0.6 }, "1%")
-              .to(meshRef.current.position, { x: -2, y: 0, z: -2, ease: "power2.out", duration: 0.7 }, "2%")
-              .to(meshRef.current.rotation, { y: Math.PI, ease: "power2.out", duration: 0.7 }, "2%")
-              .to(meshRef.current.position, { x: 0, y: 0, z: 2, ease: "power2.out", duration: 2 }, "3%")
-              .to(meshRef.current.rotation, { y: Math.PI, ease: "power2.out", duration: 2 }, "3%")
-              .to(meshRef.current.position, { x: 0, y: 0, z: -1.5, ease: "power2.out", duration: 2 }, "100%")
-              .to(meshRef.current.rotation, { y: Math.PI * 1.5, ease: "power2.out", duration: 2 }, "100%");
-          }
-        }, 100);
+          const timelineSteps = isMobile
+            ? [
+              { pos: { x: 1, y: 0, z: 1.5 }, rotY: Math.PI * 0.5 },
+              { pos: { x: -1, y: 0, z: 1.5 }, rotY: Math.PI },
+              { pos: { x: 2, y: 0, z: 3 }, rotY: Math.PI },
+              { pos: { x: 0, y: 0, z: -1 }, rotY: Math.PI * 1.5 },
+            ]
+            : isTablet
+              ? [
+                { pos: { x: 1.5, y: 0, z: -1.8 }, rotY: Math.PI * 0.5 },
+                { pos: { x: -1.5, y: 0, z: -1.8 }, rotY: Math.PI },
+                { pos: { x: 0, y: 0, z: 2 }, rotY: Math.PI },
+                { pos: { x: 0, y: 0, z: -1.2 }, rotY: Math.PI * 1.5 },
+              ]
+              : [
+                { pos: { x: 2, y: 0, z: -2 }, rotY: Math.PI * 0.5 },
+                { pos: { x: -2, y: 0, z: -2 }, rotY: Math.PI },
+                { pos: { x: 0, y: 0, z: 2 }, rotY: Math.PI },
+                { pos: { x: 0, y: 0, z: -1.5 }, rotY: Math.PI * 1.5 },
+              ];
 
+          timelineSteps.forEach((step, i) => {
+            const label = `${(i + 1) * 25}%`;
+            tl.to(meshRef.current.position, { ...step.pos, ease: "power2.out", duration: 1 }, label);
+            tl.to(meshRef.current.rotation, { y: step.rotY, ease: "power2.out", duration: 1 }, label);
+          });
+        }, 100);
       }
-    })
+    });
 
     return () => {
       cancelAnimationFrame(id);
-      if (tl) {
-        tl.kill();
-        ScrollTrigger.getById('home-scroll-animation')?.kill();
-      }
-    }
+      if (tl) tl.kill();
+      ScrollTrigger.getById("home-scroll-animation")?.kill();
+    };
   }, [meshRef, isMobile, isTablet]);
 
 

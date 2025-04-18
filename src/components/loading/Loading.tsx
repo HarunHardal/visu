@@ -57,7 +57,7 @@ const Loader = () => {
           zIndex: 10000,
           clipPath: "polygon(0 40%, 100% 0, 100% 100%, 0% 100%)",
           width: "100%",
-          height: "60vh",
+          height: "55vh",
           position: "absolute",
           bottom: "0%",
           backdropFilter: "blur(15px)",
