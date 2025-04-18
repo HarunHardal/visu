@@ -137,7 +137,6 @@ font-family: "Bodoni Moda";
     height: 100vh;
     display: grid;
     grid-template-rows: 60% 30%;
-    overflow-x: hidden ;
 }
 
 .section1-con-top {
@@ -188,7 +187,6 @@ font-family: "Bodoni Moda";
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow-x: hidden ;
 }
 
 .section2-wrap {
@@ -274,7 +272,6 @@ font-family: "Bodoni Moda";
     width: 100%;
     position: relative;
     margin-bottom: 400px;
-    overflow-x: hidden ;
 }
 
 /*Section 4 */
