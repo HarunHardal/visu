@@ -17,6 +17,7 @@ import { usePathname } from "next/navigation";
 gsap.registerPlugin(ScrollTrigger);
 
 const Experiment = ({ shouldReduceQuality, isMobile, isTablet, meshRef }) => {
+  const pathname = usePathname();
   const materialRef = useRef(null);
   const depthMaterialRef = useRef(null);
 
@@ -77,7 +78,7 @@ const Experiment = ({ shouldReduceQuality, isMobile, isTablet, meshRef }) => {
           meshRef.current.position.set(0, 0, 1.5);
         }
 
-      }else {
+      } else {
 
         setTimeout(() => {
           const tl = gsap.timeline({
@@ -125,11 +126,16 @@ const Experiment = ({ shouldReduceQuality, isMobile, isTablet, meshRef }) => {
       }
     })
 
-    return () => cancelAnimationFrame(id)
-
+    return () => {
+      cancelAnimationFrame(id);
+      if (tl) {
+        tl.kill();
+        ScrollTrigger.getById('home-scroll-animation')?.kill();
+      }
+    }
   }, [meshRef, isMobile, isTablet]);
 
-  const pathname = usePathname();
+
 
   const directionalLightRef = useRef();
   useFrame(({ clock }) => {
@@ -181,7 +187,7 @@ const Experiment = ({ shouldReduceQuality, isMobile, isTablet, meshRef }) => {
         />
       </mesh>
       <ambientLight color="#fff" intensity={1} />
-      {(pathname === "/hakkimizda" || pathname === "/iletisim")&& (
+      {(pathname === "/hakkimizda" || pathname === "/iletisim") && (
         <directionalLight
           ref={directionalLightRef}
           color="#fff"
@@ -199,8 +205,10 @@ const Experience = () => {
   const isMobile = useMediaQuery("(max-width: 767px)");
   const meshRef = useRef(null);
 
+  const pathname = usePathname();
+
   return (
-    <>
+    <div key={pathname}>
       <GrainEffect />
       <div
         style={{
@@ -226,7 +234,7 @@ const Experience = () => {
           <Experiment shouldReduceQuality={isTablet} isMobile={isMobile} meshRef={meshRef} />
         </Canvas>
       </div>
-    </>
+    </div>
   );
 };
 

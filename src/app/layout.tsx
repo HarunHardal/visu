@@ -25,7 +25,7 @@ export default function RootLayout({
           <SmoothScrolling>
             <Loader />
             <NoiseEffect />
-            <Experience />
+            <Experience/>
             <GlassEffect />
             <Nav />
             <main className="main-content">{children}</main>
