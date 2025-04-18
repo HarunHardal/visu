@@ -9,7 +9,6 @@ import fragmentShader from "./fragment.glsl";
 import vertexShader from "./vertex.glsl";
 import { useMediaQuery } from "usehooks-ts";
 import { Environment } from "@react-three/drei";
-import GrainEffect from "../grain/GlassEffect";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { usePathname } from "next/navigation";
@@ -178,7 +177,6 @@ const Experience = () => {
 
   return (
     <div key={pathname}>
-      <GrainEffect />
       <div
         style={{
           width: "100vw",
