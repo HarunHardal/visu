@@ -8,6 +8,7 @@ import { mergeVertices } from "three/examples/jsm/utils/BufferGeometryUtils";
 import fragmentShader from "./fragment.glsl";
 import vertexShader from "./vertex.glsl";
 import { useMediaQuery } from "usehooks-ts";
+import { Environment } from "@react-three/drei";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { usePathname } from "next/navigation";
@@ -162,6 +163,7 @@ const Experiment = ({ shouldReduceQuality, isMobile, isTablet, meshRef }) => {
           position={[-2, 2, 3.5]}
         />
       )}
+        <Environment files="/textures/liquid-prism-wallpaper.jpg" background={false} />
     </>
   );
 };
