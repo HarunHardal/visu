@@ -163,7 +163,7 @@ const Experiment = ({ shouldReduceQuality, isMobile, isTablet, meshRef }) => {
           position={[-2, 2, 3.5]}
         />
       )}
-      <Environment files="/textures/liquid-prism-wallpaper.jpg" background={false} />
+      <Environment files="" background={false} />
     </>
   );
 };
