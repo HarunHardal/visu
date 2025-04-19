@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useMemo, useEffect } from "react";
+import React, { useRef, useMemo, useEffect, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Color, IcosahedronGeometry, MeshDepthMaterial, MeshPhysicalMaterial, RGBADepthPacking, Mesh } from "three";
 import CustomShaderMaterial from "three-custom-shader-material";
@@ -168,7 +168,9 @@ const Experiment = ({ shouldReduceQuality, isMobile, isTablet, meshRef }) => {
           position={[-2, 2, 3.5]}
         />
       )}
+      <Suspense fallback={false}>
       <Environment files="/textures/liquid-prism-wallpaper.jpg" background={false} />
+      </Suspense>
     </>
   );
 };

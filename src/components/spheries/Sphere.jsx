@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Environment } from '@react-three/drei';
 
@@ -34,7 +34,9 @@ const Sphere = () => {
                     <torusKnotGeometry args={[5, 1.5, 128, 64, 2, 3]} />
                     <meshStandardMaterial color='#fff' metalness={1} roughness={0} envMapIntensity={55} />
                 </mesh>
-                <Environment files="textures/liquid-prism-wallpaper4.jpg" background={false} />
+                <Suspense fallback={null}>
+                    <Environment files="textures/liquid-prism-wallpaper4.jpg" background={false} />
+                </Suspense>
             </Canvas>
         </div>
     )
