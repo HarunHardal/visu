@@ -86,15 +86,12 @@ const Experiment = ({ shouldReduceQuality, isMobile, isTablet, meshRef }) => {
                 { pos: { x: -2, y: 0, z: -2 }, rotY: Math.PI * 0.5 },
                 { pos: { x: 0, y: 0, z: -0 }, rotY: Math.PI * 0.5 },
                 { pos: { x: 0, y: 0, z: 1 }, rotY: Math.PI * 0.5 },
-                { pos: { x: 0, y: 0, z: 1 }, rotY: Math.PI * 0.5 },
-                { pos: { x: 0, y: 0, z: 1 }, rotY: Math.PI * 0.5 },
-                { pos: { x: 0, y: 0, z: 1 }, rotY: Math.PI * 0.5 },
                 { pos: { x: 0, y: 0, z: -1.5 }, rotY: Math.PI * 1.5 },
               ];
 
           timelineSteps.forEach((step, i) => {
-            const label = `${( i + 1) * 5}%`;
-            tl.to(meshRef.current.position, { ...step.pos, ease: "power2.out", duration: .5 }, label);
+            const label = `${(i + 1) * 5}%`;
+            tl.to(meshRef.current.position, { ...step.pos, ease: "power2.out", duration:  1}, label);
             tl.to(meshRef.current.rotation, { y: step.rotY, ease: "power2.out", duration: 1 }, label);
           });
         }, 100);
@@ -120,7 +117,7 @@ const Experiment = ({ shouldReduceQuality, isMobile, isTablet, meshRef }) => {
       const radius = 4;
       directionalLightRef.current.position.x = Math.cos(t) * radius;
       directionalLightRef.current.position.z = Math.sin(t) * radius;
-      directionalLightRef.current.position.y = 2; // sabit yükseklik
+      directionalLightRef.current.position.y = 2;
     }
   });
 
@@ -169,7 +166,7 @@ const Experiment = ({ shouldReduceQuality, isMobile, isTablet, meshRef }) => {
         />
       )}
       <Suspense fallback={false}>
-      <Environment files="/textures/liquid-prism-wallpaper.jpg" background={false} />
+        <Environment files="/textures/liquid-prism-wallpaper.jpg" background={false} />
       </Suspense>
     </>
   );
