@@ -43,7 +43,7 @@ const Experiment = ({ shouldReduceQuality, isMobile, isTablet, meshRef }) => {
   useEffect(() => {
     if (!meshRef?.current) return;
 
-    let tl; // Timeline üstte tanımlanmalı ki cleanup içinde erişilebilsin
+    let tl;
 
     const id = requestAnimationFrame(() => {
       if (!meshRef.current) return;
@@ -69,27 +69,32 @@ const Experiment = ({ shouldReduceQuality, isMobile, isTablet, meshRef }) => {
           const timelineSteps = isMobile
             ? [
               { pos: { x: 1, y: 0, z: 1.5 }, rotY: Math.PI * 0.5 },
-              { pos: { x: -1, y: 0, z: 1.5 }, rotY: Math.PI },
-              { pos: { x: 2, y: 0, z: 3 }, rotY: Math.PI },
+              { pos: { x: 1, y: 0, z: 1.5 }, rotY: Math.PI * 0.5 },
+              { pos: { x: -1, y: 0, z: 1.5 }, rotY: Math.PI * 0.5 },
+              { pos: { x: 2, y: 0, z: 3 }, rotY: Math.PI * 0.5 },
               { pos: { x: 0, y: 0, z: -1 }, rotY: Math.PI * 1.5 },
             ]
             : isTablet
               ? [
                 { pos: { x: 1.5, y: 0, z: -1.8 }, rotY: Math.PI * 0.5 },
-                { pos: { x: -1.5, y: 0, z: -1.8 }, rotY: Math.PI },
-                { pos: { x: 0, y: 0, z: 2 }, rotY: Math.PI },
+                { pos: { x: -1.5, y: 0, z: -1.8 }, rotY: Math.PI * 0.5 },
+                { pos: { x: 0, y: 0, z: 2 }, rotY: Math.PI * 0.5 },
                 { pos: { x: 0, y: 0, z: -1.2 }, rotY: Math.PI * 1.5 },
               ]
               : [
                 { pos: { x: 2, y: 0, z: -2 }, rotY: Math.PI * 0.5 },
-                { pos: { x: -2, y: 0, z: -2 }, rotY: Math.PI },
-                { pos: { x: 0, y: 0, z: 2 }, rotY: Math.PI },
+                { pos: { x: -2, y: 0, z: -2 }, rotY: Math.PI * 0.5 },
+                { pos: { x: 0, y: 0, z: -0 }, rotY: Math.PI * 0.5 },
+                { pos: { x: 0, y: 0, z: 1 }, rotY: Math.PI * 0.5 },
+                { pos: { x: 0, y: 0, z: 1 }, rotY: Math.PI * 0.5 },
+                { pos: { x: 0, y: 0, z: 1 }, rotY: Math.PI * 0.5 },
+                { pos: { x: 0, y: 0, z: 1 }, rotY: Math.PI * 0.5 },
                 { pos: { x: 0, y: 0, z: -1.5 }, rotY: Math.PI * 1.5 },
               ];
 
           timelineSteps.forEach((step, i) => {
-            const label = `${(i + 1) * 25}%`;
-            tl.to(meshRef.current.position, { ...step.pos, ease: "power2.out", duration: 1 }, label);
+            const label = `${( i + 1) * 5}%`;
+            tl.to(meshRef.current.position, { ...step.pos, ease: "power2.out", duration: .5 }, label);
             tl.to(meshRef.current.rotation, { y: step.rotY, ease: "power2.out", duration: 1 }, label);
           });
         }, 100);
@@ -163,7 +168,7 @@ const Experiment = ({ shouldReduceQuality, isMobile, isTablet, meshRef }) => {
           position={[-2, 2, 3.5]}
         />
       )}
-        <Environment files="/textures/liquid-prism-wallpaper.jpg" background={false} />
+      <Environment files="/textures/liquid-prism-wallpaper.jpg" background={false} />
     </>
   );
 };
