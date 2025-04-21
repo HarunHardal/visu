@@ -1,6 +1,6 @@
 import ScrollingText from "../components/slidingText/SlidingText";
 import StickyScroll2 from '../components/sticky/Sticky'
-import Kure from "../components/spheries/Chart";
+import Kure from "../components/shapes/Chart";
 import ContactForm from "../components/form/ContactForm";
 import TextReveal from "../components/textReveal/TextReveal";
 

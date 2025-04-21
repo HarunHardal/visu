@@ -36,7 +36,7 @@
     ".next/types/**/*.ts",
     "src/components/background/Sphere.jsx",
     "src/components/sticky/Sticky.jsx",
-    "src/components/spheries/Chart.tsx",
+    "src/components/shapes/Chart.tsx",
     "src/app/iletisim",
     "src/components/modelViewer/ModelViewer.tsx",
     "src/declarations.d.ts"

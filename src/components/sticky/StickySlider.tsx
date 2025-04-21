@@ -4,11 +4,11 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './stickyslider.css'
-import Octahedron from '../spheries/Octahedron';
-import Cylinder from '../spheries/Cylinder';
-import Torus from '../spheries/Torus';
-import Tetrahedron from '../spheries/Tetrahedron';
-import Sphere from '../spheries/Sphere';
+import Octahedron from '../shapes/Octahedron';
+import Cylinder from '../shapes/Cylinder';
+import Torus from '../shapes/Torus';
+import Tetrahedron from '../shapes/Tetrahedron';
+import Sphere from '../shapes/Sphere';
 
 gsap.registerPlugin(ScrollTrigger);
 
