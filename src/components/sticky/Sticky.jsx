@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, Suspense } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './sticky.css'; // CSS dosyanızı import edin
@@ -42,7 +42,9 @@ const StickyScroll2 = () => {
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[0] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-            <Octahedron />
+            <Suspense>
+              <Octahedron />
+            </Suspense>
           </div>
           <div className="sticky-text-wrapper">
             <h2 className='text-italiana'>Web Tasarım & Geliştirme</h2>
@@ -57,7 +59,9 @@ const StickyScroll2 = () => {
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[1] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-            <Cylinder />
+            <Suspense>
+              <Cylinder />
+            </Suspense>
           </div>
           <div className="sticky-text-wrapper">
             <h2 className='text-italiana'>SEO Hizmetleri</h2>
@@ -72,7 +76,9 @@ const StickyScroll2 = () => {
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[2] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-            <Torus />
+            <Suspense>
+              <Torus />
+            </Suspense>
           </div>
           <div className="sticky-text-wrapper">
             <h2 className='text-italiana'>Dijital Pazarlama</h2>
@@ -87,7 +93,9 @@ const StickyScroll2 = () => {
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[3] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-            <Tetrahedron />
+            <Suspense>
+              <Tetrahedron />
+            </Suspense>
           </div>
           <div className="sticky-text-wrapper">
             <h2 className='text-italiana'>Sosyal Medya Yönetimi</h2>
@@ -102,7 +110,9 @@ const StickyScroll2 = () => {
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[4] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-            <Sphere />
+            <Suspense>
+              <Sphere />
+            </Suspense>
           </div>
           <div className="sticky-text-wrapper">
             <h2 className='text-italiana'>Marka Kimliği & Grafik Tasarım
