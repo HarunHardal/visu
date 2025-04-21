@@ -9,6 +9,13 @@ import Octahedron from '../shapes/Octahedron';
 import Torus from '../shapes/Torus';
 import Tetrahedron from '../shapes/Tetrahedron';
 import Sphere from '../shapes/Sphere';
+import dynamic from 'next/dynamic';
+
+const LayzOctahedron = dynamic(() => import("../shapes/Octahedron"), { ssr: false })
+const LazyTetrahedron = dynamic(() => import("../shapes/Tetrahedron"), { ssr: false })
+const LayzCylinder = dynamic(() => import("../shapes/Cylinder"), { ssr: false })
+const LayzSphere = dynamic(() => import("../shapes/Sphere"), { ssr: false })
+const LayzTorus = dynamic(() => import("../shapes/Torus"), { ssr: false })
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,7 +50,7 @@ const StickyScroll2 = () => {
         <div className='sticky-grid'>
           <div className="sticky-3d">
             <Suspense>
-              <Octahedron />
+              <LayzOctahedron />
             </Suspense>
           </div>
           <div className="sticky-text-wrapper">
@@ -60,7 +67,7 @@ const StickyScroll2 = () => {
         <div className='sticky-grid'>
           <div className="sticky-3d">
             <Suspense>
-              <Cylinder />
+              <LayzCylinder />
             </Suspense>
           </div>
           <div className="sticky-text-wrapper">
@@ -77,7 +84,7 @@ const StickyScroll2 = () => {
         <div className='sticky-grid'>
           <div className="sticky-3d">
             <Suspense>
-              <Torus />
+              <LayzTorus />
             </Suspense>
           </div>
           <div className="sticky-text-wrapper">
@@ -94,7 +101,7 @@ const StickyScroll2 = () => {
         <div className='sticky-grid'>
           <div className="sticky-3d">
             <Suspense>
-              <Tetrahedron />
+              <LazyTetrahedron />
             </Suspense>
           </div>
           <div className="sticky-text-wrapper">
@@ -111,7 +118,7 @@ const StickyScroll2 = () => {
         <div className='sticky-grid'>
           <div className="sticky-3d">
             <Suspense>
-              <Sphere />
+              <LayzSphere />
             </Suspense>
           </div>
           <div className="sticky-text-wrapper">
