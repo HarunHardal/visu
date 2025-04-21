@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Experience from "../components/background/Sphere";
 import './global.css'
 import Nav from "../components/nav/Nav";
 import SmoothScrolling from "../components/smoothScroll/SmoothScroll";
@@ -7,6 +6,8 @@ import NoiseEffect from "../components/grain/NoiseEffect";
 import GlassEffect from "../components/grain/GlassEffect";
 import Footer from "../components/footer/footer";
 import Loader from "../components/loading/Loading";
+import { LayzExperience } from "../components/background/LayzExperience";
+
 
 export const metadata: Metadata = {
   title: "Anasayfa | Visugenius",
@@ -28,7 +29,7 @@ export default function RootLayout({
           <SmoothScrolling>
             <Loader />
             <NoiseEffect />
-            <Experience />
+            <LayzExperience/>
             <GlassEffect />
             <Nav />
             <main className="main-content">{children}</main>

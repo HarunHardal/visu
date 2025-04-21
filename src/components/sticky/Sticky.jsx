@@ -4,11 +4,6 @@ import React, { useRef, useEffect, Suspense } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './sticky.css'; // CSS dosyanızı import edin
-import Cylinder from '../shapes/Cylinder';
-import Octahedron from '../shapes/Octahedron';
-import Torus from '../shapes/Torus';
-import Tetrahedron from '../shapes/Tetrahedron';
-import Sphere from '../shapes/Sphere';
 import dynamic from 'next/dynamic';
 
 const LayzOctahedron = dynamic(() => import("../shapes/Octahedron"), { ssr: false })
