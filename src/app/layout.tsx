@@ -20,12 +20,15 @@ export default function RootLayout({
 }>) {
   return (
     <html>
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body>
         <div className="page-container">
           <SmoothScrolling>
             <Loader />
             <NoiseEffect />
-            <Experience/>
+            <Experience />
             <GlassEffect />
             <Nav />
             <main className="main-content">{children}</main>
