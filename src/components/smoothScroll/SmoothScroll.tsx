@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { ReactLenis } from "@studio-freight/react-lenis";
 import type { JSX } from "react";  // ReactNode yerine JSX.Element kullanıyoruz

@@ -8,7 +8,6 @@ import Footer from "../components/footer/footer";
 import Loader from "../components/loading/Loading";
 import { LayzExperience } from "../components/background/LayzExperience";
 
-
 export const metadata: Metadata = {
   title: "Anasayfa | Visugenius",
   description: "Visugenius, yaratıcı web tasarım, dijital pazarlama ve sosyal medya yönetimi çözümleri sunan modern bir ajanstır.",
