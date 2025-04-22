@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import './contactform.css'
+import { prata } from '../../lib/font';
 
 export default function ContactForm() {
     const [formData, setFormData] = useState({
@@ -38,7 +39,7 @@ export default function ContactForm() {
 
     return (
         <form onSubmit={handleSubmit} className='form'>
-            <h3 className='text-color text-bodoni'> Bizinle İletişime Geçin</h3>
+            <h3 className={`${prata.className}  text-color`}> Bizimle İletişime Geçin</h3>
             <div className='form-wrapper'>
                 <div className='form-inner'>
                     <div className='form-row'>
