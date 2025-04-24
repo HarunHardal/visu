@@ -3,6 +3,7 @@ import StickyScroll2 from '../components/sticky/Sticky'
 import Kure from "../components/shapes/Chart";
 import TextReveal from "../components/textReveal/TextReveal";
 import ContactForm from '../components/form/ContactForm'
+import { italiana, montserrat } from "../lib/font";
 
 export const metadata = {
   title: "Ana Sayfa | Visugenius",
@@ -26,7 +27,7 @@ export default function Home() {
 
         </div>
         <div className="brandname-container">
-          <h1 className="brandname">Visugenius</h1>
+          <h1 className={`${italiana.className} brandname` }>Visugenius</h1>
         </div>
       </div>
       <div className="section2-container">
@@ -65,13 +66,13 @@ export default function Home() {
           </div>
 
           <div>
-            <h4 className="no-hyphen text-color text-montserrat text-italiana" style={{ width: '100%' }}>
+            <h4 className="text-color text-montserrat text-italiana" style={{ width: '100%' }}>
               İşletmenizi Geleceğe Taşıyan Akıllı Çözümler
             </h4>
             <h2 className="text-color text-italiana " style={{ width: '100%' }}>
               Yeni Nesil Dijital Dönüşüm
             </h2>
-            <p className="no-hyphen  text-montserrat text-color">
+            <p className="text-montserrat text-color">
               Her işletmenin kendine özgü bir dijital dönüşüm yolculuğu vardır. Hazır kalıplar yerine, ihtiyaçlarınıza özel çözümler geliştiriyor ve süreci sizinle birlikte şekillendiriyoruz. İlk adımda işletmenizin gereksinimlerini analiz ederek, en uygun dijital stratejiyi belirliyoruz. Çift yönlü etkileşimle ilerleyen bu süreçte, teknolojiyi işletmenize entegre ederken, sürdürülebilir bir dijital altyapı oluşturuyoruz. Böylece, işletmenizin geleceğe uyum sağlamasını ve rekabet avantajı kazanmasını sağlıyoruz.
             </p>
           </div>
@@ -90,19 +91,19 @@ export default function Home() {
           <TextReveal>
             <div className="section4-col">
               <div className="">
-                <p className="text-color text-montserrat text-center text-shadow"> Kapsamlı Dijital Dönüşüm Çözümleri</p>
-                <p className="text-color text-montserrat text-center text-shadow">Marka Stratejisi ve Konumlandırma</p>
-                <p className="text-color text-montserrat text-center text-shadow">Son Teknoloji ile Güçlendirilmiş Çözümler</p>
+                <p className={`${montserrat.className} "text-color text-center text-shadow"`}> Kapsamlı Dijital Dönüşüm Çözümleri</p>
+                <p className={`${montserrat.className} "text-color text-center text-shadow"`}>Marka Stratejisi ve Konumlandırma</p>
+                <p className={`${montserrat.className} "text-color text-center text-shadow"`}>Son Teknoloji ile Güçlendirilmiş Çözümler</p>
               </div>
               <div className="">
-                <p className="text-color text-montserrat text-center text-shadow">Veri Odaklı Pazarlama & SEO Optimizasyonu</p>
-                <p className="text-color text-montserrat text-center text-shadow">Etkili Sosyal Medya Yönetimi</p>
-                <p className="text-color text-montserrat text-center text-shadow">Yenilikçi ve Dönüşüm Odaklı Web & Mobil Çözümler</p>
+                <p className={`${montserrat.className} "text-color text-center text-shadow"`}>Veri Odaklı Pazarlama & SEO Optimizasyonu</p>
+                <p className={`${montserrat.className} "text-color text-center text-shadow"`}>Etkili Sosyal Medya Yönetimi</p>
+                <p className={`${montserrat.className} "text-color text-center text-shadow"`}>Yenilikçi ve Dönüşüm Odaklı Web & Mobil Çözümler</p>
               </div>
             </div>
           </TextReveal>
           <TextReveal>
-            <h5 className="text-color text-montserrat text-center text-shadow">İster yeni bir girişim olun ister köklü bir marka, işinizi büyütmek için doğru stratejiyi birlikte belirleyelim. Visugenius ile markanızı dijital dünyada zirveye taşıyın.</h5>
+            <h5 className={`${montserrat.className} "text-color text-center text-shadow"`}>İster yeni bir girişim olun ister köklü bir marka, işinizi büyütmek için doğru stratejiyi birlikte belirleyelim. Visugenius ile markanızı dijital dünyada zirveye taşıyın.</h5>
           </TextReveal>
         </div>
       </div>
