@@ -2,11 +2,8 @@ import ScrollingText from "../components/slidingText/SlidingText";
 import StickyScroll2 from '../components/sticky/Sticky'
 import Kure from "../components/shapes/Chart";
 import TextReveal from "../components/textReveal/TextReveal";
-import dynamic from 'next/dynamic';
-import { FC } from 'react';
-const ContactForm = dynamic(() => import('../components/form/ContactForm.jsx') as unknown as Promise<{ default: FC }>, {
-  ssr: false,
-});
+import ContactForm from '../components/form/ContactForm'
+
 export const metadata = {
   title: "Ana Sayfa | Visugenius",
   description: "Visugenius, web tasarım, SEO ve sosyal medya yönetimi alanında yenilikçi dijital çözümler sunar. Markanı dijitalde büyüt!",
