@@ -22,20 +22,29 @@ export default function ContactForm() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setStatus('Gönderiliyor');
-
-        const response = await fetch(`${window.location.origin}/api/contact`, {
+      
+        const url = typeof window !== 'undefined'
+          ? `${window.location.origin}/api/contact`
+          : '/api/contact'; // fallback, SSR için
+      
+        try {
+          const response = await fetch(url, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData),
-        });
-
-        if (response.ok) {
+          });
+      
+          if (response.ok) {
             setStatus('Mesaj Başarıyla Gönderildi.');
             setFormData({ name: '', phone: '', email: '', city: '', message: '' });
-        } else {
+          } else {
             setStatus('Hata oluştu, lütfen tekrar deneyiniz');
+          }
+        } catch (error) {
+          console.error('Fetch hatası:', error);
+          setStatus('Hata oluştu, lütfen tekrar deneyiniz');
         }
-    };
+      };
 
     return (
         <form onSubmit={handleSubmit} className='form'>
@@ -60,7 +69,7 @@ export default function ContactForm() {
                     </div>
                 </div>
             </div>
-            {status && <p>{status}</p>}
+            {status && <p className='text-color'>{status}</p>}
         </form>
     )
 
