@@ -34,7 +34,7 @@ const Torus = () => {
                     <meshStandardMaterial color='#fff' metalness={1} roughness={0} envMapIntensity={55} />
                 </mesh>
                 <Suspense fallback={null}>
-                    <Environment files="textures\liquid-prism-wallpaper3-min.jpg" background={false} />
+                    <Environment files="textures\torus-texture.jpg" background={false} />
                 </Suspense>
             </Canvas>
         </div>

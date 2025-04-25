@@ -36,7 +36,7 @@ const Octahedron = () => {
                     <meshStandardMaterial color='#fff' metalness={1} roughness={0} envMapIntensity={55} />
                 </mesh>
                 <Suspense fallback={null}>
-                    <Environment files="textures\liquid-prism-wallpaper-min.jpg" background={false} />
+                    <Environment files="textures\octahedron-texture.jpg" background={false} />
                 </Suspense>
 
             </Canvas>

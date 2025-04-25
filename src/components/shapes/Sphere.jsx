@@ -35,7 +35,7 @@ const Sphere = () => {
                     <meshStandardMaterial color='#fff' metalness={1} roughness={0} envMapIntensity={55} />
                 </mesh>
                 <Suspense fallback={null}>
-                    <Environment files="textures/liquid-prism-wallpaper4-min.jpg" background={false} />
+                    <Environment files="textures/sphere-texture.jpg" background={false} />
                 </Suspense>
             </Canvas>
         </div>
