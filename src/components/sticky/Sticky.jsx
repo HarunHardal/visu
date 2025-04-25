@@ -44,9 +44,7 @@ const StickyScroll2 = () => {
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[0] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-            <Suspense>
-              <LayzOctahedron />
-            </Suspense>
+           
           </div>
           <div className="sticky-text-wrapper">
             <h2 className='text-italiana'>Web Tasarım & Geliştirme</h2>
@@ -61,9 +59,7 @@ const StickyScroll2 = () => {
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[1] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-            <Suspense>
-              <LayzCylinder />
-            </Suspense>
+         
           </div>
           <div className="sticky-text-wrapper">
             <h2 className='text-italiana'>SEO Hizmetleri</h2>
@@ -78,9 +74,7 @@ const StickyScroll2 = () => {
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[2] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-            <Suspense>
-              <LayzTorus />
-            </Suspense>
+           
           </div>
           <div className="sticky-text-wrapper">
             <h2 className='text-italiana'>Dijital Pazarlama</h2>
@@ -95,9 +89,7 @@ const StickyScroll2 = () => {
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[3] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-            <Suspense>
-              <LazyTetrahedron />
-            </Suspense>
+     
           </div>
           <div className="sticky-text-wrapper">
             <h2 className='text-italiana'>Sosyal Medya Yönetimi</h2>
@@ -112,9 +104,7 @@ const StickyScroll2 = () => {
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[4] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-            <Suspense>
-              <LayzSphere />
-            </Suspense>
+          
           </div>
           <div className="sticky-text-wrapper">
             <h2 className='text-italiana'>Marka Kimliği & Grafik Tasarım
