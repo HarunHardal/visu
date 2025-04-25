@@ -1,7 +1,6 @@
 import ScrollingText from "../components/slidingText/SlidingText";
 import StickyScroll2 from '../components/sticky/Sticky'
 import Kure from "../components/shapes/Chart";
-import TextReveal from "../components/textReveal/TextReveal";
 import ContactForm from '../components/form/ContactForm'
 import { italiana, montserrat } from "../lib/font";
 
@@ -84,11 +83,11 @@ export default function Home() {
       <StickyScroll2 />
       <div className="section4-container">
         <div className="section4-container-wrapper">
-          <TextReveal>
+         
             <h2 className="text-color text-bodoni text-center text-shadow">Dijital Başarıya Giden Yolda Birlikte Yürüyelim</h2>
-          </TextReveal>
+        
 
-          <TextReveal>
+         
             <div className="section4-col">
               <div className="">
                 <p className={`${montserrat.className} "text-color text-center text-shadow"`}> Kapsamlı Dijital Dönüşüm Çözümleri</p>
@@ -101,10 +100,9 @@ export default function Home() {
                 <p className={`${montserrat.className} "text-color text-center text-shadow"`}>Yenilikçi ve Dönüşüm Odaklı Web & Mobil Çözümler</p>
               </div>
             </div>
-          </TextReveal>
-          <TextReveal>
+          
             <h5 className={`${montserrat.className} text-color text-center text-shadow"`}>İster yeni bir girişim olun ister köklü bir marka, işinizi büyütmek için doğru stratejiyi birlikte belirleyelim. Visugenius ile markanızı dijital dünyada zirveye taşıyın.</h5>
-          </TextReveal>
+          
         </div>
       </div>
 
