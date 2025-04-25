@@ -6,8 +6,12 @@ const Torus = () => {
     const [scrollY, setScrollY] = useState(0);
 
     useEffect(() => {
+        let scrollTimeout;
         const handleScroll = () => {
-            setScrollY(window.scrollY)
+            if (scrollTimeout) clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                setScrollY(window.scrollY);
+            }, 100); // scroll işlemini sınırlıyoruz
         }
 
         window.addEventListener('scroll', handleScroll);
@@ -20,25 +24,25 @@ const Torus = () => {
 
     const torusRotation = [
         Math.sin(scrollY * rotationSpeed) * 2,
-        Math.cos(scrollY * rotationSpeed) * .5,
-        Math.sin(scrollY * rotationSpeed) * .3,
+        Math.cos(scrollY * rotationSpeed) * 0.5,
+        Math.sin(scrollY * rotationSpeed) * 0.3,
     ];
 
     return (
-        <div style={{ width: '100%', height: '100%', position: 'relative', margin: '0' }}>
-            <Canvas camera={{ position: [0, 0, 10], fov: 50 }} style={{ position: 'relative', width: 'auto', height: '100%' }}>
-                <ambientLight intensity={1} />
-                <directionalLight position={[5, 5, 5]} intensity={1} />
+        <div style={{ width: '100%', height: '100vh', position: 'relative', margin: '0' }}>
+            <Canvas camera={{ position: [0, 0, 10], fov: 50 }} style={{ width: '100%', height: '100%' }}>
+                <ambientLight intensity={0.7} />
+                <directionalLight position={[5, 5, 5]} intensity={0.7} />
                 <mesh scale={1} position={[0, 0, 0]} rotation={torusRotation}>
                     <torusGeometry args={[2, 1, 64, 128]} />
                     <meshStandardMaterial color='#fff' metalness={0.5} roughness={0.5} envMapIntensity={0.5} />
                 </mesh>
-                <Suspense fallback={null}>
-                    <Environment files="textures\torus-texture.jpg" background={false} />
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Environment files="textures/torus-texture.jpg" background={false} />
                 </Suspense>
             </Canvas>
         </div>
-    )
-}
+    );
+};
 
-export default Torus
+export default Torus;
