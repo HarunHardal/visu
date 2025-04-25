@@ -4,13 +4,14 @@ import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import dynamic from "next/dynamic";
-import "./sticky.css"; // CSS dosyanızı import edin
+import "./sticky.css"; 
 
-const LayzOctahedron = dynamic(() => import("../shapes/Octahedron"), { ssr: false });
-const LazyTetrahedron = dynamic(() => import("../shapes/Tetrahedron"), { ssr: false });
-const LayzCylinder = dynamic(() => import("../shapes/Cylinder"), { ssr: false });
-const LayzSphere = dynamic(() => import("../shapes/Sphere"), { ssr: false });
-const LayzTorus = dynamic(() => import("../shapes/Torus"), { ssr: false });
+
+const LayzOctahedron = dynamic(() => import("../shapes/Octahedron.jsx"), { ssr: false });
+const LazyTetrahedron = dynamic(() => import("../shapes/Tetrahedron.jsx"), { ssr: false });
+const LayzCylinder = dynamic(() => import("../shapes/Cylinder.jsx"), { ssr: false });
+const LayzSphere = dynamic(() => import("../shapes/Sphere.jsx"), { ssr: false });
+const LayzTorus = dynamic(() => import("../shapes/Torus.jsx"), { ssr: false });
 
 gsap.registerPlugin(ScrollTrigger);
 
