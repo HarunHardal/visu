@@ -44,7 +44,7 @@ const StickyScroll2 = () => {
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[0] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-     
+            <LayzOctahedron />
           </div>
           <div className="sticky-text-wrapper">
             <h2 className='text-italiana'>Web Tasarım & Geliştirme</h2>
@@ -59,7 +59,7 @@ const StickyScroll2 = () => {
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[1] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-        
+            <LayzCylinder />
           </div>
           <div className="sticky-text-wrapper">
             <h2 className='text-italiana'>SEO Hizmetleri</h2>
@@ -89,7 +89,7 @@ const StickyScroll2 = () => {
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[3] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-           
+            <LazyTetrahedron />
           </div>
           <div className="sticky-text-wrapper">
             <h2 className='text-italiana'>Sosyal Medya Yönetimi</h2>
@@ -104,7 +104,7 @@ const StickyScroll2 = () => {
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[4] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-          
+            <LayzSphere />
           </div>
           <div className="sticky-text-wrapper">
             <h2 className='text-italiana'>Marka Kimliği & Grafik Tasarım

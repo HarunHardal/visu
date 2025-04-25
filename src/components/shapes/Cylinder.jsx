@@ -32,7 +32,7 @@ const Cylinder = () => {
                 <directionalLight position={[5, 5, 5]} intensity={1} />
                 <mesh scale={1} position={[0, 0, 0]} rotation={cylinderRotation}>
                     <coneGeometry args={[.9, 2.2, 128]} />
-                    <meshStandardMaterial color='#fff' metalness={0.5} roughness={0.5} envMapIntensity={0.5} />
+                    <meshStandardMaterial color='#fff' metalness={1} roughness={0} envMapIntensity={55} />
                 </mesh>
                 <Suspense fallback={null}>
                     <Environment files="textures/cylinder-texture.jpg" background={false} />

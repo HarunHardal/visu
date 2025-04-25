@@ -35,10 +35,10 @@ const Torus = () => {
                 <directionalLight position={[5, 5, 5]} intensity={0.7} />
                 <mesh scale={1} position={[0, 0, 0]} rotation={torusRotation}>
                     <torusGeometry args={[2, 1, 64, 128]} />
-                    <meshStandardMaterial color='#fff' metalness={0.5} roughness={0.5} envMapIntensity={0.5} />
+                    <meshStandardMaterial color='#fff' metalness={1} roughness={0} envMapIntensity={5} />
                 </mesh>
                 <Suspense fallback={<div>Loading...</div>}>
-                    <Environment files="textures/torus-texture.jpg" background={false} />
+                    <Environment files="/textures/torus-texture.jpg" background={false} />
                 </Suspense>
             </Canvas>
         </div>
