@@ -6,11 +6,13 @@ section {
   display: grid;
   gap: 100px;
   margin: 50px 0;
+  overflow-x: hidden;
 }
 
 .section-container {
   background-color: rgba(0, 0, 0, 0.26);
   backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   height: 70vh;
   width: 90%;
   margin: auto;
