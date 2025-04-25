@@ -1,8 +1,9 @@
 import ScrollingText from "../components/slidingText/SlidingText";
-import StickyScroll2 from '../components/sticky/Sticky'
+// import StickyScroll2 from '../components/sticky/Sticky'
 import Kure from "../components/shapes/Chart";
 import ContactForm from '../components/form/ContactForm'
 import { italiana, montserrat } from "../lib/font";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "Ana Sayfa | Visugenius",
@@ -26,7 +27,7 @@ export default function Home() {
 
         </div>
         <div className="brandname-container">
-          <h1 className={`${italiana.className} brandname` }>Visugenius</h1>
+          <h1 className={`${italiana.className} brandname`}>Visugenius</h1>
         </div>
       </div>
       <div className="section2-container">
@@ -53,9 +54,12 @@ export default function Home() {
       <div className="section-vision">
         <div className="section-vision-grid">
           <div>
-            <div className="planet">
-              <Kure />
-            </div>
+            <Suspense>
+              <div className="planet">
+                <Kure />
+              </div>
+            </Suspense>
+
             <div className="outer-circle">
               <div className="dot outer-dot"></div>
             </div>
@@ -78,36 +82,40 @@ export default function Home() {
         </div>
       </div>
       <div className="section3-container">
-        <ScrollingText />
+        <Suspense>
+          <ScrollingText />
+        </Suspense>
       </div>
-      <StickyScroll2 />
+      {/* <Suspense>
+        <StickyScroll2 />
+      </Suspense> */}
       <div className="section4-container">
         <div className="section4-container-wrapper">
-         
-            <h2 className="text-color text-bodoni text-center text-shadow">Dijital Başarıya Giden Yolda Birlikte Yürüyelim</h2>
-        
 
-         
-            <div className="section4-col">
-              <div className="">
-                <p className={`${montserrat.className} "text-color text-center text-shadow"`}> Kapsamlı Dijital Dönüşüm Çözümleri</p>
-                <p className={`${montserrat.className} "text-color text-center text-shadow"`}>Marka Stratejisi ve Konumlandırma</p>
-                <p className={`${montserrat.className} "text-color text-center text-shadow"`}>Son Teknoloji ile Güçlendirilmiş Çözümler</p>
-              </div>
-              <div className="">
-                <p className={`${montserrat.className} "text-color text-center text-shadow"`}>Veri Odaklı Pazarlama & SEO Optimizasyonu</p>
-                <p className={`${montserrat.className} "text-color text-center text-shadow"`}>Etkili Sosyal Medya Yönetimi</p>
-                <p className={`${montserrat.className} "text-color text-center text-shadow"`}>Yenilikçi ve Dönüşüm Odaklı Web & Mobil Çözümler</p>
-              </div>
+          <h2 className="text-color text-bodoni text-center text-shadow">Dijital Başarıya Giden Yolda Birlikte Yürüyelim</h2>
+
+
+
+          <div className="section4-col">
+            <div className="">
+              <p className={`${montserrat.className} "text-color text-center text-shadow"`}> Kapsamlı Dijital Dönüşüm Çözümleri</p>
+              <p className={`${montserrat.className} "text-color text-center text-shadow"`}>Marka Stratejisi ve Konumlandırma</p>
+              <p className={`${montserrat.className} "text-color text-center text-shadow"`}>Son Teknoloji ile Güçlendirilmiş Çözümler</p>
             </div>
-          
-            <h5 className={`${montserrat.className} text-color text-center text-shadow"`}>İster yeni bir girişim olun ister köklü bir marka, işinizi büyütmek için doğru stratejiyi birlikte belirleyelim. Visugenius ile markanızı dijital dünyada zirveye taşıyın.</h5>
-          
+            <div className="">
+              <p className={`${montserrat.className} "text-color text-center text-shadow"`}>Veri Odaklı Pazarlama & SEO Optimizasyonu</p>
+              <p className={`${montserrat.className} "text-color text-center text-shadow"`}>Etkili Sosyal Medya Yönetimi</p>
+              <p className={`${montserrat.className} "text-color text-center text-shadow"`}>Yenilikçi ve Dönüşüm Odaklı Web & Mobil Çözümler</p>
+            </div>
+          </div>
+
+          <h5 className={`${montserrat.className} text-color text-center text-shadow"`}>İster yeni bir girişim olun ister köklü bir marka, işinizi büyütmek için doğru stratejiyi birlikte belirleyelim. Visugenius ile markanızı dijital dünyada zirveye taşıyın.</h5>
+
         </div>
       </div>
 
       <div className="section5-container">
-          <ContactForm />
+        <ContactForm />
       </div>
     </div>
   );
