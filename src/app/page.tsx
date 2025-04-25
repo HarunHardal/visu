@@ -103,16 +103,13 @@ export default function Home() {
             </div>
           </TextReveal>
           <TextReveal>
-            <h5 className={`${montserrat.className} "text-color text-center text-shadow"`}>İster yeni bir girişim olun ister köklü bir marka, işinizi büyütmek için doğru stratejiyi birlikte belirleyelim. Visugenius ile markanızı dijital dünyada zirveye taşıyın.</h5>
+            <h5 className={`${montserrat.className} text-color text-center text-shadow"`}>İster yeni bir girişim olun ister köklü bir marka, işinizi büyütmek için doğru stratejiyi birlikte belirleyelim. Visugenius ile markanızı dijital dünyada zirveye taşıyın.</h5>
           </TextReveal>
         </div>
       </div>
 
       <div className="section5-container">
-        <TextReveal>
           <ContactForm />
-        </TextReveal>
-
       </div>
     </div>
   );
