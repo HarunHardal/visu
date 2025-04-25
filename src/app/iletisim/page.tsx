@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import './contact.css'
 import ContactForm from '../../components/form/ContactForm'
