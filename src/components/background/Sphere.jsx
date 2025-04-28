@@ -191,7 +191,7 @@ const Experiment = ({ shouldReduceQuality, isMobile, isTablet, meshRef }) => {
         />
       )}
       <Suspense fallback={false}>
-        <Environment files="/textures/torus-texture.jpg" background={false} />
+        <Environment files="/textures/liquid-prism-wallpaper-min.jpg" background={false} />
       </Suspense>
     </>
   );
