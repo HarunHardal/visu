@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
+import { Environment } from '@react-three/drei';
 import { OctahedronGeometry } from 'three';
-//import { Environment } from '@react-three/drei';
 
 const Octahedron = () => {
     const [scrollY, setScrollY] = useState(0);
@@ -16,6 +16,8 @@ const Octahedron = () => {
             window.removeEventListener('scroll', handleScroll);
         }
     }, []);
+
+    const octahedron1Position = [0, 0 + Math.sin(scrollY * 0.0005) * 5, 0];
 
     const rotationSpeed = 0.002;
 
@@ -34,7 +36,9 @@ const Octahedron = () => {
                     <OctahedronGeometry args={[1, 0]} />
                     <meshStandardMaterial color='#fff' metalness={1} roughness={0} envMapIntensity={55} />
                 </mesh>
-               
+                <Suspense fallback={null}>
+                    <Environment files="textures\octahedron-texture.jpg" background={false} />
+                </Suspense>
 
             </Canvas>
         </div>
