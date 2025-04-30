@@ -35,7 +35,7 @@ const Cylinder = () => {
                     <meshStandardMaterial color='#fff' metalness={1} roughness={0} envMapIntensity={55} />
                 </mesh>
                 <Suspense fallback={null}>
-                    <Environment files="textures/cylinder-texture.jpg" background={false} />
+                    {/* <Environment files="textures/cylinder-texture.jpg" background={false} /> */}
                 </Suspense>
             </Canvas>
         </div>

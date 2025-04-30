@@ -5,20 +5,16 @@ import { Environment } from '@react-three/drei';
 const Torus = () => {
     const [scrollY, setScrollY] = useState(0);
 
-    useEffect(() => {
-        let scrollTimeout;
-        const handleScroll = () => {
-            if (scrollTimeout) clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(() => {
-                setScrollY(window.scrollY);
-            }, 100); // scroll işlemini sınırlıyoruz
-        }
-
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        }
-    }, []);
+      useEffect(() => {
+            const handleScroll = () => {
+                setScrollY(window.scrollY)
+            }
+    
+            window.addEventListener('scroll', handleScroll);
+            return () => {
+                window.removeEventListener('scroll', handleScroll);
+            }
+        }, []);
 
     const rotationSpeed = 0.002;
 
@@ -29,7 +25,7 @@ const Torus = () => {
     ];
 
     return (
-        <div style={{ width: '100%', height: '100vh', position: 'relative', margin: '0' }}>
+        <div style={{ width: '100%', height: '100%', position: 'relative', margin: '0' }}>
             <Canvas camera={{ position: [0, 0, 10], fov: 50 }} style={{ width: '100%', height: '100%' }}>
                 <ambientLight intensity={0.7} />
                 <directionalLight position={[5, 5, 5]} intensity={0.7} />
@@ -38,7 +34,7 @@ const Torus = () => {
                     <meshStandardMaterial color='#fff' metalness={1} roughness={0} envMapIntensity={5} />
                 </mesh>
                 <Suspense fallback={<div>Loading...</div>}>
-                    <Environment files="/textures/torus-texture.jpg" background={false} />
+                    {/* <Environment files="/textures/torus-texture.jpg" background={false} /> */}
                 </Suspense>
             </Canvas>
         </div>

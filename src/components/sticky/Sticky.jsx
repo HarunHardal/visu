@@ -59,7 +59,7 @@ const StickyScroll2 = () => {
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[1] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-           
+           <LazyTetrahedron/>
           </div>
           <div className="sticky-text-wrapper">
             <h2 className='text-italiana'>SEO Hizmetleri</h2>
@@ -74,7 +74,7 @@ const StickyScroll2 = () => {
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[2] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-           
+           <LayzCylinder/>
           </div>
           <div className="sticky-text-wrapper">
             <h2 className='text-italiana'>Dijital Pazarlama</h2>
@@ -89,7 +89,7 @@ const StickyScroll2 = () => {
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[3] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-           
+           <LayzSphere/>
           </div>
           <div className="sticky-text-wrapper">
             <h2 className='text-italiana'>Sosyal Medya Yönetimi</h2>
@@ -104,11 +104,10 @@ const StickyScroll2 = () => {
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[4] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-          
+          <LayzTorus/>
           </div>
           <div className="sticky-text-wrapper">
-            <h2 className='text-italiana'>Marka Kimliği & Grafik Tasarım
-            </h2>
+            <h2 className='text-italiana'>Marka Kimliği & Grafik Tasarım</h2>
             <h3 className='text-montserrat'>Güçlü Bir Kimlik, Unutulmaz Bir Marka!</h3>
             <p className='text-montserrat'>
               Markanızın ruhunu yansıtan, akılda kalıcı bir görsel kimlik oluşturuyoruz. Logo tasarımı, kurumsal kimlik, afiş ve dijital tasarımlar ile markanızı daha profesyonel ve dikkat çekici hale getiriyoruz. Tasarımın gücüyle markanızı rakiplerinizden ayırın!
