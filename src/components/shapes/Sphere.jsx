@@ -33,7 +33,7 @@ const Sphere = () => {
                 <torusKnotGeometry args={[5, 1.5, 128, 64, 2, 3]} />
                 <meshStandardMaterial color='#fff' metalness={1} roughness={0} envMapIntensity={55} />
             </mesh>
-            <Suspense fallback={null}>
+            <Suspense fallback={false}>
                 <Environment files="/textures/sphere-texture.jpg" background={false} />
             </Suspense>
         </>
