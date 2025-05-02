@@ -45,7 +45,7 @@ const StickyScroll2 = () => {
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[0] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-             {/* <OctaGeo />*/}
+             <OctaGeo />
           </div>
           <div className="sticky-text-wrapper">
             <h2 className='text-italiana'>Web Tasarım & Geliştirme</h2>
@@ -60,7 +60,7 @@ const StickyScroll2 = () => {
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[1] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-           {/*<TetrGeo/>*/}
+          <TetrGeo/>
           </div>
           <div className="sticky-text-wrapper">
             <h2 className='text-italiana'>SEO Hizmetleri</h2>
@@ -75,7 +75,7 @@ const StickyScroll2 = () => {
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[2] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-       {/* <CylinderGeo/> */}
+      <CylinderGeo/>
           </div>
           <div className="sticky-text-wrapper">
             <h2 className='text-italiana'>Dijital Pazarlama</h2>
@@ -90,7 +90,7 @@ const StickyScroll2 = () => {
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[3] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-            {/* <TorusKontGeo/> */}
+             <TorusKontGeo/> 
           </div>
           <div className="sticky-text-wrapper">
             <h2 className='text-italiana'>Sosyal Medya Yönetimi</h2>
@@ -105,7 +105,7 @@ const StickyScroll2 = () => {
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[4] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-           {/* <TorusGeo/> */}
+            <TorusGeo/> 
           </div>
           <div className="sticky-text-wrapper">
             <h2 className='text-italiana'>Marka Kimliği & Grafik Tasarım</h2>
