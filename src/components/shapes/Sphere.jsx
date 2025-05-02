@@ -26,20 +26,28 @@ const Sphere = () => {
     ];
 
     return (
-        <div style={{ width: '100%', height: '100%', position: 'relative', margin: '0' }}>
-            <Canvas camera={{ position: [0, 0, 35], fov: 50 }} style={{ position: 'relative', width: 'auto', height: '100%' }}>
-                <ambientLight intensity={1} />
-                <directionalLight position={[5, 5, 5]} intensity={1} />
-                <mesh scale={1} position={[0, 0, 0]} rotation={cylinderRotation}>
-                    <torusKnotGeometry args={[5, 1.5, 128, 64, 2, 3]} />
-                    <meshStandardMaterial color='#fff' metalness={1} roughness={0} envMapIntensity={55} />
-                </mesh>
-                <Suspense fallback={null}>
-                    {/* <Environment files="/textures/sphere-texture.jpg" background={false} /> */}
-                </Suspense>
-            </Canvas>
-        </div>
+        <>
+            <ambientLight intensity={1} />
+            <directionalLight position={[5, 5, 5]} intensity={1} />
+            <mesh scale={1} position={[0, 0, 0]} rotation={cylinderRotation}>
+                <torusKnotGeometry args={[5, 1.5, 128, 64, 2, 3]} />
+                <meshStandardMaterial color='#fff' metalness={1} roughness={0} envMapIntensity={55} />
+            </mesh>
+            <Suspense fallback={null}>
+                <Environment files="/textures/sphere-texture.jpg" background={false} />
+            </Suspense>
+        </>
     )
 }
 
-export default Sphere
+const TorusKontGeo = () => {
+    return (
+        <Canvas
+            camera={{ position: [0, 0, 5], fov: 50 }} style={{ position: 'relative', width: '100%', height: '100%' }}
+        >
+            <Sphere />
+        </Canvas>
+    )
+}
+
+export default TorusKontGeo

@@ -1,10 +1,7 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { useLoader } from '@react-three/fiber';
-import { TextureLoader } from 'three';
 import { Environment } from '@react-three/drei';
 const Octahedron = () => {
-    const texture = useLoader(TextureLoader, '/textures/liquid-texture.png')
     const [scrollY, setScrollY] = useState(0);
 
     useEffect(() => {
@@ -45,7 +42,7 @@ const OctaGeo = () => {
 
     return (
         <Canvas
-            camera={{ position: [0, 0, 5], fov: 50 }} style={{ position: 'relative', width: 'auto', height: '100%' }}
+            camera={{ position: [0, 0, 5], fov: 50 }} style={{ position: 'relative', width: '100%', height: '100%' }}
         >
             <Octahedron />
         </Canvas>
