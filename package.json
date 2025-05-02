@@ -11,10 +11,10 @@
     "@react-three/fiber": "^9.1.2",
     "@studio-freight/lenis": "^1.0.42",
     "@studio-freight/react-lenis": "^0.0.47",
-    "Visugenius": "file:",
     "dotenv": "^16.4.7",
     "gsap": "^3.12.7",
     "imagesloaded": "^5.0.0",
+    "lamina": "^1.1.23",
     "lenis": "^1.1.20",
     "next": "^15.3.0",
     "next-transpile-modules": "^10.0.1",
@@ -23,11 +23,13 @@
     "react": "^18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^5.5.0",
+    "react-merge-refs": "^3.0.1",
     "split-type": "^0.3.4",
     "splitting": "^1.1.0",
     "three": "^0.175.0",
     "three-custom-shader-material": "^6.2.1",
-    "usehooks-ts": "^3.1.0"
+    "usehooks-ts": "^3.1.0",
+    "Visugenius": "file:"
   },
   "devDependencies": {
     "@types/node": "22.7.7",

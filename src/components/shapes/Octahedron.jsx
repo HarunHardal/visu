@@ -1,8 +1,10 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
+import { useLoader } from '@react-three/fiber';
+import { TextureLoader } from 'three';
 import { Environment } from '@react-three/drei';
-
 const Octahedron = () => {
+    const texture = useLoader(TextureLoader, '/textures/liquid-texture.png')
     const [scrollY, setScrollY] = useState(0);
 
     useEffect(() => {
@@ -16,8 +18,6 @@ const Octahedron = () => {
         }
     }, []);
 
-    const octahedron1Position = [0, 0 + Math.sin(scrollY * 0.0005) * 5, 0];
-
     const rotationSpeed = 0.002;
 
     const octahedron1Rotation = [
@@ -27,21 +27,30 @@ const Octahedron = () => {
     ];
 
     return (
-        <div style={{ width: '100%', height: '100%', position: 'relative', margin: '0' }}>
-            <Canvas camera={{ position: [0, 0, 10], fov: 20 }} style={{ position: 'relative', width: 'auto', height: '100%' }}>
-                <ambientLight intensity={1} />
-                <directionalLight position={[5, 5, 5]} intensity={1} />
-                <mesh scale={1} position={[0, 0, 0]} rotation={octahedron1Rotation}>
-                    <octahedronGeometry args={[1, 0]} />
-                    <meshStandardMaterial color='#fff' metalness={1} roughness={0} envMapIntensity={55} />
-                </mesh>
-                <Suspense fallback={null}>
-                    {/* <Environment files="textures\octahedron-texture.jpg" background={false} /> */}
-                </Suspense>
-
-            </Canvas>
-        </div>
+        <>
+            <ambientLight intensity={1} />
+            <directionalLight position={[5, 5, 5]} intensity={1} />
+            <mesh scale={1} position={[0, 0, 0]} rotation={octahedron1Rotation}>
+                <octahedronGeometry args={[1, 0]} />
+                <meshStandardMaterial color='#fff' metalness={1} roughness={0} envMapIntensity={55} />
+            </mesh>
+            <Suspense>
+                <Environment files="/textures/octahedron-texture.jpg" background={false} />
+            </Suspense>
+        </>
     )
 }
 
-export default Octahedron
+const OctaGeo = () => {
+
+    return (
+        <Canvas
+            camera={{ position: [0, 0, 5], fov: 50 }} style={{ position: 'relative', width: 'auto', height: '100%' }}
+        >
+            <Octahedron />
+        </Canvas>
+    )
+
+}
+
+export default OctaGeo

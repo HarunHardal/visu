@@ -6,7 +6,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './sticky.css'; // CSS dosyanızı import edin
 import dynamic from 'next/dynamic';
 
-const LayzOctahedron = dynamic(() => import("../shapes/Octahedron"), { ssr: false })
+import OctaGeo from '../shapes/Octahedron';
+
+const LayzOctahedron = dynamic(() => import("../shapes/Octahedron.jsx"), { ssr: false })
 const LazyTetrahedron = dynamic(() => import("../shapes/Tetrahedron"), { ssr: false })
 const LayzCylinder = dynamic(() => import("../shapes/Cylinder"), { ssr: false })
 const LayzSphere = dynamic(() => import("../shapes/Sphere"), { ssr: false })
@@ -44,7 +46,7 @@ const StickyScroll2 = () => {
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[0] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-            <LayzOctahedron />
+            <OctaGeo />
           </div>
           <div className="sticky-text-wrapper">
             <h2 className='text-italiana'>Web Tasarım & Geliştirme</h2>
