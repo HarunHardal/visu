@@ -60,7 +60,7 @@ const StickyScroll2 = () => {
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[1] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-          {/*<TetrGeo/> */}
+          <TetrGeo/> 
           </div>
           <div className="sticky-text-wrapper">
             <h2 className='text-italiana'>SEO Hizmetleri</h2>
