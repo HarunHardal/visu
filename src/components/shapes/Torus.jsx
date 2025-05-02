@@ -32,7 +32,7 @@ const Torus = () => {
                 <torusGeometry args={[2, 1, 64, 128]} />
                 <meshStandardMaterial color='#fff' metalness={1} roughness={0} envMapIntensity={5} />
             </mesh>
-            <Suspense fallback={null}>
+            <Suspense fallback={false}>
                 <Environment files="/textures/torus-texture.jpg" background={false} />
             </Suspense>
         </>
