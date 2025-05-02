@@ -33,7 +33,7 @@ const Cylinder = () => {
                     <coneGeometry args={[.9, 2.2, 128]} />
                     <meshStandardMaterial color='#fff' metalness={1} roughness={0} envMapIntensity={55} />
                 </mesh>
-                <Suspense fallback={null}>
+                <Suspense fallback={false}>
                     <Environment files="textures/cylinder-texture.jpg" background={false} /> 
                 </Suspense>
         </>
