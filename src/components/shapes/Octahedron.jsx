@@ -31,7 +31,7 @@ const Octahedron = () => {
                 <octahedronGeometry args={[1, 0]} />
                 <meshStandardMaterial color='#fff' metalness={1} roughness={0} envMapIntensity={55} />
             </mesh>
-            <Suspense>
+            <Suspense fallback={false}>
                 <Environment files="/textures/octahedron-texture.jpg" background={false} />
             </Suspense>
         </>
