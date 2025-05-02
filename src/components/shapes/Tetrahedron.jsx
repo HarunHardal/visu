@@ -33,7 +33,7 @@ const Tetrahedron = () => {
                     <tetrahedronGeometry args={[1, 0]} />
                     <meshStandardMaterial color='#fff' metalness={1} roughness={0} envMapIntensity={55} />
                 </mesh>
-                <Suspense fallback={null}>
+                <Suspense fallback={false}>
                     <Environment files="/textures/tetrahedron-texture.jpg" background={false} />
                 </Suspense>
           
