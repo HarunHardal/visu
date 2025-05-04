@@ -1,52 +1,68 @@
-import React, { useState, useEffect, Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { Environment } from '@react-three/drei';
+import React, { useState, useEffect, useRef, Suspense } from 'react';
+import { Canvas, useThree, useFrame } from '@react-three/fiber';
+import * as THREE from 'three';
+import { SRGBColorSpace } from 'three';
 
-const Torus = () => {
+
+const TorusMesh = () => {
+    const meshRef = useRef(null);
+    const { scene } = useThree();
+    const [envMap, setEnvMap] = useState(null);
     const [scrollY, setScrollY] = useState(0);
 
     useEffect(() => {
-        const handleScroll = () => {
-            setScrollY(window.scrollY)
-        }
+        const loader = new THREE.TextureLoader();
+        loader.load('/textures/liquid-prism-wallpaper3.jpg', (texture) => {
+            texture.mapping = THREE.EquirectangularReflectionMapping;
+            texture.colorSpace = SRGBColorSpace;
+            setEnvMap(texture);
+            scene.environment = texture;
+        });
+    }, [scene]);
 
+    useEffect(() => {
+        const handleScroll = () => setScrollY(window.scrollY);
         window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        }
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const rotationSpeed = 0.002;
-
-    const torusRotation = [
-        Math.sin(scrollY * rotationSpeed) * 2,
-        Math.cos(scrollY * rotationSpeed) * 0.5,
-        Math.sin(scrollY * rotationSpeed) * 0.3,
-    ];
+    useFrame(() => {
+        if (meshRef.current) {
+            const speed = 0.002;
+            meshRef.current.rotation.x = Math.sin(scrollY * speed) * 2;
+            meshRef.current.rotation.y = Math.cos(scrollY * speed) * 0.5;
+            meshRef.current.rotation.z = Math.sin(scrollY * speed) * 0.3;
+        }
+    });
 
     return (
         <>
-            <ambientLight intensity={0.7} />
-            <directionalLight position={[5, 5, 5]} intensity={0.7} />
-            <mesh scale={1} position={[0, 0, 0]} rotation={torusRotation}>
+            <ambientLight intensity={1} />
+            <directionalLight position={[5, 5, 5]} intensity={1} />
+            <mesh ref={meshRef}>
                 <torusGeometry args={[2, 1, 64, 128]} />
-                <meshStandardMaterial color='#fff' metalness={1} roughness={0} envMapIntensity={5} />
+                <meshStandardMaterial
+                    color="#ffffff"
+                    metalness={1}
+                    roughness={0}
+                    envMap={envMap ?? undefined}
+                    envMapIntensity={1}
+                />
             </mesh>
-            <Suspense fallback={false}>
-                <Environment files="/textures/torus-texture.jpg" background={false} />
-            </Suspense>
         </>
     );
 };
 
-const TorusGeo = () => {
+const Torus = () => {
     return (
-        <Canvas
-            camera={{ position: [0, 0, 6], fov: 40 }} style={{ position: 'relative', width: '100%', height: '100%' }}
-        >
-            <Torus />
-        </Canvas>
-    )
-}
+        <div style={{ width: '100%', height: '100%', position: 'relative', margin: '0' }}>
+            <Canvas camera={{ position: [0, 0, 10], fov: 50 }}>
+                <Suspense fallback={null}>
+                    <TorusMesh />
+                </Suspense>
+            </Canvas>
+        </div>
+    );
+};
 
-export default TorusGeo;
+export default Torus;
