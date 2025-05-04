@@ -32,7 +32,7 @@ const Octahedron = () => {
                 <meshStandardMaterial color='#fff' metalness={1} roughness={0} envMapIntensity={55} />
             </mesh>
             <Suspense fallback={false}>
-                <Environment files="/textures/octahedron-texture.jpg" background={false} />
+                <Environment files="/textures/last-env.png" background={false} />
             </Suspense>
         </>
     )
