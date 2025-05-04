@@ -12,7 +12,7 @@ const TorusMesh = () => {
 
     useEffect(() => {
         const loader = new THREE.TextureLoader();
-        loader.load('/textures/liquid-prism-wallpaper3.jpg', (texture) => {
+        loader.load('/textures/last-env.png', (texture) => {
             texture.mapping = THREE.EquirectangularReflectionMapping;
             texture.colorSpace = SRGBColorSpace;
             setEnvMap(texture);
