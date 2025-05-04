@@ -11,7 +11,7 @@ const OctahedronMesh = () => {
     const [scrollY, setScrollY] = useState(0);
 
     useEffect(() => {
-        new THREE.TextureLoader().load('/textures/liquid-prism-wallpaper.jpg', (texture) => {
+        new THREE.TextureLoader().load('/textures/last-env.png', (texture) => {
             texture.mapping = THREE.EquirectangularReflectionMapping;
             texture.colorSpace = SRGBColorSpace
             setEnvMap(texture);
