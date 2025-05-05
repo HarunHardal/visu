@@ -10,7 +10,7 @@ import OctahedronMesh from '../shapes/Octahedron'
 import CylinderMesh from '../shapes/Cylinder'
 import SphereMesh from '../shapes/Sphere'
 import TetrahedronMesh from '../shapes/Tetrahedron'
-import TorusMesh from '../shapes/TorusMesh'
+import TorusMesh from '../shapes/Torus'
 // const OctaGeo = dynamic(() => import("../shapes/Octahedron"), { ssr: false })
 // const TetrGeo = dynamic(() => import("../shapes/Tetrahedron"), { ssr: false })
 // const CylinderGeo = dynamic(() => import("../shapes/Cylinder"), { ssr: false })
