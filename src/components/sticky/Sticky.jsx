@@ -1,3 +1,4 @@
+/*
 "use client";
 
 import React, { useRef, useEffect, useState } from 'react';
@@ -67,7 +68,7 @@ const StickyScroll2 = () => {
         </div>
       </section>
 
-      {/* Diğer section'lar için benzer şekilde scrollY prop'unu gönderiyoruz */}
+    
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[1] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
@@ -85,15 +86,15 @@ const StickyScroll2 = () => {
         </div>
       </section>
 
-      {/* Diğer section'lar */}
+  
     </div>
   );
 };
 
 export default StickyScroll2;
+*/
 
 
-/*
 "use client"
 
 import React, { useRef, useEffect, Suspense } from 'react';
@@ -222,4 +223,3 @@ const StickyScroll2 = () => {
 };
 
 export default StickyScroll2;
-*/
