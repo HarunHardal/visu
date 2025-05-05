@@ -1,3 +1,99 @@
+"use client";
+
+import React, { useRef, useEffect, useState } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import './sticky.css'; // CSS dosyanızı import edin
+import OctahedronMesh from '../shapes/Octahedron';
+import CylinderMesh from '../shapes/Cylinder';
+import SphereMesh from '../shapes/Sphere';
+import TetrahedronMesh from '../shapes/Tetrahedron';
+import TorusScene from '../shapes/Torus';
+import { Canvas } from '@react-three/fiber';
+
+gsap.registerPlugin(ScrollTrigger);
+
+const StickyScroll2 = () => {
+  const panelsRef = useRef([]);
+  const [scrollY, setScrollY] = useState(0);
+
+  // Scroll event listener'ını yalnızca bir kez ekleyelim
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (panelsRef.current.length === 0) return;
+
+    panelsRef.current.forEach((panel, index) => {
+      const isLast = index === panelsRef.current.length - 1;
+
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: panel,
+          start: 'top top',
+          end: '+=100%',
+          scrub: true
+        }
+      })
+        .to(panel, {
+          ease: 'none',
+          startAt: { filter: 'brightness(100%)' },
+          filter: isLast ? 'none' : 'brightness(50%)',
+          scale: 0.95,
+        }, 0);
+    });
+  }, [scrollY]);
+
+  return (
+    <div className='sticky-wrapper'>
+      <section className="section-container" ref={(el) => { if (el) panelsRef.current[0] = el; }}>
+        <div className='sticky-grid'>
+          <div className="sticky-3d">
+            <Canvas>
+              <OctahedronMesh scrollY={scrollY} />
+            </Canvas>
+          </div>
+          <div className="sticky-text-wrapper">
+            <h2 className='text-italiana'>Web Tasarım & Geliştirme</h2>
+            <h3 className='text-montserrat'>Estetik, Hız ve Kullanıcı Deneyimi Bir Arada!</h3>
+            <p className='text-montserrat'>
+              Markanızı en iyi şekilde yansıtan, modern ve yüksek performanslı web siteleri tasarlıyoruz. Kullanıcı dostu arayüzler, mobil uyumluluk ve en güncel teknolojilerle öne çıkan web çözümleri sunuyoruz. İster kurumsal bir site, ister e-ticaret platformu olsun, hızlı, güvenli ve SEO uyumlu siteler inşa ediyoruz.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Diğer section'lar için benzer şekilde scrollY prop'unu gönderiyoruz */}
+      <section className="section-container" ref={(el) => { if (el) panelsRef.current[1] = el; }}>
+        <div className='sticky-grid'>
+          <div className="sticky-3d">
+            <Canvas>
+              <OctahedronMesh scrollY={scrollY} />
+            </Canvas>
+          </div>
+          <div className="sticky-text-wrapper">
+            <h2 className='text-italiana'>SEO Hizmetleri</h2>
+            <h3 className='text-montserrat'>Google’da Üst Sıralara Çıkın, Daha Fazla Görünün!</h3>
+            <p className='text-montserrat'>
+              SEO, yalnızca bir web sitesine sahip olmakla yetinmeyen markalar için en kritik stratejilerden biridir. Anahtar kelime optimizasyonu, teknik SEO ve içerik stratejileri ile Google ve diğer arama motorlarında görünürlüğünüzü artırıyoruz. Doğru kitleye ulaşmanız için organik trafik ve dönüşüm odaklı çözümler sunuyoruz.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Diğer section'lar */}
+    </div>
+  );
+};
+
+export default StickyScroll2;
+
+
+/*
 "use client"
 
 import React, { useRef, useEffect, Suspense } from 'react';
@@ -126,3 +222,4 @@ const StickyScroll2 = () => {
 };
 
 export default StickyScroll2;
+*/
