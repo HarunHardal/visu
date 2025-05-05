@@ -6,12 +6,16 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './sticky.css'; // CSS dosyanızı import edin
 import dynamic from 'next/dynamic';
 
-
-const OctaGeo = dynamic(() => import("../shapes/Octahedron"), { ssr: false })
-const TetrGeo = dynamic(() => import("../shapes/Tetrahedron"), { ssr: false })
-const CylinderGeo = dynamic(() => import("../shapes/Cylinder"), { ssr: false })
-const TorusKontGeo = dynamic(() => import("../shapes/Sphere"), { ssr: false })
-const TorusGeo = dynamic(() => import("../shapes/Torus"), { ssr: false })
+import OctahedronMesh from '../shapes/Octahedron'
+import CylinderMesh from '../shapes/Cylinder'
+import SphereMesh from '../shapes/Sphere'
+import TetrahedronMesh from '../shapes/Tetrahedron'
+import TorusMesh from '../shapes/TorusMesh'
+// const OctaGeo = dynamic(() => import("../shapes/Octahedron"), { ssr: false })
+// const TetrGeo = dynamic(() => import("../shapes/Tetrahedron"), { ssr: false })
+// const CylinderGeo = dynamic(() => import("../shapes/Cylinder"), { ssr: false })
+// const TorusKontGeo = dynamic(() => import("../shapes/Sphere"), { ssr: false })
+// const TorusGeo = dynamic(() => import("../shapes/Torus"), { ssr: false })
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,7 +49,7 @@ const StickyScroll2 = () => {
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[0] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-             <OctaGeo />
+             <OctahedronMesh />
           </div>
           <div className="sticky-text-wrapper">
             <h2 className='text-italiana'>Web Tasarım & Geliştirme</h2>
@@ -60,7 +64,7 @@ const StickyScroll2 = () => {
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[1] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-          <TetrGeo/>
+          <TetrahedronMesh/>
           </div>
           <div className="sticky-text-wrapper">
             <h2 className='text-italiana'>SEO Hizmetleri</h2>
@@ -75,7 +79,7 @@ const StickyScroll2 = () => {
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[2] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-      <CylinderGeo/>
+      <CylinderMesh/>
           </div>
           <div className="sticky-text-wrapper">
             <h2 className='text-italiana'>Dijital Pazarlama</h2>
@@ -90,7 +94,7 @@ const StickyScroll2 = () => {
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[3] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-             <TorusKontGeo/> 
+             <SphereMesh/> 
           </div>
           <div className="sticky-text-wrapper">
             <h2 className='text-italiana'>Sosyal Medya Yönetimi</h2>
@@ -105,7 +109,7 @@ const StickyScroll2 = () => {
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[4] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-            <TorusGeo/> 
+            <TorusMesh/> 
           </div>
           <div className="sticky-text-wrapper">
             <h2 className='text-italiana'>Marka Kimliği & Grafik Tasarım</h2>
