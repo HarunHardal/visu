@@ -98,18 +98,18 @@ export default function Home() {
 
           <div className="section4-col">
             <div className="">
-              <p className={`${montserrat.className} "text-color text-center text-shadow"`}> Kapsamlı Dijital Dönüşüm Çözümleri</p>
-              <p className={`${montserrat.className} "text-color text-center text-shadow"`}>Marka Stratejisi ve Konumlandırma</p>
-              <p className={`${montserrat.className} "text-color text-center text-shadow"`}>Son Teknoloji ile Güçlendirilmiş Çözümler</p>
+              <p className={`${montserrat.className} text-color text-center text-shadow`}> Kapsamlı Dijital Dönüşüm Çözümleri</p>
+              <p className={`${montserrat.className} text-color text-center text-shadow`}>Marka Stratejisi ve Konumlandırma</p>
+              <p className={`${montserrat.className} text-color text-center text-shadow`}>Son Teknoloji ile Güçlendirilmiş Çözümler</p>
             </div>
             <div className="">
-              <p className={`${montserrat.className} "text-color text-center text-shadow"`}>Veri Odaklı Pazarlama & SEO Optimizasyonu</p>
-              <p className={`${montserrat.className} "text-color text-center text-shadow"`}>Etkili Sosyal Medya Yönetimi</p>
-              <p className={`${montserrat.className} "text-color text-center text-shadow"`}>Yenilikçi ve Dönüşüm Odaklı Web & Mobil Çözümler</p>
+              <p className={`${montserrat.className} text-color text-center text-shadow`}>Veri Odaklı Pazarlama & SEO Optimizasyonu</p>
+              <p className={`${montserrat.className} text-color text-center text-shadow`}>Etkili Sosyal Medya Yönetimi</p>
+              <p className={`${montserrat.className} text-color text-center text-shadow`}>Yenilikçi ve Dönüşüm Odaklı Web & Mobil Çözümler</p>
             </div>
           </div>
 
-          <h5 className={`${montserrat.className} text-color text-center text-shadow"`}>İster yeni bir girişim olun ister köklü bir marka, işinizi büyütmek için doğru stratejiyi birlikte belirleyelim. Visugenius ile markanızı dijital dünyada zirveye taşıyın.</h5>
+          <h5 className={`${montserrat.className} text-color text-center text-shadow`}>İster yeni bir girişim olun ister köklü bir marka, işinizi büyütmek için doğru stratejiyi birlikte belirleyelim. Visugenius ile markanızı dijital dünyada zirveye taşıyın.</h5>
 
         </div>
       </div>
