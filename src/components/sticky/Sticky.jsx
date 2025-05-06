@@ -1,4 +1,3 @@
-/*
 "use client";
 
 import React, { useRef, useEffect, useState } from 'react';
@@ -7,14 +6,14 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './sticky.css'; // CSS dosyanızı import edin
 import OctahedronMesh from '../shapes/Octahedron';
 import CylinderMesh from '../shapes/Cylinder';
-import SphereMesh from '../shapes/Sphere';
+import TorusKnotMesh from '../shapes/TorusKnot';
 import TetrahedronMesh from '../shapes/Tetrahedron';
-import TorusScene from '../shapes/Torus';
+import TorusMesh from '../shapes/Torus';
 import { Canvas } from '@react-three/fiber';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const StickyScroll2 = () => {
+const StickyScroll = () => {
   const panelsRef = useRef([]);
   const [scrollY, setScrollY] = useState(0);
 
@@ -68,12 +67,12 @@ const StickyScroll2 = () => {
         </div>
       </section>
 
-    
+     
       <section className="section-container" ref={(el) => { if (el) panelsRef.current[1] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
             <Canvas>
-              <OctahedronMesh scrollY={scrollY} />
+              <CylinderMesh scrollY={scrollY} />
             </Canvas>
           </div>
           <div className="sticky-text-wrapper">
@@ -86,15 +85,61 @@ const StickyScroll2 = () => {
         </div>
       </section>
 
-  
-    </div>
+<section className="section-container" ref={(el) => { if (el) panelsRef.current[1] = el; }}>
+        <div className='sticky-grid'>
+          <div className="sticky-3d">
+            <Canvas>
+              <TorusKnotMesh scrollY={scrollY} />
+            </Canvas>
+          </div>
+          <div className="sticky-text-wrapper">
+            <h2 className='text-italiana'>Dijital Pazarlama</h2>
+            <h3 className='text-montserrat'>Stratejik Reklamlarla Müşterilerinize Ulaşın!</h3>
+            <p className='text-montserrat'>
+            Dijital dünyada başarılı olmak için doğru strateji şart! Google Ads, sosyal medya reklamları ve içerik pazarlaması ile markanızı hedef kitlenizle buluşturuyoruz. Dönüşüm odaklı reklam kampanyaları ile satışlarınızı artırıyor, marka bilinirliğinizi güçlendiriyoruz.            </p>
+          </div>
+        </div>
+      </section>
+
+<section className="section-container" ref={(el) => { if (el) panelsRef.current[1] = el; }}>
+        <div className='sticky-grid'>
+          <div className="sticky-3d">
+            <Canvas>
+              <TetrahedronMesh scrollY={scrollY} />
+            </Canvas>
+          </div>
+          <div className="sticky-text-wrapper">
+            <h2 className='text-italiana'>Sosyal Medya Yönetimi</h2>
+            <h3 className='text-montserrat'>Markanızı Sosyal Medyada Güçlendirin!</h3>
+            <p className='text-montserrat'>
+            Sosyal medya, dijital dünyada en güçlü iletişim kanallarından biri. Instagram, Facebook, LinkedIn ve diğer platformlarda etkili içerik stratejileri oluşturuyor, etkileşimi artıran paylaşımlar yapıyoruz. Topluluk yönetimi, reklam kampanyaları ve kreatif içeriklerle sosyal medyada aktif bir marka kimliği oluşturuyoruz.            </p>
+          </div>
+        </div>
+      </section>
+
+<section className="section-container" ref={(el) => { if (el) panelsRef.current[1] = el; }}>
+        <div className='sticky-grid'>
+          <div className="sticky-3d">
+            <Canvas>
+              <TorusMesh scrollY={scrollY} />
+            </Canvas>
+          </div>
+          <div className="sticky-text-wrapper">
+            <h2 className='text-italiana'>Marka Kimliği & Grafik Tasarım</h2>
+            <h3 className='text-montserrat'>Güçlü Bir Kimlik, Unutulmaz Bir Marka!</h3>
+            <p className='text-montserrat'>
+            Markanızın ruhunu yansıtan, akılda kalıcı bir görsel kimlik oluşturuyoruz. Logo tasarımı, kurumsal kimlik, afiş ve dijital tasarımlar ile markanızı daha profesyonel ve dikkat çekici hale getiriyoruz. Tasarımın gücüyle markanızı rakiplerinizden ayırın!            </p>
+          </div>
+        </div>
+      </section>
+   </div>
   );
 };
 
-export default StickyScroll2;
-*/
+export default StickyScroll;
 
 
+/*
 "use client"
 
 import React, { useRef, useEffect, Suspense } from 'react';
@@ -223,3 +268,4 @@ const StickyScroll2 = () => {
 };
 
 export default StickyScroll2;
+*/

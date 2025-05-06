@@ -1,28 +1,20 @@
-import React, { useState, useEffect, useRef, Suspense } from 'react';
-import { Canvas, useThree, useFrame } from '@react-three/fiber';
+import React, { useEffect, useRef, useState } from 'react';
+import { useThree, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
-import { SRGBColorSpace } from 'three';
 
-const SphereMesh = () => {
+const TorusKnotMesh = ({ scrollY }) => {
     const meshRef = useRef(null);
     const { scene } = useThree();
     const [envMap, setEnvMap] = useState(null);
-    const [scrollY, setScrollY] = useState(0);
 
     useEffect(() => {
-        new THREE.TextureLoader().load('/textures/last-env.png', (texture) => {
+        new THREE.TextureLoader().load('/textures/last.jpg', (texture) => {
             texture.mapping = THREE.EquirectangularReflectionMapping;
-            texture.colorSpace = SRGBColorSpace;
+            texture.colorSpace = THREE.SRGBColorSpace;
             setEnvMap(texture);
             scene.environment = texture;
         });
     }, [scene]);
-
-    useEffect(() => {
-        const handleScroll = () => setScrollY(window.scrollY);
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
 
     useFrame(() => {
         if (meshRef.current) {
@@ -51,16 +43,4 @@ const SphereMesh = () => {
     );
 };
 
-const Sphere = () => {
-    return (
-        <div style={{ width: '100%', height: '100%', position: 'relative', margin: '0' }}>
-            <Canvas gl={{ antialias: true }} camera={{ position: [0, 0, 35], fov: 50 }}>
-                <Suspense fallback={null}>
-                    <SphereMesh />
-                </Suspense>
-            </Canvas>
-        </div>
-    );
-};
-
-export default Sphere;
+export default TorusKnotMesh;

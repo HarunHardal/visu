@@ -1,5 +1,5 @@
 import ScrollingText from "../components/slidingText/SlidingText";
-import StickyScroll2 from '../components/sticky/Sticky'
+import StickyScroll from '../components/sticky/Sticky'
 import Kure from "../components/shapes/Chart";
 import ContactForm from '../components/form/ContactForm'
 import { italiana, montserrat } from "../lib/font";
@@ -87,7 +87,7 @@ export default function Home() {
         </Suspense>
       </div>
       
-        <StickyScroll2 />
+        <StickyScroll />
      
       <div className="section4-container">
         <div className="section4-container-wrapper">

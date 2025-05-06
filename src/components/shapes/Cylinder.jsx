@@ -1,30 +1,20 @@
-import React, { useState, useEffect, useRef, Suspense } from 'react';
-import { Canvas, useThree, useFrame } from '@react-three/fiber';
+import React, { useEffect, useRef, useState } from 'react';
+import { useThree, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
-import { SRGBColorSpace } from 'three';
 
-
-const CylinderMesh = () => {
+const CylinderMesh = ({scrollY}) => {
     const meshRef = useRef(null);
     const { scene } = useThree();
     const [envMap, setEnvMap] = useState(null);
-    const [scrollY, setScrollY] = useState(0);
-
+    
     useEffect(() => {
-        const loader = new THREE.TextureLoader();
-        loader.load('/textures/last-env.png', (texture) => {
-            texture.mapping = THREE.EquirectangularReflectionMapping;
-            texture.colorSpace = SRGBColorSpace;
-            setEnvMap(texture);
-            scene.environment = texture;
-        });
-    }, [scene]);
-
-    useEffect(() => {
-        const handleScroll = () => setScrollY(window.scrollY);
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+           new THREE.TextureLoader().load('/textures/last.jpg', (texture) => {
+               texture.mapping = THREE.EquirectangularReflectionMapping;
+               texture.colorSpace = THREE.SRGBColorSpace;
+               setEnvMap(texture);
+               scene.environment = texture;
+           });
+       }, [scene]);
 
     useFrame(() => {
         if (meshRef.current) {
@@ -39,8 +29,8 @@ const CylinderMesh = () => {
         <>
             <ambientLight intensity={1} />
             <directionalLight position={[5, 5, 5]} intensity={1} />
-            <mesh ref={meshRef} scale={1} position={[0, 0, 0]}>
-                <coneGeometry args={[0.9, 2.2, 128]} />
+            <mesh ref={meshRef}>
+                <coneGeometry args={[0.8, 2.0, 128]} />
                 <meshStandardMaterial
                     color="#ffffff"
                     metalness={1}
@@ -53,16 +43,4 @@ const CylinderMesh = () => {
     );
 };
 
-const Cylinder = () => {
-    return (
-        <div style={{ width: '100%', height: '100%', position: 'relative', margin: '0' }}>
-            <Canvas camera={{ position: [0, 0, 4], fov: 50 }}>
-                <Suspense fallback={null}>
-                    <CylinderMesh />
-                </Suspense>
-            </Canvas>
-        </div>
-    );
-};
-
-export default Cylinder;
+export default CylinderMesh;
