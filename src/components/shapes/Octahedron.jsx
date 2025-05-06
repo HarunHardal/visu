@@ -30,7 +30,7 @@ const OctahedronMesh = ({ scrollY }) => {
             <ambientLight intensity={1} />
             <directionalLight position={[5, 5, 5]} intensity={1} />
             <mesh ref={meshRef}>
-                <octahedronGeometry args={[1, 0]} />
+                <octahedronGeometry args={[2.5, 0]} />
                 <meshStandardMaterial
                     color="#ffffff"
                     metalness={1}

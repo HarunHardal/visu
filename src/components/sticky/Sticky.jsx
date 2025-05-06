@@ -88,7 +88,7 @@ const StickyScroll = () => {
 <section className="section-container" ref={(el) => { if (el) panelsRef.current[1] = el; }}>
         <div className='sticky-grid'>
           <div className="sticky-3d">
-            <Canvas>
+            <Canvas camera={{ position: [0, 0, 50], fov: 50 }}>
               <TorusKnotMesh scrollY={scrollY} />
             </Canvas>
           </div>

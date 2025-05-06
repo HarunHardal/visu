@@ -69,7 +69,7 @@ export default function Home() {
           </div>
 
           <div>
-            <h4 className="text-color text-montserrat text-italiana" style={{ width: '100%' }}>
+            <h4 className={`${montserrat.className} text-color`}style={{ width: '100%' }}>
               İşletmenizi Geleceğe Taşıyan Akıllı Çözümler
             </h4>
             <h2 className="text-color text-italiana " style={{ width: '100%' }}>
@@ -86,31 +86,26 @@ export default function Home() {
           <ScrollingText />
         </Suspense>
       </div>
-      
-        <StickyScroll />
-     
+
+      <StickyScroll />
+
       <div className="section4-container">
         <div className="section4-container-wrapper">
 
           <h2 className="text-color text-bodoni text-center text-shadow">Dijital Başarıya Giden Yolda Birlikte Yürüyelim</h2>
-
-
-
           <div className="section4-col">
             <div className="">
-              <p className={`${montserrat.className} text-color text-center text-shadow`}> Kapsamlı Dijital Dönüşüm Çözümleri</p>
-              <p className={`${montserrat.className} text-color text-center text-shadow`}>Marka Stratejisi ve Konumlandırma</p>
-              <p className={`${montserrat.className} text-color text-center text-shadow`}>Son Teknoloji ile Güçlendirilmiş Çözümler</p>
+              <p style={{ fontWeight: '300' }} className={`${montserrat.className} text-color text-center text-shadow`}> Kapsamlı Dijital Dönüşüm Çözümleri</p>
+              <p style={{ fontWeight: '300' }} className={`${montserrat.className} text-color text-center text-shadow`}>Marka Stratejisi ve Konumlandırma</p>
+              <p style={{ fontWeight: '300' }} className={`${montserrat.className} text-color text-center text-shadow`}>Son Teknoloji ile Güçlendirilmiş Çözümler</p>
             </div>
             <div className="">
-              <p className={`${montserrat.className} text-color text-center text-shadow`}>Veri Odaklı Pazarlama & SEO Optimizasyonu</p>
-              <p className={`${montserrat.className} text-color text-center text-shadow`}>Etkili Sosyal Medya Yönetimi</p>
-              <p className={`${montserrat.className} text-color text-center text-shadow`}>Yenilikçi ve Dönüşüm Odaklı Web & Mobil Çözümler</p>
+              <p style={{ fontWeight: '300' }} className={`${montserrat.className} text-color text-center text-shadow`}>Veri Odaklı Pazarlama & SEO Optimizasyonu</p>
+              <p style={{ fontWeight: '300' }} className={`${montserrat.className} text-color text-center text-shadow`}>Etkili Sosyal Medya Yönetimi</p>
+              <p style={{ fontWeight: '300' }} className={`${montserrat.className} text-color text-center text-shadow`}>Yenilikçi ve Dönüşüm Odaklı Web & Mobil Çözümler</p>
             </div>
           </div>
-
-          <h5 className={`${montserrat.className} text-color text-center text-shadow`}>İster yeni bir girişim olun ister köklü bir marka, işinizi büyütmek için doğru stratejiyi birlikte belirleyelim. Visugenius ile markanızı dijital dünyada zirveye taşıyın.</h5>
-
+          <h4 style={{ fontWeight: '400' }} className={`${montserrat.className} text-color text-center text-shadow`}>İster yeni bir girişim olun ister köklü bir marka, işinizi büyütmek için doğru stratejiyi birlikte belirleyelim. Visugenius ile markanızı dijital dünyada zirveye taşıyın.</h4>
         </div>
       </div>
 

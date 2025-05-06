@@ -24,6 +24,8 @@ section {
   display: flex;
   flex-direction: column;
   gap: 50px;
+  width: 99%;
+  margin: auto;
 }
 
 .sticky-grid {
@@ -71,6 +73,10 @@ h2 {
 }
 
 @media only screen and (max-width: 750px) {
+  .sticky-wrapper{
+    width: 95%;
+    margin: auto;
+  }
   .sticky-text-wrapper p {
     font-size: 16px
   }
@@ -88,6 +94,7 @@ h2 {
   .section-container {
     height: 80vh;
     width: 95%;
+    justify-content: center;
   }
 
   .sticky-grid {
@@ -100,8 +107,8 @@ h2 {
   .sticky-3d {
     position: absolute;
     -webkit-position: absolute;
-    width: 90%;
-    height: 50%;
+    width: 100%;
+    height: 40%;
     z-index: 11;
   }
 

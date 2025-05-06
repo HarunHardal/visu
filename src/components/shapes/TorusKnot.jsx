@@ -30,7 +30,7 @@ const TorusKnotMesh = ({ scrollY }) => {
             <ambientLight intensity={1} />
             <directionalLight position={[5, 5, 5]} intensity={1} />
             <mesh ref={meshRef}>
-                <torusKnotGeometry args={[5, 1.5, 128, 64, 2, 3]} />
+                <torusKnotGeometry args={[10, 3, 270, 20, 10, 12]} />
                 <meshStandardMaterial
                     color="#ffffff"
                     metalness={1}

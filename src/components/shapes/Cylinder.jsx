@@ -30,7 +30,7 @@ const CylinderMesh = ({scrollY}) => {
             <ambientLight intensity={1} />
             <directionalLight position={[5, 5, 5]} intensity={1} />
             <mesh ref={meshRef}>
-                <coneGeometry args={[0.8, 2.0, 128]} />
+                <coneGeometry args={[2, 4, 128]} />
                 <meshStandardMaterial
                     color="#ffffff"
                     metalness={1}

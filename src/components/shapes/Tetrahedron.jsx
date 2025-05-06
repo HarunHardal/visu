@@ -31,7 +31,7 @@ const TetrahedronMesh = ({scrollY}) => {
             <ambientLight intensity={1} />
             <directionalLight position={[5, 5, 5]} intensity={1} />
             <mesh ref={meshRef}>
-                <tetrahedronGeometry args={[1, 0]} />
+                <tetrahedronGeometry args={[3, 0]} />
                 <meshStandardMaterial
                     color="#ffffff"
                     metalness={1}
