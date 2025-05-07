@@ -1,8 +1,13 @@
-import { Prata } from "next/font/google";
+import {  Prata, Source_Serif_4 } from "next/font/google";
 import { Italiana } from "next/font/google";
 import { Redressed } from "next/font/google";
 import { Karla } from "next/font/google";
 import { Montserrat } from "next/font/google";
+
+export const  sourceSerif = Source_Serif_4({
+  subsets: ["latin"],
+  display:'swap'
+})
 
 export const prata = Prata({
   subsets: ["latin"],
