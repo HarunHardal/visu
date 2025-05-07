@@ -32,14 +32,14 @@ export default function Home() {
       </div>
       <div className="section2-container">
         <div className="section2-wrap">
-          <div>
-            <h2 className="text-color text-italiana" style={{ width: '100%' }}>
+          <div style={{gap:'30px'}}>
+            <h2 className={`${montserrat.className} text-color`} style={{ width: '100%', fontWeight:'300' }}>
               Neden Visugenius?
             </h2>
-            <h3 className="no-hyphen text-color text-montserrat text-italiana" style={{ width: '100%' }}>
+            <h3 className={`${italiana.className} text-color`} style={{fontWeight:'100', width: '100%' }}>
               Yaratıcı çözümlerle işinizi büyütüyoruz.
             </h3>
-            <p className="no-hyphen  text-montserrat text-color">
+            <p className={`${montserrat.className} text-color text-shadow`} style={{fontWeight:'300'}}>
               Visugenius, markaların dijital dünyada öne çıkmasını sağlayan yaratıcı çözümler sunar. Tasarım, teknoloji ve stratejiyi bir araya getirerek, işletmelere güçlü bir dijital kimlik kazandırıyoruz. Hedefimiz, yalnızca estetik değil, aynı zamanda etkili ve dönüşüm odaklı projeler üretmektir.
             </p>
           </div>
@@ -68,14 +68,14 @@ export default function Home() {
             </div>
           </div>
 
-          <div>
-            <h4 className={`${montserrat.className} text-color`}style={{ width: '100%' }}>
+          <div style={{gap:'30px'}}>
+            <h4 className={`${montserrat.className} text-color`} style={{ width: '100%', fontWeight:'300' }}>
               İşletmenizi Geleceğe Taşıyan Akıllı Çözümler
             </h4>
-            <h2 className="text-color text-italiana " style={{ width: '100%' }}>
+            <h2 className={`${italiana.className} text-color`} style={{fontWeight:'100', width: '100%' }}>
               Yeni Nesil Dijital Dönüşüm
             </h2>
-            <p className="text-montserrat text-color">
+            <p className={`${montserrat.className} text-color text-shadow`} style={{fontWeight:'300'}}>
               Her işletmenin kendine özgü bir dijital dönüşüm yolculuğu vardır. Hazır kalıplar yerine, ihtiyaçlarınıza özel çözümler geliştiriyor ve süreci sizinle birlikte şekillendiriyoruz. İlk adımda işletmenizin gereksinimlerini analiz ederek, en uygun dijital stratejiyi belirliyoruz. Çift yönlü etkileşimle ilerleyen bu süreçte, teknolojiyi işletmenize entegre ederken, sürdürülebilir bir dijital altyapı oluşturuyoruz. Böylece, işletmenizin geleceğe uyum sağlamasını ve rekabet avantajı kazanmasını sağlıyoruz.
             </p>
           </div>
