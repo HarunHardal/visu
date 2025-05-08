@@ -1,6 +1,7 @@
 .form {
-    width: max-content;
-    padding: 0 50px;
+    width: auto;
+    gap: 30px;
+    margin: auto;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -17,9 +18,11 @@
 .form-wrapper {
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     border-radius: 10px;
-    gap: 30px;
+    gap: 50px;
 }
 
 .form-inner {

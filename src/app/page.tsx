@@ -2,7 +2,7 @@ import ScrollingText from "../components/slidingText/SlidingText";
 import StickyScroll from '../components/sticky/Sticky'
 import Kure from "../components/shapes/Chart";
 import ContactForm from '../components/form/ContactForm'
-import { italiana, montserrat } from "../lib/font";
+import { italiana, montserrat, prata } from "../lib/font";
 import { Suspense } from "react";
 
 export const metadata = {
@@ -75,7 +75,7 @@ export default function Home() {
             <h2 className={`${italiana.className} text-color`} style={{fontWeight:'100', width: '100%' }}>
               Yeni Nesil Dijital Dönüşüm
             </h2>
-            <p className={`${montserrat.className} text-color text-shadow`} style={{fontWeight:'300'}}>
+            <p className={`${prata.className} text-color text-shadow`} style={{fontWeight:'300'}}>
               Her işletmenin kendine özgü bir dijital dönüşüm yolculuğu vardır. Hazır kalıplar yerine, ihtiyaçlarınıza özel çözümler geliştiriyor ve süreci sizinle birlikte şekillendiriyoruz. İlk adımda işletmenizin gereksinimlerini analiz ederek, en uygun dijital stratejiyi belirliyoruz. Çift yönlü etkileşimle ilerleyen bu süreçte, teknolojiyi işletmenize entegre ederken, sürdürülebilir bir dijital altyapı oluşturuyoruz. Böylece, işletmenizin geleceğe uyum sağlamasını ve rekabet avantajı kazanmasını sağlıyoruz.
             </p>
           </div>

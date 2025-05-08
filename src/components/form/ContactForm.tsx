@@ -47,31 +47,29 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} >
-     
-        <h3 className={`${prata.className}  text-color`}> Bizimle İletişime Geçin</h3>
-        <div className='form-wrapper'>
-          <div className=''>
-            <div className='form-row'>
-              <div className='form-col'>
-                <input type='text' name='name' placeholder='Adınız Soyadınız(Ya da İşletme)' className={`${montserrat.className} form-input`} value={formData.name} onChange={handleChange} required />
-                <input type='text' name='phone' placeholder='Telefon Numarası' className={`${montserrat.className} form-input`} value={formData.phone} onChange={handleChange} required />
-              </div>
-              <div className='form-col'>
-                <input type='email' name='email' placeholder='E-posta' className={`${montserrat.className} form-input`} value={formData.email} onChange={handleChange} required />
-                <input type='text' name='city' placeholder='Şehir' className={`${montserrat.className} form-input`} value={formData.city} onChange={handleChange} required />
-              </div>
-            </div>
-            <div className='form-input-message-wrapper'>
-              <textarea name="message" placeholder='Mesajınız' className='form-input-message' value={formData.message} onChange={handleChange} required />
-            </div>
-            <div>
-              <button type='submit' className='submit-button'>Gönder</button>
-            </div>
+    <form onSubmit={handleSubmit} className='form'>
+      <h3 className={`${prata.className}  text-color`}> Bizimle İletişime Geçin</h3>
+      <div className='form-wrapper'>
+
+        <div className='form-row'>
+          <div className='form-col'>
+            <input type='text' name='name' placeholder='Adınız Soyadınız(Ya da İşletme)' className={`${montserrat.className} form-input`} value={formData.name} onChange={handleChange} required />
+            <input type='text' name='phone' placeholder='Telefon Numarası' className={`${montserrat.className} form-input`} value={formData.phone} onChange={handleChange} required />
+          </div>
+          <div className='form-col'>
+            <input type='email' name='email' placeholder='E-posta' className={`${montserrat.className} form-input`} value={formData.email} onChange={handleChange} required />
+            <input type='text' name='city' placeholder='Şehir' className={`${montserrat.className} form-input`} value={formData.city} onChange={handleChange} required />
           </div>
         </div>
-        {status && <p className={`${montserrat.className} text-color`}>{status}</p>}
-    
+        <div className='form-input-message-wrapper'>
+          <textarea name="message" placeholder='Mesajınız' className='form-input-message' value={formData.message} onChange={handleChange} required />
+        </div>
+        <div>
+          <button type='submit' className='submit-button'>Gönder</button>
+        </div>
+
+      </div>
+      {status && <p className={`${montserrat.className} text-color`}>{status}</p>}
     </form>
   )
 

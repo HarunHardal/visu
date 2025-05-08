@@ -310,6 +310,7 @@ font-family: "Bodoni Moda";
 .section5-container {
     overflow: hidden;
     width: 100%;
+    padding: 100px 0;
 }
 
 
@@ -457,6 +458,10 @@ font-family: "Bodoni Moda";
     .section3-container {
         margin-bottom: 250px;
     }
+    .section5-container {
+        padding: 0;
+    }
+    
 
 }
 
