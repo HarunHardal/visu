@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import "./nav.css";
 import Image from "next/image";
-import logo from "../../../public/visu.svg";
+import logo from "../../../public/visugeniuslogo.svg";
 import { FiMenu, FiX } from "react-icons/fi"; // Hamburger ve kapatma ikonları
 import Link from "next/link";
 
