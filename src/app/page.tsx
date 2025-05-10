@@ -32,6 +32,8 @@ export default function Home() {
           <Image
           src={brandName}
           alt="brand name"
+          style={{width:"90%%",margin:'auto'}}
+          className="brandname"
           />
           {/* <h1 className={`${italiana.className} brandname`}>{brandName}</h1> */}
         </div>
