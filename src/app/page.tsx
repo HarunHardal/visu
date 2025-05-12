@@ -4,8 +4,6 @@ import Kure from "../components/shapes/Chart";
 import ContactForm from '../components/form/ContactForm'
 import { italiana, montserrat, prata } from "../lib/font";
 import { Suspense } from "react";
-import  brandName  from '../../public/visu isim.svg'
-import Image from "next/image";
 
 export const metadata = {
   title: "Ana Sayfa | Visugenius",
@@ -29,13 +27,7 @@ export default function Home() {
 
         </div>
         <div className="brandname-container">
-          <Image
-          src={brandName}
-          alt="brand name"
-          style={{width:"90%%",margin:'auto'}}
-          className="brandname"
-          />
-          {/* <h1 className={`${italiana.className} brandname`}>{brandName}</h1> */}
+          <h1 className={`${italiana.className} brandname`}>Visugenius</h1>
         </div>
       </div>
       <div className="section2-container">
