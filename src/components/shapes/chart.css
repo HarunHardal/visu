@@ -1,55 +1,56 @@
-  .wrapper {
-    margin: 50px;
-    perspective: 500px;
-    perspective-origin: 90% 100px;
+.wrapper {
+  margin: 50px;
+  perspective: 500px;
+  perspective-origin: 90% 100px;
+}
+
+.sphere {
+  position: relative;
+  margin: 0 auto;
+  width: 270px; /* 300'den 270'e düşürüldü */
+  transform-style: preserve-3d;
+  animation: spin 60s infinite linear;
+}
+
+.sphere > div {
+  border: solid 2px #fff;
+  border-radius: 50%;
+  height: 180px; /* 200'den 180'e düşürüldü */
+  opacity: 0.8;
+  position: absolute;
+  width: 180px; /* 200'den 180'e düşürüldü */
+}
+
+div.equator {
+  border: 2px solid white;
+  transform: rotateX(90deg);
+}
+
+div.tropic {
+  height: 158px; /* 176'dan 158'e düşürüldü */
+  margin: 11px;  /* 14'ten 11'e düşürüldü */
+  width: 158px;  /* 176'dan 158'e düşürüldü */
+}
+
+div.cancer {
+  transform: translateY(-45px) rotateX(90deg); /* -50'den -45'e */
+}
+
+div.capricorn {
+  transform: translateY(45px) rotateX(90deg); /* 50'den 45'e */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateX(15deg) rotateY(0) rotateZ(15deg);
   }
-  
-  .sphere {
-    position: relative;
-    margin: 0 auto;
-    width: 300px;
-    transform-style: preserve-3d;
+  50% {
+    transform: rotateX(-15deg) rotateY(180deg) rotateZ(-15deg);
   }
-  
-  .sphere > div {
-    border:solid 2px #fff;
-    border-radius:50%;
-    height: 200px;
-    opacity:.8;
-    position: absolute;
-    width: 200px;
+  100% {
+    transform: rotateX(15deg) rotateY(360deg) rotateZ(15deg);
   }
-  
-  div.equator {
-  border:2px solid white;
-    transform:rotateX(90deg);
-  }
-  
-  div.tropic {
-    height:176px;
-    margin:14px;
-    width:176px;
-  }
-  
-  div.cancer {
-    transform: translateY(-50px) rotateX(90deg);
-  }
-  
-  div.capricorn {
-    transform: translateY(50px) rotateX(90deg);
-  }
-  
-  @keyframes spin {
-    0% {
-      transform: rotateX(15deg) rotateY(0) rotateZ(15deg);
-    }
-    50% {
-      transform: rotateX(-15deg) rotateY(180deg) rotateZ(-15deg);
-    }
-    100% {
-      transform: rotateX(15deg) rotateY(360deg) rotateZ(15deg);
-    }
-  }
+}
   
   .sphere {
     animation: spin 60s infinite linear;
