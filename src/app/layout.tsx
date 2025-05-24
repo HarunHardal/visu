@@ -7,6 +7,7 @@ import GlassEffect from "../components/grain/GlassEffect";
 import Footer from "../components/footer/footer";
 import Loader from "../components/loading/Loading";
 import { LayzExperience } from "../components/background/LayzExperience";
+import ScrollToTop from "../components/scrollToTop/ScrollToTop";
 
 export const metadata: Metadata = {
   title: "Anasayfa | Visugenius",
@@ -31,6 +32,7 @@ export default function RootLayout({
             <LayzExperience/>
             <GlassEffect />
             <Nav />
+            <ScrollToTop/>
             <main className="main-content">{children}</main>
             <Footer />
           </SmoothScrolling>
