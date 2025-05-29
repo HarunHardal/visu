@@ -2,7 +2,7 @@ import React from 'react'
 import './contact.css'
 import ContactForm from '../../components/form/ContactForm'
 import { Metadata } from 'next';
-import  {sourceSerif} from '../../lib/font'
+import  { prata } from '../../lib/font'
 
 export const metadata: Metadata = {
   title: "İletişim | Visugenius",
@@ -13,7 +13,7 @@ const Contact = () => {
   return (
     <div className='contact-page-container'>
       <div className='contact-page-text'>
-        <h2 className={ `${sourceSerif.className} text-color`}>Markanı bir üst seviyeye taşıyalım. Biz buradayız, ya sen?</h2>
+        <h2 className={ `${prata.className} text-color`}>Markanı bir üst seviyeye taşıyalım. Biz buradayız, ya sen?</h2>
       </div>
       <div className='contact-grid'>
         <div></div>
