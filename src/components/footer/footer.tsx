@@ -21,7 +21,9 @@ const Footer = () => {
           <div className='social-wrapper'>
             <h5 className='text-color text-montserrat'>Bizi Takip Edin</h5>
             <div className='social'>
-              <FiInstagram className='social-icons' href="https://www.instagram.com/visugenius/" />
+              <a href="https://www.instagram.com/visugenius/" target="_blank" rel="noopener noreferrer">
+                 <FiInstagram className='social-icons' />
+              </a>
               <TfiFacebook className='social-icons' />
               <SiLinkedin className='social-icons' />
               <SiWhatsapp className='social-icons' />
@@ -49,3 +51,4 @@ const Footer = () => {
 
 
 export default Footer
+
