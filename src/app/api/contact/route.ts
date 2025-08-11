@@ -24,7 +24,7 @@ export async function POST(req: Request) {
         
         const mailOptions = {
             from: process.env.EMAIL_USER,
-            to: 'harun-hardal@hotmail.com',
+            to: 'visugenius@gmail.com',
             subject: "Yeni İletişim Formu Mesajı",
             text: `Ad: ${name}\nE-posta: ${email}\nMesaj: ${message}`,
         };
@@ -37,4 +37,5 @@ export async function POST(req: Request) {
         console.error("❌ Hata:", error);
         return NextResponse.json({ error: `${error}` }, { status: 500 })
     }
+
 }
